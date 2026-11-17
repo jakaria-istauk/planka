@@ -152,6 +152,26 @@ module.exports = {
   },
 
   fn(inputs) {
+    const eventBus = sails.hooks['event-bus'];
+
+    let data;
+    let prevData;
+    let scope;
+
+    if (eventBus.hasSubscribers()) {
+      data = inputs.buildData();
+      prevData = inputs.buildPrevData && inputs.buildPrevData();
+      scope = resolveScope(inputs.event, data, inputs.scope);
+
+      eventBus.emit({
+        data,
+        prevData,
+        scope,
+        event: inputs.event,
+        user: inputs.user,
+      });
+    }
+
     const userId = inputs.user && inputs.user.id;
 
     const eventFilteredWebhooks = inputs.webhooks.filter((webhook) => {
@@ -178,10 +198,11 @@ module.exports = {
       return;
     }
 
-    const data = inputs.buildData();
-    const prevData = inputs.buildPrevData && inputs.buildPrevData();
-
-    const scope = resolveScope(inputs.event, data, inputs.scope);
+    if (_.isUndefined(data)) {
+      data = inputs.buildData();
+      prevData = inputs.buildPrevData && inputs.buildPrevData();
+      scope = resolveScope(inputs.event, data, inputs.scope);
+    }
 
     const webhooks = eventFilteredWebhooks.filter((webhook) => {
       if (webhook.projectId && webhook.projectId !== scope.projectId) {
