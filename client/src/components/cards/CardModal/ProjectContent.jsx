@@ -373,11 +373,10 @@ const ProjectContent = React.memo(() => {
             board.alwaysDisplayCardCreator ||
             userIds.length > 0 ||
             labelIds.length > 0) && (
-            <div className={classNames(styles.moduleWrapper, styles.properties)}>
+            <div className={styles.moduleWrapper}>
               {board.alwaysDisplayCardCreator && (
                 <div className={styles.attachments}>
                   <div className={styles.text}>
-                    <Icon name="user outline" className={styles.textIcon} />
                     {t('common.creator', {
                       context: 'title',
                     })}
@@ -392,7 +391,6 @@ const ProjectContent = React.memo(() => {
               {userIds.length > 0 && (
                 <div className={styles.attachments}>
                   <div className={styles.text}>
-                    <Icon name="users" className={styles.textIcon} />
                     {t('common.members', {
                       context: 'title',
                     })}
@@ -433,7 +431,6 @@ const ProjectContent = React.memo(() => {
               {labelIds.length > 0 && (
                 <div className={styles.attachments}>
                   <div className={styles.text}>
-                    <Icon name="tag" className={styles.textIcon} />
                     {t('common.labels', {
                       context: 'title',
                     })}
@@ -476,7 +473,6 @@ const ProjectContent = React.memo(() => {
               {card.dueDate && (
                 <div className={styles.attachments}>
                   <div className={styles.text}>
-                    <Icon name="calendar alternate outline" className={styles.textIcon} />
                     {t('common.dueDate', {
                       context: 'title',
                     })}
@@ -514,7 +510,6 @@ const ProjectContent = React.memo(() => {
               {card.stopwatch && (
                 <div className={styles.attachments}>
                   <div className={styles.text}>
-                    <Icon name="clock outline" className={styles.textIcon} />
                     {t('common.stopwatch', {
                       context: 'title',
                     })}
