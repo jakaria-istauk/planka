@@ -5,17 +5,17 @@
 
 import React, { useCallback, useContext } from 'react';
 import classNames from 'classnames';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import { Button, Icon, Menu } from 'semantic-ui-react';
+import { Icon, Menu } from 'semantic-ui-react';
 import { Tooltip } from '../../../lib/custom-ui';
 import { usePopup } from '../../../lib/popup';
 
 import selectors from '../../../selectors';
 import entryActions from '../../../entry-actions';
 import Paths from '../../../constants/Paths';
-import { BoardMembershipRoles, BoardViews, UserRoles } from '../../../constants/Enums';
+import { UserRoles } from '../../../constants/Enums';
 import { SidebarContext } from '../../../contexts';
 import NotificationsStep from '../../notifications/NotificationsStep';
 import SelectBoardStep from '../../boards/SelectBoardStep';
@@ -35,41 +35,15 @@ const Header = React.memo(() => {
   const project = useSelector(selectors.selectCurrentProject);
   const board = useSelector(selectors.selectCurrentBoard);
   const notificationIds = useSelector(selectors.selectNotificationIdsForCurrentUser);
-  const isEditModeEnabled = useSelector(selectors.selectIsEditModeEnabled);
-
-  const { withEditModeToggler, canEditProject } = useSelector((state) => {
+  const canEditProject = useSelector((state) => {
     if (!project) {
-      return {
-        withEditModeToggler: false,
-        canEditProject: false,
-      };
+      return false;
     }
 
     const isAdminInSharedProject = user.role === UserRoles.ADMIN && !project.ownerProjectManagerId;
-    const isManager = selectors.selectIsCurrentUserManagerForCurrentProject(state);
 
-    if (isAdminInSharedProject || isManager) {
-      return {
-        withEditModeToggler: true,
-        canEditProject: isEditModeEnabled,
-      };
-    }
-
-    if (!board) {
-      return {
-        withEditModeToggler: false,
-        canEditProject: false,
-      };
-    }
-
-    const boardMembership = selectors.selectCurrentUserMembershipForCurrentBoard(state);
-    const isEditor = !!boardMembership && boardMembership.role === BoardMembershipRoles.EDITOR;
-
-    return {
-      withEditModeToggler: board.view === BoardViews.KANBAN && isEditor,
-      canEditProject: false,
-    };
-  }, shallowEqual);
+    return isAdminInSharedProject || selectors.selectIsCurrentUserManagerForCurrentProject(state);
+  });
 
   const [, setIsSidebarOpen] = useContext(SidebarContext);
 
@@ -80,17 +54,9 @@ const Header = React.memo(() => {
     setIsSidebarOpen(true);
   }, [setIsSidebarOpen]);
 
-  const handleToggleEditModeClick = useCallback(() => {
-    dispatch(entryActions.toggleEditMode(!isEditModeEnabled));
-  }, [isEditModeEnabled, dispatch]);
-
   const handleProjectSettingsClick = useCallback(() => {
-    if (!canEditProject) {
-      return;
-    }
-
     dispatch(entryActions.openProjectSettingsModal());
-  }, [canEditProject, dispatch]);
+  }, [dispatch]);
 
   const NotificationsPopup = usePopup(NotificationsStep, POPUP_PROPS);
   const SelectBoardPopup = usePopup(SelectBoardStep, BOARDS_POPUP_PROPS);
@@ -113,17 +79,6 @@ const Header = React.memo(() => {
               </Link>
               <Icon fitted name="angle right" className={styles.breadcrumbSeparator} />
               <span className={styles.titleText}>{project.name}</span>
-              {canEditProject && (
-                <Tooltip content={t('common.openProjectSettings')}>
-                  <Button
-                    aria-label={t('common.openProjectSettings')}
-                    className={styles.editButton}
-                    onClick={handleProjectSettingsClick}
-                  >
-                    <Icon fitted name="setting" />
-                  </Button>
-                </Tooltip>
-              )}
               <Icon fitted name="angle right" className={styles.breadcrumbSeparator} />
               <SelectBoardPopup>
                 <button type="button" className={styles.boardSelector}>
@@ -141,19 +96,14 @@ const Header = React.memo(() => {
           )}
         </Menu.Menu>
         <Menu.Menu position="right">
-          {withEditModeToggler && (
-            <Tooltip
-              content={t(isEditModeEnabled ? 'action.disableEditMode' : 'action.enableEditMode')}
-            >
+          {canEditProject && (
+            <Tooltip content={t('common.openProjectSettings')}>
               <Menu.Item
+                aria-label={t('common.openProjectSettings')}
                 className={classNames(styles.item, styles.itemHoverable)}
-                onClick={handleToggleEditModeClick}
+                onClick={handleProjectSettingsClick}
               >
-                <Icon
-                  fitted
-                  name={isEditModeEnabled ? 'unlock' : 'lock'}
-                  className={classNames(isEditModeEnabled && styles.itemIconEnabled)}
-                />
+                <Icon fitted name="setting" />
               </Menu.Item>
             </Tooltip>
           )}

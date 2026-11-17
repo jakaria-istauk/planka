@@ -9,7 +9,9 @@ export const selectIsLogouting = ({ core: { isLogouting } }) => isLogouting;
 
 export const selectIsFavoritesEnabled = ({ core: { isFavoritesEnabled } }) => isFavoritesEnabled;
 
-export const selectIsEditModeEnabled = ({ core: { isEditModeEnabled } }) => isEditModeEnabled;
+// The edit mode lock is gone from the interface: what a user may change follows their
+// permissions alone, so the mode is always on.
+export const selectIsEditModeEnabled = () => true;
 
 export const selectFilterFocusNonce = ({ core: { filterFocusNonce } }) => filterFocusNonce;
 
