@@ -27,10 +27,14 @@ Status legend: `[ ]` todo, `[~]` in progress, `[x]` done.
 
 Hook point: `server/api/helpers/utils/send-webhooks.js` (called from 78 helpers).
 
-- [ ] Add internal dispatcher that runs before the outgoing webhook filter (today the helper returns early when no webhook matches)
-- [ ] Subscriber registry (`sails.helpers.utils.subscribeToEvents` or a small hook in `server/api/hooks/`)
-- [ ] Pass `origin` through helpers that integrations call, for the loop guard
-- [ ] Tests: subscriber receives events with data, prevData, user and scope
+- [x] Add internal dispatcher that runs before the outgoing webhook filter (today the helper returns early when no webhook matches)
+- [x] Subscriber registry (`sails.helpers.utils.subscribeToEvents` or a small hook in `server/api/hooks/`)
+- [x] Pass `origin` through helpers that integrations call, for the loop guard
+- [x] Tests: subscriber receives events with data, prevData, user and scope
+- [ ] PR
+
+Built as the `event-bus` hook (`server/api/hooks/event-bus/`): `subscribe(handler)` returns an unsubscribe function, `sendWebhooks` emits `{ event, data, prevData, user, scope, origin }` to every subscriber on a later microtask, and data is only built when a subscriber or webhook needs it.
+`origin` travels through `AsyncLocalStorage` instead of a new input on each helper: integrations wrap their helper calls in `sails.hooks['event-bus'].runWithOrigin('github', fn)`, and every event emitted inside carries that origin.
 
 ## Phase 1: built-in MCP server
 
