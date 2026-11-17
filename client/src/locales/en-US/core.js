@@ -600,6 +600,8 @@ export default {
       makeProjectPrivate_title: 'Make Project Private',
       makeProjectShared: 'Make project shared',
       makeProjectShared_title: 'Make Project Shared',
+      markAsDone: 'Mark as done',
+      markAsNotDone: 'Mark as not done',
       move: 'Move',
       moveCard_title: 'Move Card',
       moveList_title: 'Move List',
