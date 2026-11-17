@@ -9,6 +9,10 @@ import { useTranslation } from 'react-i18next';
 
 import selectors from '../../../selectors';
 import { UserRoles } from '../../../constants/Enums';
+import {
+  isPromoBannerEnabled,
+  subscribeToPromoBannerChange,
+} from '../../../utils/promo-banner-storage';
 
 import styles from './PromoBanner.module.scss';
 
@@ -57,6 +61,7 @@ const PromoBanner = React.memo(() => {
   );
 
   const [dismissed, setDismissed] = useState(() => isBannerDismissed(userId));
+  const [isEnabled, setIsEnabled] = useState(() => isPromoBannerEnabled(userId));
   const [textIndex, setTextIndex] = useState(0);
   const [visible, setVisible] = useState(true);
   const [featureOffset] = useState(() => Math.floor(Math.random() * FEATURES.length));
@@ -86,8 +91,27 @@ const PromoBanner = React.memo(() => {
   // The landing path is what tells the two groups apart in the referral figures.
   const href = isAdmin ? TRIAL_URL : PRO_URL;
 
+  // Off unless an administrator turned it on for themselves; turning it on again
+  // also brings back a banner they had dismissed.
+  const isHidden = !isAdmin || !isEnabled || dismissed;
+
+  useEffect(
+    () =>
+      subscribeToPromoBannerChange(() => {
+        const nextIsEnabled = isPromoBannerEnabled(userId);
+
+        if (nextIsEnabled) {
+          localStorage.removeItem(getDismissKey(userId));
+          setDismissed(false);
+        }
+
+        setIsEnabled(nextIsEnabled);
+      }),
+    [userId],
+  );
+
   useEffect(() => {
-    if (dismissed) {
+    if (isHidden) {
       document.documentElement.style.removeProperty(CSS_VAR);
       return undefined;
     }
@@ -96,10 +120,10 @@ const PromoBanner = React.memo(() => {
     document.documentElement.style.setProperty(CSS_VAR, `${height}px`);
 
     return () => document.documentElement.style.removeProperty(CSS_VAR);
-  }, [dismissed]);
+  }, [isHidden]);
 
   useEffect(() => {
-    if (dismissed) return undefined;
+    if (isHidden) return undefined;
 
     const interval = setInterval(() => {
       setVisible(false);
@@ -110,7 +134,7 @@ const PromoBanner = React.memo(() => {
     }, CYCLE_INTERVAL_MS);
 
     return () => clearInterval(interval);
-  }, [dismissed, texts]);
+  }, [isHidden, texts]);
 
   const handleDismiss = useCallback(
     (e) => {
@@ -121,7 +145,7 @@ const PromoBanner = React.memo(() => {
     [userId],
   );
 
-  if (dismissed) return null;
+  if (isHidden) return null;
 
   return (
     <div ref={wrapperRef} className={styles.wrapper}>

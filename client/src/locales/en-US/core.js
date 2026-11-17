@@ -196,6 +196,7 @@ export default {
         'Scan this QR code with an authenticator app such as Google Authenticator or Authy.',
       security_title: 'Security',
       showHiddenProjects: 'Show hidden projects',
+      showProBanner: 'Show the PLANKA Pro banner',
       totpCode: 'TOTP code',
       totpOrRecoveryCode: 'TOTP or recovery code',
       trustedDevices_title: 'Trusted Browsers',
@@ -345,6 +346,9 @@ export default {
       pressPasteShortcutToAddAttachmentFromClipboard:
         'Tip: press Ctrl-V (Cmd-V on Mac) to add an attachment from the clipboard.',
       private: 'Private',
+      proBannerIsOnlyShownToYouInThisBrowser:
+        'Only administrators can see it, and only in the browser where it was turned on.',
+      proBanner_title: 'PLANKA Pro Banner',
       proFeatureCalendar: '✨ Calendar View for your boards',
       proFeatureDashboard: '✨ One dashboard across every project',
       proFeatureExport: '✨ Cards as PDF for your reporting',
