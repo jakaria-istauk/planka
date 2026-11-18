@@ -14,6 +14,7 @@ import AccountPane from './AccountPane';
 import PreferencesPane from './PreferencesPane';
 import NotificationsPane from './NotificationsPane';
 import SecurityPane from './SecurityPane';
+import McpPane from './McpPane';
 
 const UserSettingsModal = React.memo(() => {
   const dispatch = useDispatch();
@@ -49,6 +50,12 @@ const UserSettingsModal = React.memo(() => {
         context: 'title',
       }),
       render: () => <SecurityPane />,
+    },
+    {
+      menuItem: t('common.aiAssistants', {
+        context: 'title',
+      }),
+      render: () => <McpPane />,
     },
   ];
 
