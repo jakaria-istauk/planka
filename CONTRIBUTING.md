@@ -1,10 +1,10 @@
-# Contributing to PLANKA
+# Contributing to Tama
 
 First off, thanks for taking the time to contribute!
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the [PLANKA Code of Conduct](https://github.com/plankanban/planka/blob/master/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+This project and everyone participating in it is governed by the [Tama Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
 ## How Can I Contribute?
 
@@ -18,12 +18,12 @@ Feel free to create an enhancement suggestion as a new issue on GitHub. Before c
 
 ### Pull Requests
 
-Before submitting a pull request please discuss with the core team by creating or commenting in an issue on GitHub – we'd also love to hear from you in the discussions. This way we can ensure that an approach is agreed on before code is written. This will result in a much higher liklihood of your code being accepted.
+Before submitting a pull request please discuss it by creating or commenting in an issue on GitHub – we'd also love to hear from you in the discussions. This way we can ensure that an approach is agreed on before code is written. This will result in a much higher liklihood of your code being accepted.
 
-If you’re looking for ways to get started, here's a list of ways to help us improve PLANKA:
+If you’re looking for ways to get started, here's a list of ways to help improve Tama:
 
-- [Translation](https://github.com/plankanban/planka/issues/66) into other languages
-- Issues with [`good first issue`](https://github.com/plankanban/planka/labels/good%20first%20issue) label
+- Translation into other languages
+- Issues with [`good first issue`](https://github.com/jakaria-istauk/planka/labels/good%20first%20issue) label
 - Performance improvements, both on client and server
 - Developer happiness and documentation
 - Bugs and other issues listed on GitHub
