@@ -16,6 +16,8 @@ import NotificationsPane from './NotificationsPane';
 import SecurityPane from './SecurityPane';
 import McpPane from './McpPane';
 
+import styles from './UserSettingsModal.module.scss';
+
 const UserSettingsModal = React.memo(() => {
   const dispatch = useDispatch();
   const [t] = useTranslation();
@@ -66,6 +68,7 @@ const UserSettingsModal = React.memo(() => {
           menu={{
             secondary: true,
             pointing: true,
+            className: styles.menu,
           }}
           panes={panes}
         />
