@@ -37,7 +37,7 @@ module.exports.policies = {
   'users/update-password': 'is-authenticated',
   'users/update-username': 'is-authenticated',
   'users/update-avatar': 'is-authenticated',
-  'users/create-api-key': ['is-authenticated', 'is-admin'],
+  'users/create-api-key': 'is-authenticated',
   'users/setup-totp': 'is-authenticated',
   'users/enable-totp': 'is-authenticated',
   'users/disable-totp': 'is-authenticated',

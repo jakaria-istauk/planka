@@ -238,7 +238,7 @@ module.exports = {
       throw Errors.USER_NOT_FOUND; // Forbidden
     }
 
-    if (currentUser.role === User.Roles.ADMIN) {
+    if (currentUser.role === User.Roles.ADMIN || inputs.id === currentUser.id) {
       availableInputKeys.push('apiKey');
     }
 

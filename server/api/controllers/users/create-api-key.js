@@ -8,7 +8,7 @@
  * /users/{id}/api-key:
  *   post:
  *     summary: Create user API key
- *     description: Generates a user's API key. The full API key is returned only once and cannot be retrieved again.
+ *     description: Generates a user's API key. Admins can generate one for any user, other users only for themselves. The full API key is returned only once and cannot be retrieved again.
  *     tags:
  *       - Users
  *     operationId: createUserApiKey
@@ -74,6 +74,10 @@ module.exports = {
 
   async fn(inputs) {
     const { currentUser } = this.req;
+
+    if (currentUser.role !== User.Roles.ADMIN && inputs.id !== currentUser.id) {
+      throw Errors.USER_NOT_FOUND; // Forbidden
+    }
 
     let user = await User.qm.getOneById(inputs.id);
 
