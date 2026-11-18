@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # An EXAMPLE, for the stock docker-compose stack and nothing else. It is not a
-# backup concept, and PLANKA does not ship one: what has to be preserved depends
+# backup concept, and Tama does not ship one: what has to be preserved depends
 # on how you run it. On k3s with S3-backed uploads and a managed database
 # cluster this script protects nothing — your object store and your database
 # have their own answers, and those are the ones that count.
@@ -29,8 +29,8 @@
 set -e
 
 # Configure those to match your Docker container names
-DOCKER_CONTAINER_POSTGRES="planka-postgres-1"
-DOCKER_CONTAINER_PLANKA="planka-planka-1"
+DOCKER_CONTAINER_POSTGRES="tama-postgres-1"
+DOCKER_CONTAINER_TAMA="tama-tama-1"
 
 # Use provided directory or default to current directory
 BACKUP_DIR="${1:-$(pwd)}"
@@ -61,7 +61,7 @@ echo "Success!"
 echo
 
 echo -n "Exporting data volume ... "
-docker run --rm --volumes-from "$DOCKER_CONTAINER_PLANKA" -v "$BACKUP_TEMP:/backup" node:24-alpine cp -r /app/data /backup/data
+docker run --rm --volumes-from "$DOCKER_CONTAINER_TAMA" -v "$BACKUP_TEMP:/backup" node:24-alpine cp -r /app/data /backup/data
 echo "Success!"
 echo
 
