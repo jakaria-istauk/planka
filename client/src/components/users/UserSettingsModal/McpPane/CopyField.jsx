@@ -11,6 +11,28 @@ import { Button, Icon } from 'semantic-ui-react';
 
 import styles from './CopyField.module.scss';
 
+// navigator.clipboard exists only in secure contexts (HTTPS or localhost),
+// so plain-HTTP deployments copy through a hidden textarea instead
+const copyText = (text) => {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text);
+  }
+
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+
+  document.body.appendChild(textarea);
+  textarea.select();
+
+  const isCopied = document.execCommand('copy');
+  document.body.removeChild(textarea);
+
+  return isCopied ? Promise.resolve() : Promise.reject(new Error('Copy failed'));
+};
+
 const CopyField = React.memo(({ value, multiline }) => {
   const [t] = useTranslation();
   const [isCopied, setIsCopied] = useState(false);
@@ -19,11 +41,14 @@ const CopyField = React.memo(({ value, multiline }) => {
   useEffect(() => () => clearTimeout(timeoutRef.current), []);
 
   const handleCopyClick = useCallback(() => {
-    navigator.clipboard.writeText(value);
-    setIsCopied(true);
+    copyText(value)
+      .then(() => {
+        setIsCopied(true);
 
-    clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => setIsCopied(false), 1500);
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => setIsCopied(false), 1500);
+      })
+      .catch(() => {});
   }, [value]);
 
   return (
