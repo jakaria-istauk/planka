@@ -3,14 +3,39 @@
 PLANKA serves a [Model Context Protocol](https://modelcontextprotocol.io) server at `POST /api/mcp`, so AI clients can read and edit boards as a PLANKA user.
 
 - Transport: stateless streamable HTTP with JSON responses. `GET` and `DELETE` answer `405`.
-- Auth: an API key in the `X-Api-Key` header. Session access tokens and the internal access token are rejected.
-- Permissions: every tool runs the matching REST action as the API key user, so it sees and changes only what that user can in the web app.
+- Auth: an API key in the `X-Api-Key` header, or an OAuth 2.1 access token (`Authorization: Bearer …`). Session access tokens and the internal access token are rejected.
+- Permissions: every tool runs the matching REST action as the connected user, so it sees and changes only what that user can in the web app.
+
+## Connect from the web app
+
+Every user can connect assistants themselves in **Settings → AI Assistants**. The tab shows the server URL, step-by-step setup for Claude, ChatGPT, Claude Code, Gemini CLI, Codex, Cursor, VS Code and Windsurf, the user's own API key, and the apps connected through OAuth (with a Disconnect button).
+
+- **Claude (claude.ai, Desktop, mobile) and ChatGPT** connect through OAuth: add PLANKA as a custom connector with the server URL, and approve the request on PLANKA's consent screen. These assistants reach PLANKA from the internet, so PLANKA must be served from a public HTTPS address.
+- **Claude Code, Gemini CLI, Codex, Cursor, VS Code, Windsurf and other clients** use an API key from a command or config file. The tab fills the key into the snippet right after it is created.
+
+## OAuth
+
+PLANKA is its own OAuth 2.1 authorization server for the MCP endpoint:
+
+| Endpoint | Purpose |
+| --- | --- |
+| `GET /.well-known/oauth-protected-resource/api/mcp` | Protected resource metadata (RFC 9728); `401` answers from `/api/mcp` point here in `WWW-Authenticate` |
+| `GET /.well-known/oauth-authorization-server` | Authorization server metadata (RFC 8414) |
+| `POST /oauth/register` | Dynamic client registration (RFC 7591) |
+| `GET /oauth/authorize` | Authorization request; sends the browser to the consent screen at `/oauth/consent` |
+| `POST /oauth/token` | Authorization code (PKCE `S256` required) and refresh token grants |
+| `POST /oauth/revoke` | Token revocation |
+
+- Access tokens last 1 hour and only work on `/api/mcp`. Refresh tokens last 30 days and rotate on every use.
+- Only hashes of client secrets, codes and tokens are stored.
+- Users see and disconnect their connected apps in Settings → AI Assistants (`GET` and `DELETE /api/oauth/connections`).
+- The issuer is `BASE_URL`. When PLANKA runs under a sub-path, the reverse proxy must also forward the `/.well-known/oauth-*` paths at the host root.
 
 ## Get an API key
 
-An admin creates the key for a user with `POST /api/users/{id}/api-key`. The response holds the key once; store it somewhere safe.
+Users create, regenerate and delete their own key in Settings → AI Assistants (`POST /api/users/{id}/api-key`, `PATCH /api/users/{id}` with `apiKey: null`). Admins can still manage any user's key. The key is shown once; store it somewhere safe.
 
-## Connect a client
+## Connect a client by hand
 
 Claude Code:
 
