@@ -6,17 +6,17 @@
 :global(#app) {
   .addButton {
     background: transparent;
+    border-radius: 8px;
     box-shadow: none;
-    color: #6b808c;
-    font-weight: normal;
+    color: var(--pk-accent);
+    font-weight: 600;
     margin-top: 8px;
     padding: 6px 11px;
     text-align: left;
-    text-decoration: underline;
     transition: background 0.3s ease;
 
     &:hover {
-      background: #e9e9e9;
+      background: var(--pk-accent-soft);
     }
   }
 
@@ -26,7 +26,7 @@
   // `position: relative` and the reserved right padding leave room for the
   // active chip's checkmark without the text running under it.
   .chip {
-    border-radius: 3px;
+    border-radius: 8px;
     color: #fff;
     cursor: pointer;
     display: inline-block;
@@ -100,7 +100,7 @@
     overflow-y: auto;
 
     @supports (-moz-appearance: none) {
-      scrollbar-color: rgba(0, 0, 0, 0.32) transparent;
+      scrollbar-color: var(--pk-border-strong) transparent;
       scrollbar-width: thin;
     }
 
@@ -115,7 +115,7 @@
     &::-webkit-scrollbar-thumb {
       background-clip: padding-box;
       border-left: 0.25em transparent solid;
-      border-radius: 3px;
+      border-radius: 8px;
     }
   }
 
@@ -138,8 +138,8 @@
     align-items: center;
     background: transparent;
     border: none;
-    border-radius: 3px;
-    color: #6b808c;
+    border-radius: 8px;
+    color: var(--pk-text-muted);
     cursor: pointer;
     display: inline-flex;
     flex: 0 0 auto;
@@ -151,8 +151,8 @@
     width: 32px;
 
     &:hover {
-      background: #e9e9e9;
-      color: #17394d;
+      background: var(--pk-surface-muted);
+      color: var(--pk-text);
     }
   }
 }

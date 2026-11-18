@@ -11,7 +11,7 @@
     overflow-y: auto;
 
     @supports (-moz-appearance: none) {
-      scrollbar-color: rgba(0, 0, 0, 0.32) transparent;
+      scrollbar-color: var(--pk-border-strong) transparent;
       scrollbar-width: thin;
     }
 
@@ -26,7 +26,7 @@
     &::-webkit-scrollbar-thumb {
       background-clip: padding-box;
       border-left: 0.25em transparent solid;
-      border-radius: 3px;
+      border-radius: 8px;
     }
   }
 }

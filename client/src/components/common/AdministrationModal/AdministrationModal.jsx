@@ -38,30 +38,46 @@ const AdministrationModal = React.memo(() => {
 
   const panes = [
     {
-      menuItem: t('common.users', {
-        context: 'title',
-      }),
+      menuItem: {
+        key: 'users',
+        icon: 'users',
+        content: t('common.users', {
+          context: 'title',
+        }),
+      },
       render: () => <UsersPane />,
     },
   ];
   if (config.smtpHost !== undefined) {
     panes.push({
-      menuItem: t('common.smtp', {
-        context: 'title',
-      }),
+      menuItem: {
+        key: 'smtp',
+        icon: 'mail outline',
+        content: t('common.smtp', {
+          context: 'title',
+        }),
+      },
       render: () => <SmtpPane />,
     });
   }
   panes.push({
-    menuItem: t('common.webhooks', {
-      context: 'title',
-    }),
+    menuItem: {
+      key: 'webhooks',
+      icon: 'plug',
+      content: t('common.webhooks', {
+        context: 'title',
+      }),
+    },
     render: () => <WebhooksPane />,
   });
   panes.push({
-    menuItem: t('common.proBanner', {
-      context: 'title',
-    }),
+    menuItem: {
+      key: 'proBanner',
+      icon: 'bullhorn',
+      content: t('common.proBanner', {
+        context: 'title',
+      }),
+    },
     render: () => <PromoBannerPane />,
   });
 

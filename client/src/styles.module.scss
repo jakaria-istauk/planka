@@ -19,6 +19,8 @@
     --pk-accent-soft: #eef0ff;
     --pk-accent-text: #3730a3;
     --pk-danger: #d92d20;
+    --pk-close: #a3162b;
+    --pk-hover: rgba(15, 23, 42, 0.06);
     --pk-radius: 10px;
     --pk-radius-lg: 14px;
     --pk-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
@@ -58,6 +60,8 @@
     --pk-accent-soft: #26244a;
     --pk-accent-text: #c7c3ff;
     --pk-danger: #f97066;
+    --pk-close: #f0617a;
+    --pk-hover: rgba(255, 255, 255, 0.07);
     --pk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
     --pk-shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45);
 
@@ -157,11 +161,36 @@
       }
 
       > .close {
-        color: var(--pk-text-muted);
+        align-items: center;
+        background: transparent;
+        border: 1.5px solid var(--pk-close);
+        border-radius: 50%;
+        color: var(--pk-close);
+        display: flex;
+        height: 32px;
+        justify-content: center;
+        margin: 0;
         opacity: 1;
+        padding: 0;
+        right: 12px;
+        top: 12px;
+        transition: background 0.2s ease, color 0.2s ease, transform 0.25s ease;
+        width: 32px;
+
+        // Slim stroked cross instead of the heavy icon-font glyph
+        &::before {
+          background: currentColor !important;
+          content: '';
+          height: 14px;
+          -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E") center / contain no-repeat;
+          width: 14px;
+        }
 
         &:hover {
-          color: var(--pk-text);
+          background: var(--pk-close);
+          color: #fff;
+          transform: rotate(90deg);
         }
       }
     }
@@ -177,24 +206,125 @@
         background: var(--pk-surface);
         box-shadow: -1px -1px 0 0 var(--pk-border);
       }
+
+      // Menus inside popups: compact rounded rows with a soft hover
+      .ui.secondary.vertical.menu {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+
+        > .item {
+          align-items: center;
+          border-radius: 8px;
+          color: var(--pk-text-secondary);
+          display: flex;
+          font-size: 14px;
+          line-height: 20px;
+          margin: 1px 0;
+          padding: 8px 10px;
+
+          > .icon:not(.dropdown) {
+            color: var(--pk-text-muted);
+            float: none;
+            height: auto;
+            line-height: 1;
+            margin: 0 10px 0 0;
+          }
+
+          &:hover {
+            background: var(--pk-hover);
+            color: var(--pk-text);
+
+            > .icon:not(.dropdown) {
+              color: var(--pk-text);
+            }
+          }
+        }
+
+        > .active.item {
+          background: var(--pk-accent-soft);
+          color: var(--pk-accent-text);
+        }
+      }
+
+      .ui.divider,
+      hr {
+        border-color: var(--pk-border);
+      }
+
+      .ui.basic.button,
+      .ui.button:not(.primary):not(.positive):not(.negative):not(.icon) {
+        border-radius: 8px;
+      }
+
+      .ui.negative.button,
+      .ui.red.button {
+        background: var(--pk-danger);
+        border-radius: 8px;
+        color: #fff;
+      }
+
+      .ui.dropdown,
+      .ui.selection.dropdown {
+        border-radius: 8px;
+      }
+
+      .ui.input > input:focus,
+      .ui.form input:focus,
+      .ui.form textarea:focus {
+        box-shadow: 0 0 0 3px var(--pk-accent-soft);
+      }
     }
 
+    // Tabs in modals: a pill track with an icon per tab and a raised active tab
     .ui.secondary.pointing.menu {
-      border-bottom: 1px solid var(--pk-border);
+      background: var(--pk-surface-muted);
+      border: 0;
+      border-radius: 12px;
+      display: inline-flex;
+      gap: 2px;
+      margin: 0 0 16px;
+      max-width: 100%;
+      min-height: 0;
+      padding: 4px;
 
       .item {
-        color: var(--pk-text-muted);
-        font-weight: bold;
-        padding: 10px 14px;
+        align-self: auto;
+        border: 0;
+        border-radius: 8px;
+        color: var(--pk-text-secondary);
+        font-size: 13px;
+        font-weight: 600;
+        margin: 0;
+        padding: 8px 14px;
+        transition: background 0.15s ease, color 0.15s ease;
+        white-space: nowrap;
+
+        > .icon {
+          color: var(--pk-text-muted);
+          margin: 0 8px 0 0;
+          transition: color 0.15s ease;
+        }
 
         &:hover {
+          background: var(--pk-hover);
           color: var(--pk-text);
         }
       }
 
       .active.item {
-        border-color: var(--pk-accent);
-        color: var(--pk-text);
+        background: var(--pk-surface);
+        box-shadow: var(--pk-shadow-sm), 0 0 0 1px var(--pk-border);
+        color: var(--pk-accent);
+
+        > .icon {
+          color: var(--pk-accent);
+        }
+
+        &:hover {
+          background: var(--pk-surface);
+          color: var(--pk-accent);
+        }
       }
     }
 
@@ -282,68 +412,92 @@
     }
 
     .react-datepicker {
+      background: transparent;
       border: 0;
-      color: #444444;
-      font-size: 14px;
+      color: var(--pk-text);
       font-family: "Nunitoga", "Helvetica Neue", Arial, Helvetica, sans-serif;
-      padding-bottom: 8px;
+      font-size: 13px;
+      padding-bottom: 4px;
     }
 
     .react-datepicker__current-month,
     .react-datepicker-time__header {
-      color: #444;
-      font-weight: normal;
+      color: var(--pk-text);
       font-size: 14px;
+      font-weight: 600;
       line-height: 32px;
       padding-bottom: 4px;
       text-transform: capitalize;
     }
 
     .react-datepicker__header {
-      background: #fff;
+      background: transparent;
       border: 0;
       padding: 0;
     }
 
-    .react-datepicker__day-name,
+    .react-datepicker__day-names {
+      margin-top: 4px;
+    }
+
+    .react-datepicker__day-name {
+      color: var(--pk-text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 28px;
+      margin: 0;
+      text-transform: uppercase;
+      width: 40px;
+    }
+
     .react-datepicker__day,
     .react-datepicker__time-name {
-      color: #444;
+      border-radius: 8px;
+      color: var(--pk-text);
+      line-height: 34px;
+      margin: 1px 0;
+      outline: none;
       width: 40px;
-      margin: 0;
-      border-style: solid;
-      border-width: 0 0 1px 1px;
-      border-color: rgba(34, 36, 38, 0.15);
+
+      &:hover {
+        background: var(--pk-hover);
+        border-radius: 8px;
+      }
+    }
+
+    .react-datepicker__day--today {
+      color: var(--pk-accent);
+      font-weight: 700;
+    }
+
+    .react-datepicker__day--keyboard-selected {
+      background: var(--pk-accent-soft);
+      color: var(--pk-accent-text);
     }
 
     .react-datepicker__day--selected,
     .react-datepicker__day--in-selecting-range,
     .react-datepicker__day--in-range {
-      border-radius: 0;
+      background: var(--pk-accent);
       color: #fff;
-    }
 
-    .react-datepicker__day-names,
-    .react-datepicker__week {
-      border-right: 1px solid #c2ccd1;
-    }
-
-    .react-datepicker__day-names {
-      background: #ebeef0;
-      border-top: 1px solid #c2ccd1;
+      &:hover {
+        background: var(--pk-accent-hover);
+      }
     }
 
     .react-datepicker__day--outside-month {
-      color: rgba(68, 68, 68, 0.3);
+      color: var(--pk-text-muted);
+      opacity: 0.5;
     }
 
     .react-datepicker__month {
-      margin: 8px 0 0;
+      margin: 0;
     }
 
-    .react-datepicker__navigation--previous,
-    .react-datepicker__navigation--next {
+    .react-datepicker__navigation {
       outline: none;
+      top: 0;
     }
 
     .react-datepicker__navigation--previous {
@@ -354,16 +508,8 @@
       right: 0;
     }
 
-    .react-datepicker__navigation {
-      top: 0;
-    }
-
-    .react-datepicker__day {
-      outline: none;
-
-      &:hover {
-        border-radius: 0;
-      }
+    .react-datepicker__navigation-icon::before {
+      border-color: var(--pk-text-muted);
     }
 
     .pswp .pswp__img--placeholder {

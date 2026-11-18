@@ -23,13 +23,21 @@ const UserEditModal = React.memo(({ userId, onClose }) => {
 
   const panes = [
     {
-      menuItem: t('common.information'),
+      menuItem: {
+        key: 'information',
+        icon: 'id card outline',
+        content: t('common.information'),
+      },
       render: () => <ProfilePane userId={userId} />,
     },
     {
-      menuItem: t('common.apiKey', {
-        context: 'title',
-      }),
+      menuItem: {
+        key: 'apiKey',
+        icon: 'key',
+        content: t('common.apiKey', {
+          context: 'title',
+        }),
+      },
       render: () => <ApiKeyPane userId={userId} onClose={onClose} />,
     },
   ];

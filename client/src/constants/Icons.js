@@ -76,7 +76,6 @@ export const CardTypeIcons = {
 };
 
 export const ThemeIcons = {
-  [Themes.LIGHT]: 'sun outline',
   [Themes.DARK]: 'moon outline',
   [Themes.SYSTEM]: 'desktop',
 };

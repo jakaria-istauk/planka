@@ -37,15 +37,23 @@ const ProjectSettingsModal = React.memo(() => {
 
   const panes = [
     {
-      menuItem: t('common.general', {
-        context: 'title',
-      }),
+      menuItem: {
+        key: 'general',
+        icon: 'setting',
+        content: t('common.general', {
+          context: 'title',
+        }),
+      },
       render: () => <GeneralPane />,
     },
     {
-      menuItem: t('common.managers', {
-        context: 'title',
-      }),
+      menuItem: {
+        key: 'managers',
+        icon: 'user circle outline',
+        content: t('common.managers', {
+          context: 'title',
+        }),
+      },
       render: () => <ManagersPane />,
     },
   ];
@@ -53,15 +61,23 @@ const ProjectSettingsModal = React.memo(() => {
   if (withManagablePanes) {
     panes.push(
       {
-        menuItem: t('common.background', {
-          context: 'title',
-        }),
+        menuItem: {
+          key: 'background',
+          icon: 'image outline',
+          content: t('common.background', {
+            context: 'title',
+          }),
+        },
         render: () => <BackgroundPane />,
       },
       {
-        menuItem: t('common.baseCustomFields', {
-          context: 'title',
-        }),
+        menuItem: {
+          key: 'baseCustomFields',
+          icon: 'list alternate outline',
+          content: t('common.baseCustomFields', {
+            context: 'title',
+          }),
+        },
         render: () => <BaseCustomFieldGroupsPane />,
       },
     );

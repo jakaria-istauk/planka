@@ -7,16 +7,15 @@
   .deleteAllButton {
     background: transparent;
     box-shadow: none;
-    color: #6b808c;
+    color: var(--pk-text-muted);
     font-weight: normal;
     margin-top: 8px;
     padding: 6px 11px;
-    text-decoration: underline;
     transition: none;
 
     &:hover {
-      background: rgba(9, 30, 66, 0.08);
-      color: #092d42;
+      background: var(--pk-hover);
+      color: var(--pk-text);
     }
   }
 
@@ -27,7 +26,7 @@
     overflow-y: auto;
 
     @supports (-moz-appearance: none) {
-      scrollbar-color: rgba(0, 0, 0, 0.32) transparent;
+      scrollbar-color: var(--pk-border-strong) transparent;
       scrollbar-width: thin;
     }
 
@@ -40,7 +39,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      border-radius: 3px;
+      border-radius: 8px;
     }
   }
 }
