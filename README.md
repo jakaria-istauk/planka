@@ -1,118 +1,106 @@
 <div align="center">
 
-  ![Logo](https://raw.githubusercontent.com/plankanban/planka/master/assets/logo.png)
+  <img src="assets/logo.png" alt="Tama" width="300">
 
-  # PLANKA
+  **Free, self-hosted kanban for teams, with AI assistants built in.**
 
-  _Project mastering driven by fun_
-
-  ![Version](https://img.shields.io/github/package-json/v/plankanban/planka?style=flat-square) [![Docker Pulls](https://img.shields.io/badge/docker_pulls-8M%2B-%23066da5?style=flat-square&color=red)](https://github.com/plankanban/planka/pkgs/container/planka) [![Contributors](https://img.shields.io/github/contributors/plankanban/planka?style=flat-square&color=blue)](https://github.com/plankanban/planka/graphs/contributors) [![Chat](https://img.shields.io/discord/1041440072953765979?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/WqqYNd7Jvt)
-
-  [Install](https://docs.planka.cloud/docs/installation/docker/production-version/) ·  [Demo](https://planka.app) · [Docs](https://docs.planka.cloud/docs/welcome/) · [API](https://plankanban.github.io/planka/swagger-ui/) · [Cloud](https://planka.app/pricing) · [Pro version](https://planka.app/pro?ref=github-readme)
-
-  ![Demo](https://raw.githubusercontent.com/plankanban/planka/master/assets/demo.gif)
+  [Quick start](#quick-start) · [Features](#features) · [AI assistants](docs/mcp.md) · [Deploy](#deploy) · [License](#license)
 
 </div>
 
 ---
 
-<div align="center">
+Tama is a real-time kanban board you run on your own server. Plan projects in
+boards, lists and cards, work on them together live, and let AI assistants such
+as Claude, ChatGPT or Cursor read and update your boards with your permissions.
 
-  ## PLANKA Pro
+Tama is based on [PLANKA](https://github.com/plankanban/planka) and adds an
+MCP server, OAuth sign-in for AI assistants and a redesigned interface. It is
+free to use and its source is public: anyone can run it, fork it and change it,
+within the [license](#license).
 
-  **When the whole team runs on PLANKA.**
+## Features
 
-  Phones and tablets · five themes · a dashboard across every project · calendar, timeline and
-  map views · cards on more than one board · templates · guest roles · SSO · PDF export.
-  Self-hosted exactly as you host it now, supported by the people who build it.
+- **Kanban boards:** projects, boards, lists and cards with drag and drop.
+- **Real-time collaboration:** every change shows up for everyone at once, no refresh.
+- **Rich cards:** Markdown descriptions, attachments, comments, tasks, labels,
+  custom fields, due dates and a stopwatch.
+- **AI assistants (MCP):** a built-in [Model Context Protocol](https://modelcontextprotocol.io)
+  server at `/api/mcp`. Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code,
+  Gemini CLI and Windsurf can work on your boards as you. See [docs/mcp.md](docs/mcp.md).
+- **OAuth for assistants:** Claude and ChatGPT connect with a consent screen; you
+  can see and revoke connected apps at any time.
+- **Notifications:** to over 100 services through [Apprise](https://appriseit.com/services/).
+- **Webhooks and a REST API** for your own integrations.
+- **Security:** two-factor authentication with recovery codes, and personal API keys.
+- **Light and dark themes**, and a multilingual interface.
 
-  [![Try Pro free for 30 days](https://img.shields.io/badge/Try_Pro_free_for_30_days-22252a?style=for-the-badge)](https://planka.app/trial?ref=github-readme-trial)
-  [![Features and pricing](https://img.shields.io/badge/Features_and_pricing-5a6c78?style=for-the-badge)](https://planka.app/pro?ref=github-readme-pro)
+## Quick start
 
-  <img src="https://raw.githubusercontent.com/plankanban/planka/master/assets/pro/dashboard.png" width="820" alt="Personal dashboard across every project">
+You need Docker with Compose.
 
-  <img src="https://raw.githubusercontent.com/plankanban/planka/master/assets/pro/mobile-board-small.png" height="240" alt="A board on a phone">
-  <img src="https://raw.githubusercontent.com/plankanban/planka/master/assets/pro/theme-picker-crop.png" height="240" alt="Theme picker">
-  <img src="https://raw.githubusercontent.com/plankanban/planka/master/assets/pro/timeline.png" height="240" alt="Timeline view">
+```sh
+git clone https://github.com/jakaria-istauk/planka.git tama
+cd tama
+```
 
-</div>
+Open `docker-compose.yml` and set at least:
 
-| | Community | Pro |
-| --- | :---: | :---: |
-| Boards, lists, cards, real-time collaboration | ✓ | ✓ |
-| Markdown, attachments, comments, custom fields | ✓ | ✓ |
-| Stopwatch and due dates on cards | ✓ | ✓ |
-| Notifications through 100+ providers | ✓ | ✓ |
-| Webhooks and a documented REST API | ✓ | ✓ |
-| Two-factor authentication | ✓ | ✓ |
-| Self-hosted, your database, your backups | ✓ | ✓ |
-| **Free to self-host** | **✓** | — |
-| Phones and tablets, five themes, accent color | — | ✓ |
-| Calendar, timeline, map and media views | — | ✓ |
-| Recurring cards, card and board templates | — | ✓ |
-| One card on more than one board | — | ✓ |
-| Guest roles, SSO (OIDC) | — | ✓ |
-| PDF and HTML export | — | ✓ |
-| Support from the developers, no ticket queue | — | ✓ |
+- `BASE_URL`: the address people open Tama at, for example `https://tama.example.com`.
+- `SECRET_KEY`: a random value, from `openssl rand -hex 32`.
 
-Pro upgrades an existing Community installation in place — your database, your volume, your
-data. It is a real migration rather than a new image: Pro adds a Valkey service and a one-off
-schema promote. The promote accepts only certain Community releases as a starting point —
-currently 2.1.x and 2.2.x — and from any other version it stops without changing anything.
-**The upgrade is one-way — there is no downgrade back to Community — so take a backup first,
-or try it on a copy.** The step-by-step guide is in the customer center once you have a key,
-and lists the releases the promote accepts.
+Then start it and create the first admin:
 
----
+```sh
+docker compose up -d --build
+docker compose run --rm tama npm run db:create-admin-user
+```
 
-## Key Features
+Tama is now at `http://localhost:3000`.
 
-- **Collaborative Kanban Boards:** Create projects, boards, lists, cards, and manage tasks with an intuitive drag-and-drop interface
-- **Real-Time Updates:** Instant syncing across all users, no refresh needed
-- **Rich Markdown Support:** Write beautifully formatted card descriptions with a powerful markdown editor
-- **Flexible Notifications:** Get alerts through 100+ providers, fully customizable to your workflow
-- **Multilingual & Easy to Translate:** Full internationalization support for a global audience
+## Deploy
 
-## How to Deploy
+- **Docker Compose:** [docker-compose.yml](docker-compose.yml) is commented
+  option by option. Back up with [docker-backup.sh](docker-backup.sh).
+- **Kubernetes:** the Helm chart in [charts/tama](charts/tama).
+- **A home server behind Cloudflare Tunnel**, with auto-deploy from GitHub:
+  [deploy/SETUP.md](deploy/SETUP.md).
+- **Upgrading an install from before the rename:** [docs/migrating-from-planka.md](docs/migrating-from-planka.md).
 
-PLANKA is easy to install using multiple methods - learn more in the [installation guide](https://docs.planka.cloud/docs/welcome/).
+## Development
 
-For configuration and environment settings, see the [configuration section](https://docs.planka.cloud/docs/category/configuration/).
+```sh
+docker compose -f docker-compose-dev.yml up
+```
 
-For hosted plans and pricing, see our [website](https://planka.app/pricing?ref=github-readme).
-
-## Notes App
-
-A testing version of the Notes app is now available on multiple platforms:
-
-- **iOS:** Join the [TestFlight](https://testflight.apple.com/join/5eJqTaJW) to try the app
-- **Windows & Android:** Download the app [here](https://planka-notes.hillerdaniel.de)
-
-## Contact
-
-For any security issues, please do not create a public issue on GitHub - instead, report it privately by emailing [security@planka.group](mailto:security@planka.group).
-
-**Note:** We do NOT offer any public support via email, please use GitHub.
-
-**Join our community:** Get help, share ideas, or contribute on our [Discord server](https://discord.gg/WqqYNd7Jvt).
-
-## License
-
-PLANKA is [fair-code](https://faircode.io) distributed under the [Fair Use License](https://github.com/plankanban/planka/blob/master/LICENSES/PLANKA%20Community%20License%20EN.md) and [PLANKA Pro/Enterprise License](https://github.com/plankanban/planka/blob/master/LICENSES/PLANKA%20Commercial%20License%20EN.md).
-
-- **Source Available:** The source code is always visible
-- **Self-Hostable:** Deploy and host it anywhere
-- **Extensible:** Customize with your own functionality
-- **Enterprise Licenses:** Available for additional features and support
-
-For more details, check the [License Guide](https://github.com/plankanban/planka/blob/master/LICENSES/PLANKA%20License%20Guide%20EN.md).
+The client runs at `http://localhost:3000` and the server at
+`http://localhost:1337`, both reloading on change. To run without Docker, copy
+`server/.env.sample` to `server/.env`, point `DATABASE_URL` at a PostgreSQL
+database, then run `npm install`, `npm run server:db:init` and `npm start`.
 
 ## Contributing
 
-Found a bug or have a feature request? Check out our [Contributing Guide](https://github.com/plankanban/planka/blob/master/CONTRIBUTING.md) to get started.
+Bug reports, ideas and pull requests are welcome. Read the
+[contributing guide](CONTRIBUTING.md) first.
 
-For setting up the project locally, see the [development section](https://docs.planka.cloud/docs/category/development/).
+Please report security issues privately, as described in [SECURITY.md](SECURITY.md).
 
-**Thanks to all our contributors!**
+## License
 
-[![Contributors](https://contrib.rocks/image?repo=plankanban/planka)](https://github.com/plankanban/planka/graphs/contributors)
+Tama is a fork of PLANKA and is distributed under the same terms: the
+[PLANKA Community License](LICENSE.md) (a "fair-code" Fair Use License). It is
+source-available rather than open source in the OSI sense. In short:
+
+- **You may** use, copy, fork and modify it for personal use, inside your own
+  organization, for friends and family, for non-profit organizations, and for
+  education and research.
+- **You may not** run it as a hosted service for third parties for any
+  commercial gain, or remove the license and copyright notices.
+
+Read [LICENSE.md](LICENSE.md) for the full terms.
+
+## Credits
+
+Tama is built on [PLANKA](https://github.com/plankanban/planka) by PLANKA
+Software GmbH and its contributors. Tama is an independent project and is not
+affiliated with or endorsed by PLANKA Software GmbH. PLANKA is their trademark.
