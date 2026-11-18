@@ -1,0 +1,139 @@
+/*!
+ * Copyright (c) 2024 PLANKA Software GmbH
+ * Licensed under the Fair Use License: https://github.com/plankanban/planka/blob/master/LICENSE.md
+ */
+
+:global(#app) {
+  .badge {
+    background: var(--pk-accent-soft);
+    border-radius: 999px;
+    color: var(--pk-accent-text);
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 8px;
+    white-space: nowrap;
+  }
+
+  .client {
+    align-items: center;
+    background: var(--pk-surface);
+    border: 1px solid var(--pk-border);
+    border-radius: var(--pk-radius);
+    color: var(--pk-text-secondary);
+    cursor: pointer;
+    display: flex;
+    font: inherit;
+    font-size: 13px;
+    gap: 8px;
+    padding: 8px 10px;
+    text-align: left;
+
+    &:hover {
+      border-color: var(--pk-border-strong);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--pk-accent);
+      outline-offset: 1px;
+    }
+  }
+
+  .clientActive {
+    background: var(--pk-accent-soft);
+    border-color: var(--pk-accent);
+    color: var(--pk-accent-text);
+
+    &:hover {
+      border-color: var(--pk-accent);
+    }
+  }
+
+  .clientDescription {
+    color: var(--pk-text-secondary);
+    margin: 0 0 10px;
+  }
+
+  .clientDetails {
+    margin-top: 12px;
+  }
+
+  .clients {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .confirm {
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  .fileName {
+    color: var(--pk-text-muted);
+    font-size: 12px;
+    margin: 0 0 6px;
+  }
+
+  .heading {
+    color: var(--pk-text) !important;
+    margin: 0 0 8px !important;
+  }
+
+  .intro {
+    color: var(--pk-text-secondary);
+    margin: 0;
+  }
+
+  .keyActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+
+    :global(.button) {
+      margin: 0;
+    }
+  }
+
+  .keyStatus {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+
+    code {
+      color: var(--pk-text);
+    }
+  }
+
+  .muted {
+    color: var(--pk-text-muted);
+    margin: 0 0 8px;
+  }
+
+  .section {
+    border-top: 1px solid var(--pk-border);
+    margin-top: 20px;
+    padding-top: 16px;
+  }
+
+  .steps {
+    color: var(--pk-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 20px;
+
+    li + li {
+      margin-top: 4px;
+    }
+  }
+
+  .wrapper {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+}

@@ -11,9 +11,14 @@
  * @docs        :: https://sailsjs.com/docs/concepts/extending-sails/hooks
  */
 
+const { isAccessToken: isOauthAccessToken } = require('../../../utils/mcp/oauth-provider');
+
 module.exports = function defineCurrentUserHook(sails) {
   const TOKEN_PATTERN = /^Bearer /;
   const API_KEY_HEADER_NAME = 'x-api-key';
+
+  // OAuth access tokens are issued to MCP clients and do not open the rest of the API
+  const OAUTH_ACCESS_TOKEN_PATHS = new Set(['/api/mcp']);
 
   // The five checks a token has to pass live in `utils/resolveAccessToken`,
   // shared with the routes that serve avatars and background images so the two
@@ -28,6 +33,33 @@ module.exports = function defineCurrentUserHook(sails) {
     const apiKeyHash = sails.helpers.utils.hash(apiKey);
 
     return User.qm.getOneActiveByApiKeyHash(apiKeyHash);
+  };
+
+  const getOauthTokenAndUserByAccessToken = async (accessToken) => {
+    const oauthToken = await OauthToken.qm.getOneUnexpiredByAccessTokenHash(
+      sails.helpers.utils.hash(accessToken),
+    );
+
+    if (!oauthToken) {
+      return null;
+    }
+
+    const user = await User.qm.getOneById(oauthToken.userId, {
+      withDeactivated: false,
+    });
+
+    if (!user) {
+      return null;
+    }
+
+    await OauthToken.qm.updateOne(oauthToken.id, {
+      lastUsedAt: new Date().toISOString(),
+    });
+
+    return {
+      oauthToken,
+      user,
+    };
   };
 
   return {
@@ -52,6 +84,23 @@ module.exports = function defineCurrentUserHook(sails) {
 
               if (internalAccessToken && accessToken === internalAccessToken) {
                 req.currentUser = User.INTERNAL;
+              } else if (isOauthAccessToken(accessToken)) {
+                if (OAUTH_ACCESS_TOKEN_PATHS.has(req.path)) {
+                  const oauthTokenAndUser = await getOauthTokenAndUserByAccessToken(accessToken);
+
+                  if (oauthTokenAndUser) {
+                    const { oauthToken, user } = oauthTokenAndUser;
+
+                    if (user.language) {
+                      req.setLocale(user.language);
+                    }
+
+                    Object.assign(req, {
+                      currentOauthToken: oauthToken,
+                      currentUser: user,
+                    });
+                  }
+                }
               } else {
                 const { httpOnlyToken } = req.cookies;
 

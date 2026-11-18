@@ -32,6 +32,7 @@ export default {
       addUser_title: 'Add User',
       admin: 'Admin',
       administration: 'Administration',
+      aiAssistants_title: 'AI Assistants',
       all: 'All',
       allChangesWillBeAutomaticallySavedAfterConnectionRestored:
         'All changes will be automatically saved<br />after connection restored.',
@@ -39,7 +40,15 @@ export default {
       alwaysDisplayCardCreator: 'Always display card creator',
       apiKeyCreated_title: 'API Key Created',
       apiKey_title: 'API Key',
+      appCanChangeCardsTasksAndComments:
+        'Create, update, move and delete cards, tasks, labels, members and comments',
+      appCanReadProjectsBoardsAndCards: 'See your projects, boards, lists, cards and comments',
+      appConnectionRequestFailed:
+        'The connection could not be completed. Start it again from the app.',
+      appKeepsYourPermissions:
+        'It can only do what you can do in PLANKA, on the boards you can access',
       applyFilter: 'Apply filter',
+      appWantsToAccessYourAccount: '<0>{{appName}}</0> wants to access your PLANKA account',
       archive: 'Archive',
       archiveCard_title: 'Archive Card',
       archiveCards_title: 'Archive Cards',
@@ -119,6 +128,7 @@ export default {
         'Can edit the board layout and assign members to cards.',
       canManageSystemWideSettingsAndActAsProjectOwner:
         'Can manage the system wide settings and act as project owner.',
+      cannotConnectApp_title: 'Cannot Connect App',
       canOnlyViewBoard: 'Can only view the board.',
       cardActions_title: 'Card Actions',
       cardNotFound_title: 'Card Not Found',
@@ -135,6 +145,9 @@ export default {
       comments: 'Comments',
       confirmCodesSaved: 'I have saved these codes in a safe place.',
       confirmPassword: 'Confirm password',
+      connectAnAssistant_title: 'Connect an Assistant',
+      connected: 'Connected',
+      connectedApps_title: 'Connected Apps',
       contentExceedsLimit: 'Content exceeds {{limit}}',
       contentOfThisAttachmentIsTooBigToDisplay: 'Content of this attachment is too big to display.',
       copy_inline: 'copy',
@@ -168,7 +181,39 @@ export default {
       expires: 'Expires',
       invalidTotpCode: 'Invalid TOTP or recovery code',
       lastUsed: 'Last used',
+      mcpChatgptDescription:
+        'ChatGPT connects as a custom connector and signs in with your PLANKA account.',
+      mcpChatgptStep1:
+        'In ChatGPT, open Settings → Apps & Connectors → Advanced settings and turn on Developer mode.',
+      mcpChatgptStep2: 'Go back to Apps & Connectors and choose Create.',
+      mcpChatgptStep3:
+        'Enter a name, paste {{url}} as the MCP server URL and choose OAuth authentication.',
+      mcpChatgptStep4: 'Create it, then approve the request in PLANKA when ChatGPT opens it.',
+      mcpClaudeCodeDescription: 'Run this in a terminal to add PLANKA to Claude Code.',
+      mcpClaudeDescription:
+        'Works in claude.ai, Claude Desktop and the mobile apps. Claude signs in with your PLANKA account.',
+      mcpClaudeStep1: 'In Claude, open Settings → Connectors.',
+      mcpClaudeStep2: 'Choose Add custom connector and give it a name, such as PLANKA.',
+      mcpClaudeStep3: 'Paste {{url}} as the remote MCP server URL and add it.',
+      mcpClaudeStep4: 'Choose Connect, then approve the request in PLANKA when Claude opens it.',
+      mcpCodexDescription: 'Add this to the Codex configuration file.',
+      mcpCreateApiKeyFirst: 'Create an API key below and it is filled in here.',
+      mcpCursorDescription: 'Add this to the Cursor MCP configuration file.',
+      mcpGeminiCliDescription: 'Add this to the Gemini CLI settings file.',
+      mcpIntro:
+        'Connect AI assistants to PLANKA through the Model Context Protocol (MCP). They can read and update your boards as you, with your permissions.',
+      mcpNeedsPublicHttps:
+        'This assistant reaches PLANKA over the internet, so PLANKA must be served from a public HTTPS address.',
+      mcpOtherDescription:
+        'Any client that supports remote MCP servers over Streamable HTTP with custom headers can connect with these details.',
+      mcpServerUrl_title: 'MCP Server URL',
+      mcpVscodeDescription: 'Add this to the workspace MCP file for GitHub Copilot in VS Code.',
+      mcpWindsurfDescription: 'Add this to the Windsurf MCP configuration file.',
       never: 'Never',
+      noApiKeyCreatedForMcp:
+        'No API key yet. Assistants configured with a file or command need one.',
+      noConnectedApps:
+        'No apps are connected. Apps you approve through PLANKA sign-in appear here.',
       noTrustedDevices: 'No trusted devices.',
       openBoardActions: 'Open board actions',
       openBoardSettings: 'Open board settings',
@@ -178,6 +223,7 @@ export default {
       openProjectActions: 'Open project actions',
       openProjectSettings: 'Open project settings',
       orEnterSecretManually: 'Or enter this secret manually:',
+      otherMcpClient: 'Other',
       recoveryCodesExhausted:
         'All recovery codes have been used. Regenerate a new set to keep a fallback in case you lose your authenticator app.',
       recoveryCodesIntro:
@@ -192,11 +238,15 @@ export default {
       reset2faWarning:
         'Resetting 2FA signs the user out of all sessions and removes their TOTP setup. They will need to set it up again on next login.',
       saveTheseCodes_title: 'Save These Recovery Codes',
+      saveThisKeyItIsAddedToSetupBelowOnlyNow:
+        'Save it now: it will not be shown again. It is filled into the setup above until you close this window.',
       scanQrCodeWithApp:
         'Scan this QR code with an authenticator app such as Google Authenticator or Authy.',
       security_title: 'Security',
       showHiddenProjects: 'Show hidden projects',
       showProBanner: 'Show the PLANKA Pro banner',
+      signedInAs: 'Signed in as {{name}}',
+      signInWithPlanka: 'Sign in with PLANKA',
       totpCode: 'TOTP code',
       totpOrRecoveryCode: 'TOTP or recovery code',
       trustedDevices_title: 'Trusted Browsers',
@@ -206,7 +256,10 @@ export default {
       twoFactor_intro:
         'Add an extra layer of security to your account using a time-based one-time code from an authenticator app.',
       twoFactorAuthentication: 'Two-Factor Authentication',
+      unknownAppConnectionRequest:
+        'This connection request is incomplete or the app is unknown. Start it again from the app.',
       unknownDevice: 'Unknown device',
+      unnamedApp: 'Unnamed app',
       upgradeTeamToPro_title: 'Upgrade Team to Pro',
       dark: 'Dark',
       date: 'Date',
@@ -450,6 +503,7 @@ export default {
       uploadFailedNotEnoughStorageSpace: 'Upload failed: Not enough storage space.',
       uploadedImages: 'Uploaded images',
       url: 'URL',
+      usesApiKey: 'Uses an API key',
       useSecureConnection: 'Use secure connection',
       userActions_title: 'User Actions',
       userAddedCardToList: '<0>{{user}}</0> added <2>{{card}}</2> to {{list}}',
@@ -485,6 +539,9 @@ export default {
       whatsNew_title: "What's New",
       withoutBaseGroup: 'Without base group',
       writeComment: 'Write a comment...',
+      youCanDisconnectAppsInSettings:
+        'You can disconnect it at any time in Settings → AI Assistants.',
+      youWillBeSentBackTo: 'You will be sent back to {{host}}.',
     },
 
     action: {
@@ -508,6 +565,7 @@ export default {
       addToCard: 'Add to card',
       addUser: 'Add user',
       addWebhook: 'Add webhook',
+      allowAccess: 'Allow access',
       archive: 'Archive',
       archiveCard: 'Archive card',
       archiveCard_title: 'Archive Card',
@@ -559,8 +617,10 @@ export default {
       deleteUser: 'Delete user',
       deleteUser_title: 'Delete User',
       deleteWebhook: 'Delete webhook',
+      deny: 'Deny',
       disable2fa: 'Disable 2FA',
       disableEditMode: 'Disable edit mode',
+      disconnect: 'Disconnect',
       dismissAll: 'Dismiss all',
       done: 'Done',
       download: 'Download',

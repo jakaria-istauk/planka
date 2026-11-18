@@ -300,6 +300,11 @@ module.exports.routes = {
   'POST /api/notification-services/:id/test': 'notification-services/test',
   'DELETE /api/notification-services/:id': 'notification-services/delete',
 
+  'GET /api/oauth/clients/:clientId': 'oauth-clients/show',
+  'POST /api/oauth/consents': 'oauth-consents/create',
+  'GET /api/oauth/connections': 'oauth-connections/index',
+  'DELETE /api/oauth/connections/:id': 'oauth-connections/delete',
+
   'POST /api/mcp': 'mcp/handle',
   'GET /api/mcp': 'mcp/handle',
   'DELETE /api/mcp': 'mcp/handle',

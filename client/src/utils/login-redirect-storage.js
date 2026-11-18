@@ -20,7 +20,7 @@ const KEY = 'planka:loginRedirect';
 // Restorable destinations only: the ones Root renders and the core fetch can
 // resolve from the path. /login would loop, and the root path is where a login
 // lands anyway.
-const RESTORABLE_PATHS = [Paths.PROJECTS, Paths.BOARDS, Paths.CARDS];
+const RESTORABLE_PATHS = [Paths.PROJECTS, Paths.BOARDS, Paths.CARDS, Paths.OAUTH_CONSENT];
 
 const isRestorable = (location) => {
   if (typeof location !== 'string' || location[0] !== '/') {

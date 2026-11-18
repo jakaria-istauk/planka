@@ -75,7 +75,7 @@ const UserActionsStep = React.memo(({ onClose }) => {
       <Popup.Content>
         <Menu secondary vertical className={styles.menu}>
           <Menu.Item className={styles.menuItem} onClick={handleSettingsClick}>
-            <Icon name="user circle" className={styles.menuItemIcon} />
+            <Icon name="setting" className={styles.menuItemIcon} />
             {t('common.settings', {
               context: 'title',
             })}
@@ -83,7 +83,7 @@ const UserActionsStep = React.memo(({ onClose }) => {
           {withAdministration && (
             <>
               <Menu.Item className={styles.menuItem} onClick={handleAdministrationClick}>
-                <Icon name="setting" className={styles.menuItemIcon} />
+                <Icon name="wrench" className={styles.menuItemIcon} />
                 {t('common.administration', {
                   context: 'title',
                 })}

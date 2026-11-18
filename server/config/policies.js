@@ -37,7 +37,7 @@ module.exports.policies = {
   'users/update-password': 'is-authenticated',
   'users/update-username': 'is-authenticated',
   'users/update-avatar': 'is-authenticated',
-  'users/create-api-key': ['is-authenticated', 'is-admin'],
+  'users/create-api-key': 'is-authenticated',
   'users/setup-totp': 'is-authenticated',
   'users/enable-totp': 'is-authenticated',
   'users/disable-totp': 'is-authenticated',
@@ -48,7 +48,12 @@ module.exports.policies = {
 
   'projects/create': ['is-authenticated', 'is-external', 'is-admin-or-project-owner'],
 
-  'mcp/handle': ['is-authenticated', 'is-external', 'is-api-key'],
+  'mcp/handle': 'is-mcp-authenticated',
+
+  'oauth-clients/show': ['is-authenticated', 'is-session'],
+  'oauth-consents/create': ['is-authenticated', 'is-session'],
+  'oauth-connections/index': ['is-authenticated', 'is-session'],
+  'oauth-connections/delete': ['is-authenticated', 'is-session'],
 
   '_internal/update-config': ['is-authenticated', 'is-internal'],
 

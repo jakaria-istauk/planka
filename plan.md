@@ -53,11 +53,26 @@ Built as the `event-bus` hook (`server/api/hooks/event-bus/`): `subscribe(handle
   - [x] `create_comment`, `list_comments`
 - [x] Integration tests per tool (auth, permission denied, happy path)
 - [x] Swagger / docs entry and a client config example (Claude Code `claude mcp add --transport http`)
-- [ ] PR
+- [x] PR
 
 Built as the `mcp/handle` action at `POST /api/mcp` (stateless streamable HTTP, JSON responses; `GET`/`DELETE` answer 405) behind the new `is-api-key` policy.
 Tools live in `server/utils/mcp/tools.js` and run the REST controller definitions through `server/utils/mcp/run-action.js` (the same `machine` runner Sails uses for actions), so input validation and permission checks are the REST ones, not copies.
 Docs: `docs/mcp.md` and the `/mcp` swagger entry.
+
+## Phase 1b: connect assistants from PLANKA
+
+Claude (claude.ai, Desktop, mobile) and ChatGPT only add remote MCP servers that sign in with OAuth 2.1, so PLANKA is its own authorization server for `/api/mcp`.
+
+- [x] Users create, regenerate and delete their own API key (admins still manage everyone's)
+- [x] Migration and models: `oauth_client`, `oauth_authorization_code`, `oauth_token` (hashes only)
+- [x] OAuth 2.1 server on the MCP SDK handlers: metadata (RFC 8414, RFC 9728), dynamic client registration, authorize, token (PKCE `S256`, rotating refresh tokens), revoke
+- [x] OAuth access tokens accepted on `/api/mcp` only; `401` carries `WWW-Authenticate` with the resource metadata URL
+- [x] Consent screen at `/oauth/consent`, returning there after login
+- [x] Settings → AI Assistants tab: server URL, setup for Claude, ChatGPT, Claude Code, Gemini CLI, Codex, Cursor, VS Code, Windsurf, own API key, connected apps with Disconnect
+- [x] Tests: OAuth flow, consent checks, connected apps, self-service keys
+- [x] Browser verification in Chrome DevTools
+- [ ] Try the real Claude and ChatGPT connectors against a public HTTPS deployment
+- [ ] PR
 
 ## Phase 2: automation rules
 
@@ -124,3 +139,4 @@ Bot commands (HTTP interactions):
 Add a line per merged PR: date, phase, PR link.
 
 - 2026-11-17, phase 0: landed on `master` directly without a PR (`7d5f0e6f`..`19d0a7d2`)
+- 2026-11-18, phase 1: https://github.com/jakaria-istauk/planka/pull/1

@@ -1,0 +1,120 @@
+/*!
+ * Copyright (c) 2024 PLANKA Software GmbH
+ * Licensed under the Fair Use License: https://github.com/plankanban/planka/blob/master/LICENSE.md
+ */
+
+:global(#app) {
+  .actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 24px;
+
+    :global(.button) {
+      margin: 0;
+    }
+  }
+
+  .appIcon,
+  .plankaIcon {
+    align-items: center;
+    border-radius: var(--pk-radius);
+    display: inline-flex;
+    font-size: 20px;
+    height: 48px;
+    justify-content: center;
+    width: 48px;
+  }
+
+  .appIcon {
+    background: var(--pk-surface-muted);
+    color: var(--pk-text-secondary);
+  }
+
+  .card {
+    background: var(--pk-surface);
+    border: 1px solid var(--pk-border);
+    border-radius: var(--pk-radius-lg);
+    box-shadow: var(--pk-shadow-md);
+    color: var(--pk-text);
+    max-width: 440px;
+    padding: 32px;
+    width: 100%;
+  }
+
+  .connector {
+    color: var(--pk-text-muted);
+  }
+
+  .hint {
+    color: var(--pk-text-muted);
+    font-size: 12px;
+    margin: 16px 0 0;
+    text-align: center;
+  }
+
+  .icons {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .permissionIcon {
+    color: var(--pk-accent);
+    margin-right: 10px;
+  }
+
+  .permissions {
+    border-bottom: 1px solid var(--pk-border);
+    border-top: 1px solid var(--pk-border);
+    list-style: none;
+    margin: 20px 0 16px;
+    padding: 16px 0;
+
+    li {
+      color: var(--pk-text-secondary);
+      display: flex;
+      line-height: 1.5;
+
+      & + li {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .plankaIcon {
+    background: var(--pk-accent);
+    color: #fff;
+  }
+
+  .redirect,
+  .signedInAs {
+    color: var(--pk-text-muted);
+    margin: 0;
+    text-align: center;
+  }
+
+  .signedInAs {
+    margin-top: 6px;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    text-align: center;
+  }
+
+  .wrapper {
+    align-items: center;
+    background: var(--pk-bg);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 16px;
+  }
+}
