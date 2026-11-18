@@ -102,6 +102,9 @@ const TYPE_STATE_BY_TYPE = {
   [Types.CLOSED]: Types.CLOSED,
 };
 
+// Lists named like "My Work", "My Tasks" or "My To-Do" hold the creator's own cards
+const PERSONAL_NAME_REGEX = /^\s*my\s+(works?|tasks?|to[\s-]?dos?)\s*$/i;
+
 const COLORS = [
   'berry-red',
   'pumpkin-orange',
@@ -123,6 +126,7 @@ module.exports = {
   FINITE_TYPES,
   KANBAN_TYPES,
   TYPE_STATE_BY_TYPE,
+  PERSONAL_NAME_REGEX,
   COLORS,
 
   attributes: {

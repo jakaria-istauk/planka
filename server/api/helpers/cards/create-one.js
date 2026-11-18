@@ -150,6 +150,23 @@ module.exports = {
       list: values.list,
     });
 
+    // The creator becomes a member of cards added to a personal list ("My Work", "My Tasks", ...)
+    if (values.list.name && List.PERSONAL_NAME_REGEX.test(values.list.name)) {
+      await sails.helpers.cardMemberships.createOne
+        .with({
+          values: {
+            card,
+            user: values.creatorUser,
+          },
+          project: inputs.project,
+          board: values.board,
+          list: values.list,
+          actorUser: values.creatorUser,
+          request: inputs.request,
+        })
+        .tolerate('userAlreadyCardMember');
+    }
+
     return card;
   },
 };
