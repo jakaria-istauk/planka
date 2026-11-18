@@ -31,7 +31,7 @@ Hook point: `server/api/helpers/utils/send-webhooks.js` (called from 78 helpers)
 - [x] Subscriber registry (`sails.helpers.utils.subscribeToEvents` or a small hook in `server/api/hooks/`)
 - [x] Pass `origin` through helpers that integrations call, for the loop guard
 - [x] Tests: subscriber receives events with data, prevData, user and scope
-- [ ] PR
+- [x] PR
 
 Built as the `event-bus` hook (`server/api/hooks/event-bus/`): `subscribe(handler)` returns an unsubscribe function, `sendWebhooks` emits `{ event, data, prevData, user, scope, origin }` to every subscriber on a later microtask, and data is only built when a subscriber or webhook needs it.
 `origin` travels through `AsyncLocalStorage` instead of a new input on each helper: integrations wrap their helper calls in `sails.hooks['event-bus'].runWithOrigin('github', fn)`, and every event emitted inside carries that origin.
@@ -122,3 +122,5 @@ Bot commands (HTTP interactions):
 ## Done log
 
 Add a line per merged PR: date, phase, PR link.
+
+- 2026-11-17, phase 0: landed on `master` directly without a PR (`7d5f0e6f`..`19d0a7d2`)
