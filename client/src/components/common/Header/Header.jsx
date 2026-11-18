@@ -15,13 +15,13 @@ import { usePopup } from '../../../lib/popup';
 import selectors from '../../../selectors';
 import entryActions from '../../../entry-actions';
 import Paths from '../../../constants/Paths';
-import { UserRoles } from '../../../constants/Enums';
+import { Themes, UserRoles } from '../../../constants/Enums';
 import { ThemeIcons } from '../../../constants/Icons';
 import { useTheme } from '../../../hooks';
 import { SidebarContext } from '../../../contexts';
 import NotificationsStep from '../../notifications/NotificationsStep';
 import SelectBoardStep from '../../boards/SelectBoardStep';
-import ThemeStep from '../ThemeStep';
+import SunIcon from '../../../assets/images/sun-icon.svg?react';
 
 import styles from './Header.module.scss';
 
@@ -31,6 +31,14 @@ const POPUP_PROPS = {
 
 const BOARDS_POPUP_PROPS = {
   position: 'bottom left',
+};
+
+const THEME_ORDER = [Themes.SYSTEM, Themes.LIGHT, Themes.DARK];
+
+const THEME_TITLES = {
+  [Themes.SYSTEM]: 'common.systemDefault',
+  [Themes.LIGHT]: 'common.light',
+  [Themes.DARK]: 'common.dark',
 };
 
 const Header = React.memo(() => {
@@ -49,7 +57,7 @@ const Header = React.memo(() => {
   });
 
   const [, setIsSidebarOpen] = useContext(SidebarContext);
-  const [theme] = useTheme();
+  const [theme, setTheme] = useTheme();
 
   const dispatch = useDispatch();
   const [t] = useTranslation();
@@ -58,13 +66,16 @@ const Header = React.memo(() => {
     setIsSidebarOpen(true);
   }, [setIsSidebarOpen]);
 
+  const handleThemeClick = useCallback(() => {
+    setTheme(THEME_ORDER[(THEME_ORDER.indexOf(theme) + 1) % THEME_ORDER.length]);
+  }, [theme, setTheme]);
+
   const handleProjectSettingsClick = useCallback(() => {
     dispatch(entryActions.openProjectSettingsModal());
   }, [dispatch]);
 
   const NotificationsPopup = usePopup(NotificationsStep, POPUP_PROPS);
   const SelectBoardPopup = usePopup(SelectBoardStep, BOARDS_POPUP_PROPS);
-  const ThemePopup = usePopup(ThemeStep, POPUP_PROPS);
 
   return (
     <div className={styles.wrapper}>
@@ -101,16 +112,18 @@ const Header = React.memo(() => {
           )}
         </Menu.Menu>
         <Menu.Menu position="right">
-          <ThemePopup>
-            <Tooltip content={t('common.theme')}>
-              <Menu.Item
-                aria-label={t('common.theme')}
-                className={classNames(styles.item, styles.itemHoverable)}
-              >
+          <Tooltip content={`${t('common.theme')}: ${t(THEME_TITLES[theme])}`}>
+            <Menu.Item
+              className={classNames(styles.item, styles.itemHoverable)}
+              onClick={handleThemeClick}
+            >
+              {theme === Themes.LIGHT ? (
+                <SunIcon className={styles.themeIcon} />
+              ) : (
                 <Icon fitted name={ThemeIcons[theme]} />
-              </Menu.Item>
-            </Tooltip>
-          </ThemePopup>
+              )}
+            </Menu.Item>
+          </Tooltip>
           {canEditProject && (
             <Tooltip content={t('common.openProjectSettings')}>
               <Menu.Item
