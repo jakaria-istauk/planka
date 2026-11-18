@@ -188,13 +188,11 @@ const provider = {
 
   async exchangeAuthorizationCode(client, code, codeVerifier, redirectUri, resource) {
     const oauthClient = await getOauthClientRecord(client);
-    const authorizationCode = await OauthAuthorizationCode.qm.deleteOneByCodeHash(hash(code));
+    const authorizationCode = await OauthAuthorizationCode.qm.deleteOneUnexpiredByCodeHash(
+      hash(code),
+    );
 
-    if (
-      !authorizationCode ||
-      authorizationCode.oauthClientId !== oauthClient.id ||
-      new Date(authorizationCode.expiresAt) <= new Date()
-    ) {
+    if (!authorizationCode || authorizationCode.oauthClientId !== oauthClient.id) {
       throw new InvalidGrantError('Invalid authorization code');
     }
 

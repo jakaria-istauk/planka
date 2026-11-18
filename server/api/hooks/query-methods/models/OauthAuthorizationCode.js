@@ -13,10 +13,12 @@ const getOneUnexpiredByCodeHash = (codeHash) =>
     expiresAt: { '>': new Date().toISOString() },
   });
 
-// Codes are single use, so the exchange deletes the one it reads
-const deleteOneByCodeHash = (codeHash) =>
+// Codes are single use, so the exchange deletes the one it reads. Expiry is checked in the
+// query: timestamps read back are not reliably parsed as UTC, so they are not compared in code
+const deleteOneUnexpiredByCodeHash = (codeHash) =>
   OauthAuthorizationCode.destroyOne({
     codeHash,
+    expiresAt: { '>': new Date().toISOString() },
   });
 
 const deleteExpired = () =>
@@ -27,6 +29,6 @@ const deleteExpired = () =>
 module.exports = {
   createOne,
   getOneUnexpiredByCodeHash,
-  deleteOneByCodeHash,
+  deleteOneUnexpiredByCodeHash,
   deleteExpired,
 };
