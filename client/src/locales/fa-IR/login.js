@@ -16,7 +16,6 @@ export default {
       or: 'یا',
       pageNotFound_title: 'صفحه یافت نشد',
       password: 'رمز عبور',
-      poweredByPlanka: 'قدرت گرفته از <1>PLANKA</1>',
       serverConnectionFailed: 'اتصال به سرور ناموفق بود',
       totpSessionExpired: 'نشست TOTP منقضی شد. لطفاً دوباره وارد شوید.',
       trustThisBrowser: 'به این مرورگر به مدت ۳۰ روز اعتماد کن',

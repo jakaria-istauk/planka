@@ -16,7 +16,6 @@ export default {
       or: 'أو',
       pageNotFound_title: 'الصفحة غير موجودة',
       password: 'كلمة المرور',
-      poweredByPlanka: 'مدعوم بواسطة <1>PLANKA</1>',
       serverConnectionFailed: 'فشل الاتصال بالخادم',
       totpSessionExpired: 'انتهت صلاحية جلسة TOTP. يرجى تسجيل الدخول مرة أخرى.',
       trustThisBrowser: 'الوثوق بهذا المتصفح لمدة 30 يومًا',

@@ -17,7 +17,6 @@ export default {
       or: 'Tai',
       pageNotFound_title: 'Sivua ei löytynyt',
       password: 'Salasana',
-      poweredByPlanka: 'Käyttää <1>PLANKAa</1>',
       serverConnectionFailed: 'Yhteys palvelimeen epäonnistui',
       totpSessionExpired: 'TOTP-istunto on vanhentunut. Kirjaudu sisään uudelleen.',
       trustThisBrowser: 'Luota tähän selaimeen 30 päivän ajan',

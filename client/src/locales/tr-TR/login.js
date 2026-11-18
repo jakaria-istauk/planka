@@ -16,7 +16,6 @@ export default {
       or: 'Veya',
       pageNotFound_title: 'Sayfa bulunamadı',
       password: 'Şifre',
-      poweredByPlanka: 'PLANKA tarafından desteklenmektedir',
       serverConnectionFailed: 'Sunucu bağlantı hatası',
       totpSessionExpired: 'TOTP oturumu sona erdi. Lütfen tekrar giriş yapın.',
       trustThisBrowser: 'Bu tarayıcıya 30 gün boyunca güven',

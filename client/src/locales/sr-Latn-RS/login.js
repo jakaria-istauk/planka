@@ -17,7 +17,6 @@ export default {
       or: 'Ili',
       pageNotFound_title: 'Stranica nije pronađena',
       password: 'Lozinka',
-      poweredByPlanka: 'Pokreće <1>PLANKA</1>',
       serverConnectionFailed: 'Neuspešna konekcija sa serverom',
       totpSessionExpired: 'TOTP sesija je istekla. Prijavite se ponovo.',
       trustThisBrowser: 'Označi ovaj pregledač kao pouzdan na 30 dana',

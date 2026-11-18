@@ -17,7 +17,6 @@ export default {
       or: 'Alebo',
       pageNotFound_title: 'Stránka neexistuje',
       password: 'Heslo',
-      poweredByPlanka: 'Poháňané <1>PLANKA</1>',
       serverConnectionFailed: 'Pripojenie k serveru zlyhalo',
       totpSessionExpired: 'Platnosť relácie TOTP vypršala. Prihláste sa znova.',
       trustThisBrowser: 'Dôverovať tomuto prehliadaču počas 30 dní',

@@ -17,7 +17,6 @@ export default {
       or: 'Lub',
       pageNotFound_title: 'Strona nie znaleziona',
       password: 'Hasło',
-      poweredByPlanka: 'Powered by <1>PLANKA</1>',
       serverConnectionFailed: 'Błąd połączenia z serwerem',
       totpSessionExpired: 'Sesja TOTP wygasła. Zaloguj się ponownie.',
       trustThisBrowser: 'Zaufaj tej przeglądarce przez 30 dni',

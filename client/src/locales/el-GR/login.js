@@ -17,7 +17,6 @@ export default {
       or: 'Ή',
       pageNotFound_title: 'Η σελίδα δεν βρέθηκε',
       password: 'Κωδικός',
-      poweredByPlanka: 'Με την υποστήριξη του <1>PLANKA</1>',
       serverConnectionFailed: 'Αποτυχία σύνδεσης με τον διακομιστή',
       totpSessionExpired: 'Η συνεδρία TOTP έληξε. Συνδεθείτε ξανά.',
       trustThisBrowser: 'Να θεωρείται έμπιστο αυτό το πρόγραμμα περιήγησης για 30 ημέρες',

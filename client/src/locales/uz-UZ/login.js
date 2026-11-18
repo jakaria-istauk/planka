@@ -17,7 +17,6 @@ export default {
       or: 'Yoki',
       pageNotFound_title: 'Sahifa topilmadi',
       password: 'Parol',
-      poweredByPlanka: 'PLANKA tomonidan quvvatlanadi',
       serverConnectionFailed: "Serverga bog'lanish xatosi",
       totpSessionExpired: 'TOTP sessiyasi muddati tugadi. Iltimos, qaytadan kiring.',
       trustThisBrowser: 'Ushbu brauzerga 30 kunga ishonish',

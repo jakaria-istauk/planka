@@ -17,7 +17,6 @@ export default {
       or: 'Nebo',
       pageNotFound_title: 'Stránka nenalezena',
       password: 'Heslo',
-      poweredByPlanka: 'Poháněno technologií <1>PLANKA</1>',
       serverConnectionFailed: 'Připojení k serveru selhalo',
       totpSessionExpired: 'Platnost relace TOTP vypršela. Přihlaste se prosím znovu.',
       trustThisBrowser: 'Důvěřovat tomuto prohlížeči po dobu 30 dnů',

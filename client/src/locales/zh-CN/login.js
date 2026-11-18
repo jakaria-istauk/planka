@@ -16,7 +16,6 @@ export default {
       or: '或',
       pageNotFound_title: '找不到页面',
       password: '密码',
-      poweredByPlanka: '技术支持由<1>PLANKA</1>提供',
       serverConnectionFailed: '服务器连接失败',
       totpSessionExpired: 'TOTP 会话已过期，请重新登录。',
       trustThisBrowser: '信任此浏览器 30 天',
