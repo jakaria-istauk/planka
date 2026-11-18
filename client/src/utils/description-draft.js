@@ -11,7 +11,7 @@
 // the description as it stood while the draft was being written, which lets the
 // recovery flow detect that the card moved on underneath a stale draft.
 
-const PREFIX = 'planka:descriptionDraft:';
+const PREFIX = 'tama:descriptionDraft:';
 const MAX_AGE = 7 * 24 * 60 * 60 * 1000; // 7 days
 const MAX_SIZE = 2 * 1024 * 1024; // localStorage can't hold huge (image-heavy) drafts
 

@@ -25,7 +25,7 @@
 // Bumping the suffix abandons the lot, and costs nothing: the store dies with
 // the window anyway.
 
-const KEY = 'planka:listScroll:2';
+const KEY = 'tama:listScroll:2';
 
 const read = () => {
   try {
