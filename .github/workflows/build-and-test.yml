@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      POSTGRES_USERNAME: planka
-      POSTGRES_PASSWORD: planka
-      POSTGRES_DATABASE: planka
+      POSTGRES_USERNAME: tama
+      POSTGRES_PASSWORD: tama
+      POSTGRES_DATABASE: tama
 
     steps:
       - name: Checkout repository

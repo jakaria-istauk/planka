@@ -47,12 +47,12 @@ jobs:
 
       - name: Create release package
         run: |
-          mv dist planka
-          zip -r planka-prebuild.zip planka
+          mv dist tama
+          zip -r tama-prebuild.zip tama
         working-directory: ./server
 
       - name: Publish release package
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload ${{ github.event.release.tag_name }} planka-prebuild.zip
+        run: gh release upload ${{ github.event.release.tag_name }} tama-prebuild.zip
         working-directory: ./server
