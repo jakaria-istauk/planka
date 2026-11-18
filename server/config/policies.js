@@ -48,6 +48,8 @@ module.exports.policies = {
 
   'projects/create': ['is-authenticated', 'is-external', 'is-admin-or-project-owner'],
 
+  'mcp/handle': ['is-authenticated', 'is-external', 'is-api-key'],
+
   '_internal/update-config': ['is-authenticated', 'is-internal'],
 
   index: true,
