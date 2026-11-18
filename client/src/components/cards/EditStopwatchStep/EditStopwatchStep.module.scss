@@ -6,7 +6,7 @@
 :global(#app) {
   .deleteButton {
     bottom: 12px;
-    box-shadow: 0 1px 0 #cbcccc;
+    box-shadow: 0 1px 0 var(--pk-border);
     position: absolute;
     right: 9px;
   }
@@ -28,12 +28,12 @@
     width: 36px;
 
     &:hover {
-      background: #e9e9e9;
+      background: var(--pk-surface-muted);
     }
   }
 
   .text {
-    color: #444444;
+    color: var(--pk-text-secondary);
     font-size: 12px;
     font-weight: bold;
     padding-bottom: 4px;

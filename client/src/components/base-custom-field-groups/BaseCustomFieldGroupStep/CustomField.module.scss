@@ -10,17 +10,16 @@
     flex: 0 0 auto;
     font-weight: normal;
     padding: 8px 10px;
-    text-decoration: underline;
 
     &:hover {
-      background: #e9e9e9;
+      background: var(--pk-surface-muted);
     }
   }
 
   .name {
-    background: rgba(9, 30, 66, 0.04);
-    border-radius: 3px;
-    color: #17394d;
+    background: var(--pk-surface-muted);
+    border-radius: 8px;
+    color: var(--pk-text);
     flex: 1 1 auto;
     font-size: 14px;
     overflow: hidden;
@@ -30,7 +29,7 @@
   }
 
   .nameIcon {
-    color: rgba(9, 30, 66, 0.24);
+    color: var(--pk-text-muted);
     font-size: 12px;
     margin: 0 8px 0 0;
     width: 14px;
