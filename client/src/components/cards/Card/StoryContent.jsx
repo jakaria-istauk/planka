@@ -7,12 +7,13 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { shallowEqual, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { Icon } from 'semantic-ui-react';
 
 import selectors from '../../../selectors';
 import markdownToText from '../../../utils/markdown-to-text';
+import format12HourDateTime from '../../../utils/format-12-hour-date-time';
 import { BoardViews } from '../../../constants/Enums';
-import TimeAgo from '../../common/TimeAgo';
 import LabelChip from '../../labels/LabelChip';
 import CustomFieldValueChip from '../../custom-field-values/CustomFieldValueChip';
 
@@ -70,6 +71,13 @@ const StoryContent = React.memo(({ cardId }) => {
   const descriptionText = useMemo(
     () => card.description && markdownToText(card.description),
     [card.description],
+  );
+
+  const [, i18n] = useTranslation();
+
+  const createdAtText = useMemo(
+    () => card.createdAt && format12HourDateTime(i18n, card.createdAt),
+    [card.createdAt, i18n],
   );
 
   return (
@@ -134,11 +142,11 @@ const StoryContent = React.memo(({ cardId }) => {
                 </span>
               </span>
             )}
-            {withAge && card.createdAt && (
+            {withAge && createdAtText && (
               <span className={classNames(styles.attachment, styles.attachmentLeft)}>
                 <span className={styles.attachmentContent}>
                   <Icon name="history" />
-                  <TimeAgo date={card.createdAt} />
+                  <time dateTime={card.createdAt.toISOString()}>{createdAtText}</time>
                 </span>
               </span>
             )}
