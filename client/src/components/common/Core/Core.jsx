@@ -11,6 +11,7 @@ import { Loader } from 'semantic-ui-react';
 import selectors from '../../../selectors';
 import version from '../../../version';
 import ModalTypes from '../../../constants/ModalTypes';
+import Paths from '../../../constants/Paths';
 import { SidebarContext } from '../../../contexts';
 import { useTheme } from '../../../hooks';
 import { resolveTheme, subscribeToThemeChange } from '../../../utils/theme-storage';
@@ -26,6 +27,7 @@ import AutoLogoutWarningModal from '../AutoLogoutWarningModal';
 import UserSettingsModal from '../../users/UserSettingsModal';
 import ProjectBackground from '../../projects/ProjectBackground';
 import AddProjectModal from '../../projects/AddProjectModal';
+import OauthConsent from '../OauthConsent';
 
 const Core = React.memo(() => {
   const isInitializing = useSelector(selectors.selectIsInitializing);
@@ -34,6 +36,7 @@ const Core = React.memo(() => {
   const project = useSelector(selectors.selectCurrentProject);
   const board = useSelector(selectors.selectCurrentBoard);
   const currentUserId = useSelector(selectors.selectCurrentUserId);
+  const pathsMatch = useSelector(selectors.selectPathsMatch);
 
   // TODO: move to selector?
   const isNewVersionAvailable = useSelector((state) => {
@@ -148,8 +151,11 @@ const Core = React.memo(() => {
 
   return (
     <>
+      {/* eslint-disable-next-line no-nested-ternary */}
       {isInitializing || !currentUserId ? (
         <Loader active size="massive" />
+      ) : pathsMatch && pathsMatch.pattern.path === Paths.OAUTH_CONSENT ? (
+        <OauthConsent />
       ) : (
         <SidebarContext.Provider value={sidebarContextValue}>
           <Toaster />

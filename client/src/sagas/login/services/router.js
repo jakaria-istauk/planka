@@ -57,6 +57,7 @@ export function* handleLocationChange() {
     case Paths.PROJECTS:
     case Paths.BOARDS:
     case Paths.CARDS:
+    case Paths.OAUTH_CONSENT:
       yield call(goToLogin);
 
       break;
