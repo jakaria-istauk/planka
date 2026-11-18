@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'О апликацији',
-      aboutPlanka_title: 'O PLANKA',
+      aboutTama_title: 'O Tama',
       accessToken: 'Токен за приступ',
       account: 'Налог',
       actions: 'Радње',
@@ -338,8 +338,8 @@ export default {
       others: 'Остали',
       passwordIsSet: 'Лозинка је подешена',
       phone: 'Телефон',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA користи <1><0>Apprise</0></1> за слање обавештења на преко 100 популарних сервиса.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama користи <1><0>Apprise</0></1> за слање обавештења на преко 100 популарних сервиса.',
       port: 'Порт',
       preferences: 'Својства',
       pressPasteShortcutToAddAttachmentFromClipboard:

@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Ilova haqida',
-      aboutPlanka_title: 'PLANKA haqida',
+      aboutTama_title: 'Tama haqida',
       accessToken: 'Kirish tokeni',
       account: 'Profil',
       actions: 'Amallar',
@@ -335,8 +335,8 @@ export default {
       others: 'Boshqalar',
       passwordIsSet: "Parol o'rnatilgan",
       phone: 'Telefon',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA 100 dan ortiq mashhur xizmatlarga bildirishnomalar yuborish uchun <1><0>Apprise</0></1> dan foydalanadi.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama 100 dan ortiq mashhur xizmatlarga bildirishnomalar yuborish uchun <1><0>Apprise</0></1> dan foydalanadi.',
       port: 'Port',
       preferences: 'Afzalliklar',
       pressPasteShortcutToAddAttachmentFromClipboard:

@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Σχετικά με την εφαρμογή',
-      aboutPlanka_title: 'Σχετικά με το PLANKA',
+      aboutTama_title: 'Σχετικά με το Tama',
       accessToken: 'Διακριτικό πρόσβασης',
       account: 'Λογαριασμός',
       actions: 'Ενέργειες',
@@ -351,8 +351,8 @@ export default {
       others: 'Άλλοι',
       passwordIsSet: 'Ο κωδικός πρόσβασης έχει οριστεί',
       phone: 'Τηλέφωνο',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'Το PLANKA χρησιμοποιεί το <1><0>Apprise</0></1> για να στέλνει ειδοποιήσεις σε πάνω από 100 δημοφιλείς υπηρεσίες.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Το Tama χρησιμοποιεί το <1><0>Apprise</0></1> για να στέλνει ειδοποιήσεις σε πάνω από 100 δημοφιλείς υπηρεσίες.',
       port: 'Θύρα',
       preferences: 'Προτιμήσεις',
       pressPasteShortcutToAddAttachmentFromClipboard:

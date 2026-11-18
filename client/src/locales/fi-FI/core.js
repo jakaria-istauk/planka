@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Tietoa sovelluksesta',
-      aboutPlanka_title: 'Tietoa PLANKAsta',
+      aboutTama_title: 'Tietoa Tamasta',
       accessToken: 'Käyttöoikeustunnus',
       account: 'Tili',
       actions: 'Toiminnot',
@@ -333,8 +333,8 @@ export default {
       others: 'Muut',
       passwordIsSet: 'Salasana on asetettu',
       phone: 'Puhelin',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA käyttää <1><0>Apprise</0></1> lähettääkseen ilmoituksia yli 100 suosittuun palveluun.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama käyttää <1><0>Apprise</0></1> lähettääkseen ilmoituksia yli 100 suosittuun palveluun.',
       port: 'Portti',
       preferences: 'Asetukset',
       pressPasteShortcutToAddAttachmentFromClipboard:

@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Az alkalmazásról',
-      aboutPlanka_title: 'PLANKA-ról',
+      aboutTama_title: 'Tama-ról',
       accessToken: 'Hozzáférési token',
       account: 'Fiók',
       actions: 'Műveletek',
@@ -332,8 +332,8 @@ export default {
       others: 'Egyebek',
       passwordIsSet: 'Jelszó beállítva',
       phone: 'Telefon',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'A PLANKA az <1><0>Apprise</0></1> szolgáltatást használja több mint 100 népszerű szolgáltatás értesítéseinek küldésére.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'A Tama az <1><0>Apprise</0></1> szolgáltatást használja több mint 100 népszerű szolgáltatás értesítéseinek küldésére.',
       port: 'Port',
       preferences: 'Beállítások',
       pressPasteShortcutToAddAttachmentFromClipboard:

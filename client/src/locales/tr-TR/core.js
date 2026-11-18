@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Uygulama hakkında',
-      aboutPlanka_title: 'PLANKA Hakkında',
+      aboutTama_title: 'Tama Hakkında',
       accessToken: 'Erişim jetonu',
       account: 'Hesap',
       actions: 'Eylemler',
@@ -339,8 +339,8 @@ export default {
       others: 'Diğerleri',
       passwordIsSet: 'Şifre ayarlandı',
       phone: 'Telefon',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        "PLANKA, 100'den fazla popüler servise bildirim göndermek için <1><0>Apprise</0></1> kullanır.",
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        "Tama, 100'den fazla popüler servise bildirim göndermek için <1><0>Apprise</0></1> kullanır.",
       port: 'Port',
       preferences: 'Tercihler',
       pressPasteShortcutToAddAttachmentFromClipboard:

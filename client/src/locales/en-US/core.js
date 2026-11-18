@@ -16,7 +16,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'About the App',
-      aboutPlanka_title: 'About PLANKA',
+      aboutTama_title: 'About Tama',
       accessToken: 'Access token',
       account: 'Account',
       actions: 'Actions',
@@ -46,9 +46,9 @@ export default {
       appConnectionRequestFailed:
         'The connection could not be completed. Start it again from the app.',
       appKeepsYourPermissions:
-        'It can only do what you can do in PLANKA, on the boards you can access',
+        'It can only do what you can do in Tama, on the boards you can access',
       applyFilter: 'Apply filter',
-      appWantsToAccessYourAccount: '<0>{{appName}}</0> wants to access your PLANKA account',
+      appWantsToAccessYourAccount: '<0>{{appName}}</0> wants to access your Tama account',
       archive: 'Archive',
       archiveCard_title: 'Archive Card',
       archiveCards_title: 'Archive Cards',
@@ -179,28 +179,28 @@ export default {
       invalidTotpCode: 'Invalid TOTP or recovery code',
       lastUsed: 'Last used',
       mcpChatgptDescription:
-        'ChatGPT connects as a custom connector and signs in with your PLANKA account.',
+        'ChatGPT connects as a custom connector and signs in with your Tama account.',
       mcpChatgptStep1:
         'In ChatGPT, open Settings → Apps & Connectors → Advanced settings and turn on Developer mode.',
       mcpChatgptStep2: 'Go back to Apps & Connectors and choose Create.',
       mcpChatgptStep3:
         'Enter a name, paste {{url}} as the MCP server URL and choose OAuth authentication.',
-      mcpChatgptStep4: 'Create it, then approve the request in PLANKA when ChatGPT opens it.',
-      mcpClaudeCodeDescription: 'Run this in a terminal to add PLANKA to Claude Code.',
+      mcpChatgptStep4: 'Create it, then approve the request in Tama when ChatGPT opens it.',
+      mcpClaudeCodeDescription: 'Run this in a terminal to add Tama to Claude Code.',
       mcpClaudeDescription:
-        'Works in claude.ai, Claude Desktop and the mobile apps. Claude signs in with your PLANKA account.',
+        'Works in claude.ai, Claude Desktop and the mobile apps. Claude signs in with your Tama account.',
       mcpClaudeStep1: 'In Claude, open Settings → Connectors.',
-      mcpClaudeStep2: 'Choose Add custom connector and give it a name, such as PLANKA.',
+      mcpClaudeStep2: 'Choose Add custom connector and give it a name, such as Tama.',
       mcpClaudeStep3: 'Paste {{url}} as the remote MCP server URL and add it.',
-      mcpClaudeStep4: 'Choose Connect, then approve the request in PLANKA when Claude opens it.',
+      mcpClaudeStep4: 'Choose Connect, then approve the request in Tama when Claude opens it.',
       mcpCodexDescription: 'Add this to the Codex configuration file.',
       mcpCreateApiKeyFirst: 'Create an API key below and it is filled in here.',
       mcpCursorDescription: 'Add this to the Cursor MCP configuration file.',
       mcpGeminiCliDescription: 'Add this to the Gemini CLI settings file.',
       mcpIntro:
-        'Connect AI assistants to PLANKA through the Model Context Protocol (MCP). They can read and update your boards as you, with your permissions.',
+        'Connect AI assistants to Tama through the Model Context Protocol (MCP). They can read and update your boards as you, with your permissions.',
       mcpNeedsPublicHttps:
-        'This assistant reaches PLANKA over the internet, so PLANKA must be served from a public HTTPS address.',
+        'This assistant reaches Tama over the internet, so Tama must be served from a public HTTPS address.',
       mcpOtherDescription:
         'Any client that supports remote MCP servers over Streamable HTTP with custom headers can connect with these details.',
       mcpServerUrl_title: 'MCP Server URL',
@@ -209,8 +209,7 @@ export default {
       never: 'Never',
       noApiKeyCreatedForMcp:
         'No API key yet. Assistants configured with a file or command need one.',
-      noConnectedApps:
-        'No apps are connected. Apps you approve through PLANKA sign-in appear here.',
+      noConnectedApps: 'No apps are connected. Apps you approve through Tama sign-in appear here.',
       noTrustedDevices: 'No trusted devices.',
       openBoardActions: 'Open board actions',
       openBoardSettings: 'Open board settings',
@@ -242,7 +241,7 @@ export default {
       security_title: 'Security',
       showHiddenProjects: 'Show hidden projects',
       signedInAs: 'Signed in as {{name}}',
-      signInWithPlanka: 'Sign in with PLANKA',
+      signInWithTama: 'Sign in with Tama',
       totpCode: 'TOTP code',
       totpOrRecoveryCode: 'TOTP or recovery code',
       trustedDevices_title: 'Trusted Browsers',
@@ -389,8 +388,8 @@ export default {
       others: 'Others',
       passwordIsSet: 'Password is set',
       phone: 'Phone',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA uses <1><0>Apprise</0></1> to send notifications to over 100 popular services.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama uses <1><0>Apprise</0></1> to send notifications to over 100 popular services.',
       port: 'Port',
       preferences: 'Preferences',
       pressPasteShortcutToAddAttachmentFromClipboard:

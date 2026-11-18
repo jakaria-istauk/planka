@@ -157,7 +157,7 @@ const McpPane = React.memo(() => {
             {t(client.descriptionKey)}{' '}
             <span className={styles.badge}>
               {client.authType === AuthTypes.OAUTH
-                ? t('common.signInWithPlanka')
+                ? t('common.signInWithTama')
                 : t('common.usesApiKey')}
             </span>
           </p>

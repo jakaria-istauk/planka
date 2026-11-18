@@ -120,13 +120,13 @@ const OauthConsent = React.memo(() => {
             <Icon fitted name="plug" />
           </span>
           <Icon fitted name="exchange" className={styles.connector} />
-          <span className={styles.plankaIcon}>
+          <span className={styles.tamaIcon}>
             <Icon fitted name="columns" />
           </span>
         </div>
         <h1 className={styles.title}>
           <Trans i18nKey="common.appWantsToAccessYourAccount" values={{ appName }}>
-            <strong>{appName}</strong> wants to access your PLANKA account
+            <strong>{appName}</strong> wants to access your Tama account
           </Trans>
         </h1>
         <p className={styles.signedInAs}>{t('common.signedInAs', { name: currentUser.name })}</p>

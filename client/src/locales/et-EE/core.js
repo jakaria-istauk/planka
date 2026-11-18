@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Rakenduse kohta',
-      aboutPlanka_title: 'PLANKA kohta',
+      aboutTama_title: 'Tama kohta',
       accessToken: 'Juurdepääsuluba',
       account: 'Konto',
       actions: 'Tegevused',
@@ -335,8 +335,8 @@ export default {
       others: 'Teised',
       passwordIsSet: 'Parool on määratud',
       phone: 'Telefon',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA kasutab <1><0>Apprise</0></1> teavitusteenuse, et teavitada üle 100 populaarset teenust.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama kasutab <1><0>Apprise</0></1> teavitusteenuse, et teavitada üle 100 populaarset teenust.',
       port: 'Port',
       preferences: 'Eelistused',
       pressPasteShortcutToAddAttachmentFromClipboard:

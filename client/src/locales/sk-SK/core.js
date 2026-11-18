@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'O aplikácii',
-      aboutPlanka_title: 'O Planke',
+      aboutTama_title: 'O Planke',
       accessToken: 'Prístupový token',
       account: 'Účet',
       actions: 'Akcia',
@@ -337,8 +337,8 @@ export default {
       others: 'Ostatní',
       passwordIsSet: 'Heslo je nastavené',
       phone: 'Telefón',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA používa <1><0>Apprise</0></1> na posielanie oznámení do viac ako 100 populárnych služieb.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama používa <1><0>Apprise</0></1> na posielanie oznámení do viac ako 100 populárnych služieb.',
       port: 'Port',
       preferences: 'Voľby',
       pressPasteShortcutToAddAttachmentFromClipboard:

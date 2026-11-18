@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Om appen',
-      aboutPlanka_title: 'Om PLANKA',
+      aboutTama_title: 'Om Tama',
       accessToken: 'Adgangstoken',
       account: 'Konto',
       actions: 'Handlinger',
@@ -309,8 +309,8 @@ export default {
       others: 'Andre',
       passwordIsSet: 'Adgangskode er indstillet',
       phone: 'Telefon',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA bruger <1><0>Apprise</0></1> til at sende notifikationer til over 100 populære tjenester.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama bruger <1><0>Apprise</0></1> til at sende notifikationer til over 100 populære tjenester.',
       port: 'Port',
       preferences: 'Præferencer',
       pressPasteShortcutToAddAttachmentFromClipboard:

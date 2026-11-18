@@ -26,7 +26,7 @@ const RecoveryCodesView = React.memo(({ codes, className }) => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'planka-recovery-codes.txt';
+    link.download = 'tama-recovery-codes.txt';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

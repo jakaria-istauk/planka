@@ -55,7 +55,7 @@ const Sidebar = React.memo(() => {
           <span className={styles.logoMark}>
             <Icon fitted name="columns" />
           </span>
-          PLANKA
+          Tama
         </Link>
         <nav className={styles.nav}>
           <Link

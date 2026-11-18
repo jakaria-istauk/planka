@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'حول التطبيق',
-      aboutPlanka_title: 'حول PLANKA',
+      aboutTama_title: 'حول Tama',
       accessToken: 'رمز الوصول',
       account: 'الحساب',
       actions: 'إجراءات',
@@ -330,7 +330,7 @@ export default {
       others: 'آخرون',
       passwordIsSet: 'تم تعيين كلمة المرور',
       phone: 'الهاتف',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
         'تستخدم بلانكا <1><0>Apprise</0></1> لإرسال الإشعارات إلى أكثر من 100 خدمة شائعة.',
       port: 'المنفذ',
       preferences: 'التفضيلات',

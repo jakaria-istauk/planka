@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Tentang aplikasi',
-      aboutPlanka_title: 'Tentang PLANKA',
+      aboutTama_title: 'Tentang Tama',
       accessToken: 'Token akses',
       account: 'Akun',
       actions: 'Tindakan',
@@ -336,8 +336,8 @@ export default {
       others: 'Lainnya',
       passwordIsSet: 'Kata sandi telah diatur',
       phone: 'Ponsel',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA menggunakan <1><0>Apprise</0></1> untuk mengirim notifikasi ke lebih dari 100 layanan populer.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama menggunakan <1><0>Apprise</0></1> untuk mengirim notifikasi ke lebih dari 100 layanan populer.',
       port: 'Port',
       preferences: 'Preferensi',
       pressPasteShortcutToAddAttachmentFromClipboard:

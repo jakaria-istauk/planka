@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Про додаток',
-      aboutPlanka_title: 'Про PLANKA',
+      aboutTama_title: 'Про Tama',
       accessToken: 'Токен доступу',
       account: 'Обліковий запис',
       actions: 'Дії',
@@ -343,8 +343,8 @@ export default {
       others: 'Інші',
       passwordIsSet: 'Пароль встановлено',
       phone: 'Телефон',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA використовує <1><0>Apprise</0></1> для надсилання сповіщень на понад 100 популярних сервісів.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama використовує <1><0>Apprise</0></1> для надсилання сповіщень на понад 100 популярних сервісів.',
       port: 'Порт',
       preferences: 'Уподобання',
       pressPasteShortcutToAddAttachmentFromClipboard:

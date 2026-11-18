@@ -50,7 +50,7 @@ export default [
     authType: AuthTypes.API_KEY,
     language: 'shell',
     buildSnippet: (url, apiKey) =>
-      `claude mcp add --transport http planka ${url} \\\n  --header "X-Api-Key: ${apiKey}"`,
+      `claude mcp add --transport http tama ${url} \\\n  --header "X-Api-Key: ${apiKey}"`,
   },
   {
     id: 'geminiCli',
@@ -62,7 +62,7 @@ export default [
     buildSnippet: (url, apiKey) =>
       toJson({
         mcpServers: {
-          planka: {
+          tama: {
             httpUrl: url,
             headers: {
               'X-Api-Key': apiKey,
@@ -79,7 +79,7 @@ export default [
     authType: AuthTypes.API_KEY,
     fileName: '~/.codex/config.toml',
     buildSnippet: (url, apiKey) =>
-      `[mcp_servers.planka]\nurl = "${url}"\nhttp_headers = { "X-Api-Key" = "${apiKey}" }`,
+      `[mcp_servers.tama]\nurl = "${url}"\nhttp_headers = { "X-Api-Key" = "${apiKey}" }`,
   },
   {
     id: 'cursor',
@@ -91,7 +91,7 @@ export default [
     buildSnippet: (url, apiKey) =>
       toJson({
         mcpServers: {
-          planka: {
+          tama: {
             url,
             headers: {
               'X-Api-Key': apiKey,
@@ -110,7 +110,7 @@ export default [
     buildSnippet: (url, apiKey) =>
       toJson({
         servers: {
-          planka: {
+          tama: {
             type: 'http',
             url,
             headers: {
@@ -130,7 +130,7 @@ export default [
     buildSnippet: (url, apiKey) =>
       toJson({
         mcpServers: {
-          planka: {
+          tama: {
             serverUrl: url,
             headers: {
               'X-Api-Key': apiKey,

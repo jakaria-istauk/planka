@@ -192,7 +192,7 @@ const Content = React.memo(() => {
               <Header
                 as="h1"
                 textAlign="center"
-                content={bootstrap.instanceName || 'PLANKA'}
+                content={bootstrap.instanceName || 'Tama'}
                 className={styles.formTitle}
               />
               <Header

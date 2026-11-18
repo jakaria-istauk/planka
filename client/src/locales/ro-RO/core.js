@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Despre aplicație',
-      aboutPlanka_title: 'Despre PLANKA',
+      aboutTama_title: 'Despre Tama',
       accessToken: 'Token de acces',
       account: 'Cont',
       actions: 'Acțiuni',
@@ -338,8 +338,8 @@ export default {
       others: 'Alții',
       passwordIsSet: 'Parola este setată',
       phone: 'Telefon',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA folosește <1><0>Apprise</0></1> pentru a trimite notificări către peste 100 de servicii populare.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama folosește <1><0>Apprise</0></1> pentru a trimite notificări către peste 100 de servicii populare.',
       port: 'Port',
       preferences: 'Preferințe',
       pressPasteShortcutToAddAttachmentFromClipboard:

@@ -37,10 +37,10 @@ const AboutPane = React.memo(() => {
 
   return (
     <Tab.Pane attached={false} className={styles.wrapper}>
-      <a href="https://github.com/plankanban/planka" target="_blank" rel="noreferrer">
+      <a href="https://github.com/jakaria-istauk/planka" target="_blank" rel="noreferrer">
         <Image centered src={aboutLogo} size="large" />
       </a>
-      <div className={styles.version}>Community v{version}</div>
+      <div className={styles.version}>v{version}</div>
       <Divider horizontal>
         <Header as="h4">
           {t('common.whatsNew', {

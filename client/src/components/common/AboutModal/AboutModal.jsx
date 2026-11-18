@@ -28,9 +28,9 @@ const AboutModal = React.memo(() => {
   const panes = [
     {
       menuItem: {
-        key: 'aboutPlanka',
+        key: 'aboutTama',
         icon: 'info circle',
-        content: t('common.aboutPlanka', {
+        content: t('common.aboutTama', {
           context: 'title',
         }),
       },
