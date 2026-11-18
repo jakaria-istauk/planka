@@ -22,6 +22,10 @@ module.exports = {
       version: sails.config.custom.version,
     };
 
+    if (sails.config.custom.signUpEnabled) {
+      data.isSignUpEnabled = true;
+    }
+
     if (inputs.user && inputs.user.role === User.Roles.ADMIN) {
       Object.assign(data, {
         activeUsersLimit: inputs.internalConfig.activeUsersLimit,

@@ -32,6 +32,10 @@
  *                   format: uri
  *                   description: URL to the customer management panel (conditionally added for admins if configured)
  *                   example: https://panel.example.com
+ *                 isSignUpEnabled:
+ *                   type: boolean
+ *                   description: Whether anyone can create an account from the login page (conditionally added if enabled)
+ *                   example: true
  *                 termsLanguages:
  *                   type: array
  *                   description: List of available language codes for terms localization
