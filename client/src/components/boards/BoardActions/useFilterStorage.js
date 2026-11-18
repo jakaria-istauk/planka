@@ -57,7 +57,9 @@ const isFilterMeaningful = (filter) =>
     (filter.excludedLabelIds && filter.excludedLabelIds.length > 0) ||
     (filter.listIds && filter.listIds.length > 0) ||
     !!filter.noMember ||
-    (filter.search && filter.search.length > 0));
+    (filter.search && filter.search.length > 0) ||
+    (filter.creatorUserIds && filter.creatorUserIds.length > 0) ||
+    !!filter.due);
 
 // One shape for both buckets. `userIds` / `labelIds` / `search` are the
 // fields Pro reads; the rest are Community-only and additive.
@@ -68,6 +70,8 @@ const normalizeFilter = (filter) => ({
   excludedLabelIds: filter.excludedLabelIds || [],
   listIds: filter.listIds || [],
   noMember: !!filter.noMember,
+  creatorUserIds: filter.creatorUserIds || [],
+  due: filter.due || null,
 });
 
 export const readLastFilter = (userId, boardId) => {

@@ -17,12 +17,14 @@ import { Input, Tooltip } from '../../../lib/custom-ui';
 import selectors from '../../../selectors';
 import entryActions from '../../../entry-actions';
 import { useNestedRef } from '../../../hooks';
-import { BoardViews, LabelFilterModes } from '../../../constants/Enums';
+import { BoardViews, DueFilterRanges, LabelFilterModes } from '../../../constants/Enums';
+import { isSameDueFilter, parseDueFilterDate } from '../../../utils/due-filter';
 import UserAvatar from '../../users/UserAvatar';
 import BoardMembershipsStep from '../../board-memberships/BoardMembershipsStep';
 import LabelChip from '../../labels/LabelChip';
 import LabelsStep from '../../labels/LabelsStep';
 import ListsFilterStep from '../../lists/ListsFilterStep';
+import DueFilterStep from './DueFilterStep';
 import SaveFilterStep from './SaveFilterStep';
 import SavedFiltersStep from './SavedFiltersStep';
 import {
@@ -64,6 +66,17 @@ FilterListChip.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
+const formatDueFilterLabel = (due, t) => {
+  if (due.range !== DueFilterRanges.CUSTOM) {
+    return t(`common.dueFilterRanges.${due.range}`);
+  }
+
+  const from = parseDueFilterDate(due.from).toLocaleDateString();
+  const to = parseDueFilterDate(due.to).toLocaleDateString();
+
+  return from === to ? from : `${from} – ${to}`;
+};
+
 const Filters = React.memo(() => {
   const board = useSelector(selectors.selectCurrentBoard);
   const userIds = useSelector(selectors.selectFilterUserIdsForCurrentBoard);
@@ -71,6 +84,8 @@ const Filters = React.memo(() => {
   const excludedLabelIds = useSelector(selectors.selectFilterExcludedLabelIdsForCurrentBoard);
   const listIds = useSelector(selectors.selectFilterListIdsForCurrentBoard);
   const currentUserId = useSelector(selectors.selectCurrentUserId);
+  const creatorUserIds = board.filterCreatorUserIds;
+  const due = board.filterDue;
 
   const withCurrentUserSelector = useSelector(
     (state) => !!selectors.selectCurrentUserMembershipForCurrentBoard(state),
@@ -145,8 +160,19 @@ const Filters = React.memo(() => {
       excludedLabelIds,
       listIds,
       noMember: !!board.filterNoMember,
+      creatorUserIds,
+      due,
     }),
-    [board.filterNoMember, board.search, excludedLabelIds, labelIds, listIds, userIds],
+    [
+      board.filterNoMember,
+      board.search,
+      creatorUserIds,
+      due,
+      excludedLabelIds,
+      labelIds,
+      listIds,
+      userIds,
+    ],
   );
 
   const hasFilter =
@@ -155,7 +181,9 @@ const Filters = React.memo(() => {
     excludedLabelIds.length > 0 ||
     listIds.length > 0 ||
     !!board.filterNoMember ||
-    currentFilter.search.length > 0;
+    currentFilter.search.length > 0 ||
+    creatorUserIds.length > 0 ||
+    !!due;
 
   const savedFilters = useMemo(
     () => readSavedFilters(currentUserId, board.id),
@@ -181,7 +209,9 @@ const Filters = React.memo(() => {
         sameIds(item.excludedLabelIds || [], currentFilter.excludedLabelIds) &&
         sameIds(item.listIds || [], currentFilter.listIds) &&
         !!item.noMember === currentFilter.noMember &&
-        (item.search || '') === currentFilter.search,
+        (item.search || '') === currentFilter.search &&
+        sameIds(item.creatorUserIds || [], currentFilter.creatorUserIds) &&
+        isSameDueFilter(item.due || null, currentFilter.due),
     );
 
     return match && match.id;
@@ -233,6 +263,47 @@ const Filters = React.memo(() => {
     },
     [dispatch, invalidateLastFilter],
   );
+
+  const handleCreatorSelect = useCallback(
+    (userId) => {
+      dispatch(entryActions.addCreatorToFilterInCurrentBoard(userId));
+    },
+    [dispatch],
+  );
+
+  const handleCreatorDeselect = useCallback(
+    (userId) => {
+      dispatch(entryActions.removeCreatorFromFilterInCurrentBoard(userId));
+      invalidateLastFilter();
+    },
+    [dispatch, invalidateLastFilter],
+  );
+
+  const handleCreatorClick = useCallback(
+    ({
+      currentTarget: {
+        dataset: { id: userId },
+      },
+    }) => {
+      handleCreatorDeselect(userId);
+    },
+    [handleCreatorDeselect],
+  );
+
+  const handleDueChange = useCallback(
+    (nextDue) => {
+      dispatch(entryActions.updateDueFilterInCurrentBoard(nextDue));
+
+      if (!nextDue) {
+        invalidateLastFilter();
+      }
+    },
+    [dispatch, invalidateLastFilter],
+  );
+
+  const handleDueClearClick = useCallback(() => {
+    handleDueChange(null);
+  }, [handleDueChange]);
 
   const handleListSelect = useCallback(
     (listId) => {
@@ -332,6 +403,14 @@ const Filters = React.memo(() => {
       dispatch(entryActions.removeNoMemberFromFilterInCurrentBoard());
     }
 
+    creatorUserIds.forEach((userId) => {
+      dispatch(entryActions.removeCreatorFromFilterInCurrentBoard(userId));
+    });
+
+    if (due) {
+      dispatch(entryActions.updateDueFilterInCurrentBoard(null));
+    }
+
     debouncedSearch.cancel();
     setSearch('');
 
@@ -341,8 +420,10 @@ const Filters = React.memo(() => {
   }, [
     board.filterNoMember,
     board.search,
+    creatorUserIds,
     debouncedSearch,
     dispatch,
+    due,
     excludedLabelIds,
     labelIds,
     listIds,
@@ -373,6 +454,14 @@ const Filters = React.memo(() => {
       (filter.listIds || []).forEach((listId) => {
         dispatch(entryActions.addListToFilterInCurrentBoard(listId));
       });
+
+      (filter.creatorUserIds || []).forEach((userId) => {
+        dispatch(entryActions.addCreatorToFilterInCurrentBoard(userId));
+      });
+
+      if (filter.due) {
+        dispatch(entryActions.updateDueFilterInCurrentBoard(filter.due));
+      }
 
       if (filter.search) {
         debouncedSearch.cancel();
@@ -437,6 +526,8 @@ const Filters = React.memo(() => {
   const BoardMembershipsPopup = usePopup(BoardMembershipsStep);
   const LabelsPopup = usePopup(LabelsStep);
   const ListsFilterPopup = usePopup(ListsFilterStep);
+  const CreatorsPopup = usePopup(BoardMembershipsStep);
+  const DueFilterPopup = usePopup(DueFilterStep);
   const SaveFilterPopup = usePopup(SaveFilterStep);
   const SavedFiltersPopup = usePopup(SavedFiltersStep);
 
@@ -504,6 +595,39 @@ const Filters = React.memo(() => {
             <LabelChip id={labelId} size="small" isExcluded onClick={handleLabelClick} />
           </span>
         ))}
+      </span>
+      <span className={styles.filter}>
+        <CreatorsPopup
+          currentUserIds={creatorUserIds}
+          title="common.filterByCreator"
+          onUserSelect={handleCreatorSelect}
+          onUserDeselect={handleCreatorDeselect}
+        >
+          <button type="button" className={styles.filterButton}>
+            <span className={styles.filterTitle}>{`${t('common.createdBy')}:`}</span>
+            {creatorUserIds.length === 0 && (
+              <span className={styles.filterLabel}>{t('common.all')}</span>
+            )}
+          </button>
+        </CreatorsPopup>
+        {creatorUserIds.map((userId) => (
+          <span key={userId} className={styles.filterItem}>
+            <UserAvatar id={userId} size="tiny" onClick={handleCreatorClick} />
+          </span>
+        ))}
+      </span>
+      <span className={styles.filter}>
+        <DueFilterPopup value={due} onChange={handleDueChange}>
+          <button type="button" className={styles.filterButton}>
+            <span className={styles.filterTitle}>{`${t('common.due')}:`}</span>
+            {!due && <span className={styles.filterLabel}>{t('common.anyTime')}</span>}
+          </button>
+        </DueFilterPopup>
+        {due && (
+          <button type="button" className={styles.filterButton} onClick={handleDueClearClick}>
+            <span className={styles.filterLabel}>{formatDueFilterLabel(due, t)}</span>
+          </button>
+        )}
       </span>
       {isListView && (
         <span className={styles.filter}>
