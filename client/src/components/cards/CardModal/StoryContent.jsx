@@ -408,7 +408,7 @@ const StoryContent = React.memo(() => {
                   <div className={styles.attachments}>
                     <span className={styles.attachment}>
                       <CreationDetailsPopup userId={card.creatorUserId}>
-                        <UserAvatar withCreatorIndicator id={card.creatorUserId} size="tiny" />
+                        <UserAvatar id={card.creatorUserId} size="tiny" />
                       </CreationDetailsPopup>
                     </span>
                   </div>

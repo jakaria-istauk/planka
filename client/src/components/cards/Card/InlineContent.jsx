@@ -57,7 +57,7 @@ const InlineContent = React.memo(({ cardId }) => {
   return (
     <div className={styles.wrapper}>
       <span className={styles.attachments}>
-        <UserAvatar withCreatorIndicator id={card.creatorUserId} />
+        <UserAvatar id={card.creatorUserId} />
       </span>
       {(notificationsTotal > 0 || listName) && (
         <span className={styles.attachments}>

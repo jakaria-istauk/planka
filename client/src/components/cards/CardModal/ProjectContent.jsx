@@ -383,7 +383,7 @@ const ProjectContent = React.memo(() => {
                   </div>
                   <span className={styles.attachment}>
                     <CreationDetailsPopup userId={card.creatorUserId}>
-                      <UserAvatar withCreatorIndicator id={card.creatorUserId} />
+                      <UserAvatar id={card.creatorUserId} />
                     </CreationDetailsPopup>
                   </span>
                 </div>
