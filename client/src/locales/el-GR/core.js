@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Σχετικά με την εφαρμογή',
-      aboutPlanka_title: 'Σχετικά με το PLANKA',
+      aboutTama_title: 'Σχετικά με το Tama',
       accessToken: 'Διακριτικό πρόσβασης',
       account: 'Λογαριασμός',
       actions: 'Ενέργειες',
@@ -171,21 +171,6 @@ export default {
       customFieldGroups_title: 'Ομάδες προσαρμοσμένων πεδίων',
       customField_title: 'Προσαρμοσμένο πεδίο',
       customFields_title: 'Προσαρμοσμένα πεδία',
-      discoverPlankaPro:
-        '✨ Περισσότερες λειτουργίες για τους πίνακές σας: Ανακαλύψτε το PLANKA Pro',
-      discoverPlankaPro_title: 'Ανακαλύψτε το PLANKA Pro',
-      upgradeTeamToPro_title: 'Αναβαθμίστε την ομάδα σε Pro',
-      proFeatureCalendar: '✨ Προβολή ημερολογίου για τους πίνακές σας',
-      proFeatureRecurringCards: '✨ Επαναλαμβανόμενες κάρτες και αυτοματισμός',
-      proFeatureGuestRoles: '✨ Ρόλοι επισκεπτών και εξωτερική συνεργασία',
-      proFeatureDashboard: '✨ Ένας πίνακας ελέγχου για όλα τα έργα',
-      proFeatureExport: '✨ Κάρτες σε PDF για τις αναφορές σας',
-      proFeatureMobile: '✨ Το PLANKA σε κινητά και tablet',
-      proFeatureSso: '✨ Σύνδεση με τον κατάλογο της εταιρείας σας (SSO)',
-      proFeatureThemes: '✨ Πέντε θέματα και το δικό σας χρώμα τονισμού',
-      proFeatureTimeline: '✨ Timeline: όλη η χρονιά σε έναν άξονα',
-      proTrialSelfHosted: '✨ Δοκιμάστε το PLANKA Pro για 30 ημέρες στον δικό σας διακομιστή',
-      dismissProBannerFor30Days: 'Κλείσιμο για 30 ημέρες',
       customerPanel_title: 'Πίνακας πελάτη',
       dangerZone_title: 'Επικίνδυνη ζώνη',
       disable2fa_title: 'Απενεργοποίηση ταυτοποίησης δύο παραγόντων',
@@ -366,8 +351,8 @@ export default {
       others: 'Άλλοι',
       passwordIsSet: 'Ο κωδικός πρόσβασης έχει οριστεί',
       phone: 'Τηλέφωνο',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'Το PLANKA χρησιμοποιεί το <1><0>Apprise</0></1> για να στέλνει ειδοποιήσεις σε πάνω από 100 δημοφιλείς υπηρεσίες.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Το Tama χρησιμοποιεί το <1><0>Apprise</0></1> για να στέλνει ειδοποιήσεις σε πάνω από 100 δημοφιλείς υπηρεσίες.',
       port: 'Θύρα',
       preferences: 'Προτιμήσεις',
       pressPasteShortcutToAddAttachmentFromClipboard:

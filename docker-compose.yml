@@ -1,6 +1,8 @@
 services:
-  planka:
-    image: ghcr.io/plankanban/planka:latest
+  tama:
+    image: ghcr.io/jakaria-istauk/tama:latest
+    # Builds from this checkout when the image has not been published or pulled
+    build: .
     restart: on-failure
     volumes:
       - data:/app/data
@@ -15,10 +17,10 @@ services:
       - 3000:1337
     environment:
       - BASE_URL=http://localhost:3000
-      - DATABASE_URL=postgresql://postgres@postgres/planka
+      - DATABASE_URL=postgresql://postgres@postgres/tama
 
       # Optionally store the database password in secrets:
-      # - DATABASE_URL=postgresql://postgres:$${DATABASE_PASSWORD}@postgres/planka
+      # - DATABASE_URL=postgresql://postgres:$${DATABASE_PASSWORD}@postgres/tama
       # - DATABASE_PASSWORD__FILE=/run/secrets/database_password
       # And add the following to the service:
       # secrets:
@@ -29,15 +31,15 @@ services:
       # Anything in the user name or password that is special in a URL has to be
       # percent-encoded: / as %2F, \ as %5C, : as %3A, @ as %40, % as %25.
 
-      # The schema PLANKA lives in. It must already exist, and the database user
+      # The schema Tama lives in. It must already exist, and the database user
       # must be able to create tables in it. Defaults to the connection's own
       # search path, which is usually public.
-      # - DATABASE_SCHEMA=planka
+      # - DATABASE_SCHEMA=tama
 
       # REPLACE THIS. Every access token is signed with it, so leaving the
       # published example value means anyone can mint a token for any account
       # on this instance. Generate one with: openssl rand -hex 32
-      # PLANKA warns about this on every start until you change it.
+      # Tama warns about this on every start until you change it.
       - SECRET_KEY=notsecretkey
       # Optionally store in secrets - then SECRET_KEY should not be set
       # - SECRET_KEY__FILE=/run/secrets/secret_key
@@ -53,7 +55,7 @@ services:
 
       # TLS is configured in DATABASE_URL and applies to the app and to the
       # migrations alike, e.g.
-      # - DATABASE_URL=postgresql://postgres@postgres/planka?sslmode=verify-full&sslrootcert=/run/secrets/ca.pem
+      # - DATABASE_URL=postgresql://postgres@postgres/tama?sslmode=verify-full&sslrootcert=/run/secrets/ca.pem
       # PGSSLMODE is still read when the connection string says nothing about TLS.
 
       # Accept a certificate that cannot be verified. Prefer sslrootcert above,
@@ -137,10 +139,10 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=planka
+      - POSTGRES_DB=tama
       - POSTGRES_HOST_AUTH_METHOD=trust
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d planka"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d tama"]
       interval: 10s
       timeout: 5s
       retries: 5

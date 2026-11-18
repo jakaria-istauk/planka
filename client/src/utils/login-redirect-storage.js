@@ -15,7 +15,7 @@ import Paths from '../constants/Paths';
 // Tab-scoped: the destination belongs to the interrupted visit, not to every
 // tab open on this machine.
 
-const KEY = 'planka:loginRedirect';
+const KEY = 'tama:loginRedirect';
 
 // Restorable destinations only: the ones Root renders and the core fetch can
 // resolve from the path. /login would loop, and the root path is where a login

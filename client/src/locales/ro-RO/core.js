@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Despre aplicație',
-      aboutPlanka_title: 'Despre PLANKA',
+      aboutTama_title: 'Despre Tama',
       accessToken: 'Token de acces',
       account: 'Cont',
       actions: 'Acțiuni',
@@ -155,20 +155,6 @@ export default {
       customFieldGroups_title: 'Grupuri de câmpuri personalizate',
       customField_title: 'Câmp personalizat',
       customFields_title: 'Câmpuri personalizate',
-      discoverPlankaPro: '✨ Mai multe funcții pentru panourile tale: Descoperă PLANKA Pro',
-      discoverPlankaPro_title: 'Descoperiți PLANKA Pro',
-      upgradeTeamToPro_title: 'Actualizați echipa la Pro',
-      proFeatureCalendar: '✨ Vizualizare calendar pentru panourile tale',
-      proFeatureRecurringCards: '✨ Carduri recurente și automatizare',
-      proFeatureGuestRoles: '✨ Roluri invitat și colaborare externă',
-      proFeatureDashboard: '✨ Un singur tablou de bord pentru toate proiectele',
-      proFeatureExport: '✨ Carduri în format PDF pentru rapoartele tale',
-      proFeatureMobile: '✨ PLANKA pe telefon și tabletă',
-      proFeatureSso: '✨ Autentificare cu directorul companiei tale (SSO)',
-      proFeatureThemes: '✨ Cinci teme și propria ta culoare de accent',
-      proFeatureTimeline: '✨ Cronologie: un an întreg pe o singură axă',
-      proTrialSelfHosted: '✨ Încearcă PLANKA Pro 30 de zile pe serverul tău',
-      dismissProBannerFor30Days: 'Închide pentru 30 de zile',
       customerPanel_title: 'Panoul clientului',
       dangerZone_title: 'Zona periculoasă',
       disable2fa_title: 'Dezactivați autentificarea cu doi factori',
@@ -352,8 +338,8 @@ export default {
       others: 'Alții',
       passwordIsSet: 'Parola este setată',
       phone: 'Telefon',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA folosește <1><0>Apprise</0></1> pentru a trimite notificări către peste 100 de servicii populare.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama folosește <1><0>Apprise</0></1> pentru a trimite notificări către peste 100 de servicii populare.',
       port: 'Port',
       preferences: 'Preferințe',
       pressPasteShortcutToAddAttachmentFromClipboard:

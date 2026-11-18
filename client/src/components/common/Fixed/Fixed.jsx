@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 
 import selectors from '../../../selectors';
 import Header from '../Header';
-import PromoBanner from '../PromoBanner/PromoBanner';
 import HomeActions from '../HomeActions';
 import Project from '../../projects/Project';
 import BoardActions from '../../boards/BoardActions';
@@ -23,8 +22,8 @@ const Fixed = React.memo(() => {
 
   const wrapperRef = useRef(null);
 
-  // The content below starts where this bar ends, and its height changes with the page,
-  // the banner and the window width, so it is published as a variable rather than guessed
+  // The content below starts where this bar ends, and its height changes with the page
+  // and the window width, so it is published as a variable rather than guessed
   useLayoutEffect(() => {
     const { style } = document.documentElement;
 
@@ -43,7 +42,6 @@ const Fixed = React.memo(() => {
   return (
     <div ref={wrapperRef} className={styles.wrapper}>
       <Header />
-      <PromoBanner />
       {projectId === undefined && <HomeActions />}
       {projectId && <Project />}
       {board && !board.isFetching && <BoardActions />}

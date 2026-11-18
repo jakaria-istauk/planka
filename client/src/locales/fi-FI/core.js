@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Tietoa sovelluksesta',
-      aboutPlanka_title: 'Tietoa PLANKAsta',
+      aboutTama_title: 'Tietoa Tamasta',
       accessToken: 'Käyttöoikeustunnus',
       account: 'Tili',
       actions: 'Toiminnot',
@@ -154,20 +154,6 @@ export default {
       customFieldGroups_title: 'Mukautettujen kenttien ryhmät',
       customField_title: 'Mukautettu kenttä',
       customFields_title: 'Mukautetut kentät',
-      discoverPlankaPro: '✨ Lisää ominaisuuksia tauluillesi: Tutustu PLANKA Pro:hon',
-      discoverPlankaPro_title: 'Tutustu PLANKA Pro:hon',
-      upgradeTeamToPro_title: 'Päivitä tiimi Pro-versioon',
-      proFeatureCalendar: '✨ Kalenterinäkymä tauluillesi',
-      proFeatureRecurringCards: '✨ Toistuvat kortit ja automaatio',
-      proFeatureGuestRoles: '✨ Vierasroolit ja ulkoinen yhteistyö',
-      proFeatureDashboard: '✨ Yksi koontinäyttö kaikille projekteille',
-      proFeatureExport: '✨ Kortit PDF-muodossa raportointiin',
-      proFeatureMobile: '✨ PLANKA puhelimissa ja tableteissa',
-      proFeatureSso: '✨ Kirjautuminen yrityksesi hakemistolla (SSO)',
-      proFeatureThemes: '✨ Viisi teemaa ja oma korostusväri',
-      proFeatureTimeline: '✨ Aikajana: koko vuosi yhdellä akselilla',
-      proTrialSelfHosted: '✨ Kokeile PLANKA Pro:ta 30 päivää omalla palvelimellasi',
-      dismissProBannerFor30Days: 'Sulje 30 päiväksi',
       customerPanel_title: 'Asiakaspaneeli',
       dangerZone_title: 'Vaaravyöhyke',
       disable2fa_title: 'Poista kaksivaiheinen tunnistautuminen käytöstä',
@@ -347,8 +333,8 @@ export default {
       others: 'Muut',
       passwordIsSet: 'Salasana on asetettu',
       phone: 'Puhelin',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA käyttää <1><0>Apprise</0></1> lähettääkseen ilmoituksia yli 100 suosittuun palveluun.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama käyttää <1><0>Apprise</0></1> lähettääkseen ilmoituksia yli 100 suosittuun palveluun.',
       port: 'Portti',
       preferences: 'Asetukset',
       pressPasteShortcutToAddAttachmentFromClipboard:

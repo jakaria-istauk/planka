@@ -38,11 +38,11 @@ const logFormat = winston.format.combine(
  * The transport has to be left unbuilt rather than added and removed again:
  * Winston creates the directory and opens the file inside the constructor, so
  * a transport that is built and then dropped stops writing but still leaves an
- * empty logs/planka.log behind, on every start, forever.
+ * empty logs/tama.log behind, on every start, forever.
  *
  * Set LOG_FILE=none to keep the console output only.
  */
-const logFile = process.env.LOG_FILE || `${process.cwd()}/logs/planka.log`;
+const logFile = process.env.LOG_FILE || `${process.cwd()}/logs/tama.log`;
 const isLogFileEnabled = logFile !== 'none';
 
 /**
@@ -53,7 +53,7 @@ const isLogFileEnabled = logFile !== 'none';
  *
  * `tailable` keeps the newest lines in the file LOG_FILE actually names, so
  * whatever was reading that path — `tail -f`, a collector, a support request
- * asking for logs/planka.log — goes on finding them where it found them before.
+ * asking for logs/tama.log — goes on finding them where it found them before.
  */
 const LOG_FILE_MAX_SIZE = 10 * 1024 * 1024;
 const LOG_FILE_MAX_COUNT = 3;

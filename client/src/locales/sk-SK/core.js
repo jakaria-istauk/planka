@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'O aplikácii',
-      aboutPlanka_title: 'O Planke',
+      aboutTama_title: 'O Planke',
       accessToken: 'Prístupový token',
       account: 'Účet',
       actions: 'Akcia',
@@ -152,20 +152,6 @@ export default {
       customFieldGroups_title: 'Skupiny vlastných polí',
       customField_title: 'Vlastné pole',
       customFields_title: 'Vlastné polia',
-      discoverPlankaPro: '✨ Viac funkcií pre vaše tabule: Objavte PLANKA Pro',
-      discoverPlankaPro_title: 'Objavte PLANKA Pro',
-      upgradeTeamToPro_title: 'Inovovať tím na Pro',
-      proFeatureCalendar: '✨ Zobrazenie kalendára pre vaše tabule',
-      proFeatureRecurringCards: '✨ Opakujúce sa karty a automatizácia',
-      proFeatureGuestRoles: '✨ Roly hosťa a externá spolupráca',
-      proFeatureDashboard: '✨ Jeden dashboard naprieč všetkými projektmi',
-      proFeatureExport: '✨ Karty ako PDF pre vaše reporty',
-      proFeatureMobile: '✨ PLANKA na mobiloch a tabletoch',
-      proFeatureSso: '✨ Prihlásenie cez firemný adresár (SSO)',
-      proFeatureThemes: '✨ Päť tém a vlastná farba zvýraznenia',
-      proFeatureTimeline: '✨ Timeline: celý rok na jednej osi',
-      proTrialSelfHosted: '✨ Vyskúšajte PLANKA Pro na 30 dní na vlastnom serveri',
-      dismissProBannerFor30Days: 'Zavrieť na 30 dní',
       customerPanel_title: 'Panel zákazníka',
       dangerZone_title: 'Nebezpečná zóna',
       disable2fa_title: 'Deaktivovať dvojfaktorové overenie',
@@ -351,8 +337,8 @@ export default {
       others: 'Ostatní',
       passwordIsSet: 'Heslo je nastavené',
       phone: 'Telefón',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA používa <1><0>Apprise</0></1> na posielanie oznámení do viac ako 100 populárnych služieb.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama používa <1><0>Apprise</0></1> na posielanie oznámení do viac ako 100 populárnych služieb.',
       port: 'Port',
       preferences: 'Voľby',
       pressPasteShortcutToAddAttachmentFromClipboard:

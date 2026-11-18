@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'О приложении',
-      aboutPlanka_title: 'О PLANKA',
+      aboutTama_title: 'О Tama',
       accessToken: 'Токен доступа',
       account: 'Учетная запись',
       actions: 'Действия',
@@ -158,20 +158,6 @@ export default {
       customFieldGroups_title: 'Группы настраиваемых полей',
       customField_title: 'Настраиваемое поле',
       customFields_title: 'Настраиваемые поля',
-      discoverPlankaPro: '✨ Больше возможностей для ваших досок: Откройте PLANKA Pro',
-      discoverPlankaPro_title: 'Откройте PLANKA Pro',
-      upgradeTeamToPro_title: 'Улучшить команду до Pro',
-      proFeatureCalendar: '✨ Вид календаря для ваших досок',
-      proFeatureRecurringCards: '✨ Повторяющиеся карточки и автоматизация',
-      proFeatureGuestRoles: '✨ Роли гостей и внешнее сотрудничество',
-      proFeatureDashboard: '✨ Единая панель для всех проектов',
-      proFeatureExport: '✨ Карточки в PDF для ваших отчётов',
-      proFeatureMobile: '✨ PLANKA на телефонах и планшетах',
-      proFeatureSso: '✨ Вход через корпоративный каталог (SSO)',
-      proFeatureThemes: '✨ Пять тем и собственный акцентный цвет',
-      proFeatureTimeline: '✨ Таймлайн: целый год на одной оси',
-      proTrialSelfHosted: '✨ Попробуйте PLANKA Pro 30 дней на своём сервере',
-      dismissProBannerFor30Days: 'Закрыть на 30 дней',
       customerPanel_title: 'Панель клиента',
       dangerZone_title: 'Опасная зона',
       date: 'Дата',
@@ -324,8 +310,8 @@ export default {
       others: 'Другие',
       passwordIsSet: 'Пароль установлен',
       phone: 'Телефон',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA использует <1><0>Apprise</0></1> для отправки уведомлений в более чем 100 популярных сервисов.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama использует <1><0>Apprise</0></1> для отправки уведомлений в более чем 100 популярных сервисов.',
       port: 'Порт',
       preferences: 'Предпочтения',
       pressPasteShortcutToAddAttachmentFromClipboard:

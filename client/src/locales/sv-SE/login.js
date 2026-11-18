@@ -17,7 +17,6 @@ export default {
       or: 'Eller',
       pageNotFound_title: 'Sidan kunde inte hittas',
       password: 'Lösenord',
-      poweredByPlanka: 'Drivs av <1>PLANKA</1>',
       serverConnectionFailed: 'Anslutningen till servern misslyckades',
       totpSessionExpired: 'TOTP-sessionen har gått ut. Logga in igen.',
       trustThisBrowser: 'Lita på den här webbläsaren i 30 dagar',

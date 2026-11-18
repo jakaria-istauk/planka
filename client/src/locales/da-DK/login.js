@@ -17,7 +17,6 @@ export default {
       or: 'Eller',
       pageNotFound_title: 'Side ikke fundet',
       password: 'Adgangskode',
-      poweredByPlanka: 'Drevet af <1>PLANKA</1>',
       serverConnectionFailed: 'Ingen forbindelse til serveren',
       totpSessionExpired: 'TOTP-sessionen er udløbet. Log på igen.',
       trustThisBrowser: 'Stol på denne browser i 30 dage',

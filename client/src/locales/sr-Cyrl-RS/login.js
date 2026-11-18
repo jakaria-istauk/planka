@@ -17,7 +17,6 @@ export default {
       or: 'Или',
       pageNotFound_title: 'Страница није пронађена',
       password: 'Лозинка',
-      poweredByPlanka: 'Покреће <1>PLANKA</1>',
       serverConnectionFailed: 'Неуспешна конекција са сервером',
       totpSessionExpired: 'TOTP сесија је истекла. Пријавите се поново.',
       trustThisBrowser: 'Веруј овом веб прегледачу 30 дана',

@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Về ứng dụng',
-      aboutPlanka_title: 'Về PLANKA',
+      aboutTama_title: 'Về Tama',
       accessToken: 'Access token',
       account: 'Tài khoản',
       actions: 'Thao tác',
@@ -158,20 +158,6 @@ export default {
       customFieldGroups_title: 'Các nhóm trường tùy chỉnh',
       customField_title: 'Trường tùy chỉnh',
       customFields_title: 'Các trường tùy chỉnh',
-      discoverPlankaPro: '✨ Nhiều tính năng hơn cho bảng của bạn: Khám phá PLANKA Pro',
-      discoverPlankaPro_title: 'Khám phá PLANKA Pro',
-      upgradeTeamToPro_title: 'Nâng cấp nhóm lên Pro',
-      proFeatureCalendar: '✨ Chế độ xem lịch cho bảng của bạn',
-      proFeatureRecurringCards: '✨ Thẻ định kỳ và tự động hóa',
-      proFeatureGuestRoles: '✨ Vai trò khách và cộng tác bên ngoài',
-      proFeatureDashboard: '✨ Một bảng điều khiển cho mọi dự án',
-      proFeatureExport: '✨ Xuất thẻ ra PDF cho báo cáo của bạn',
-      proFeatureMobile: '✨ PLANKA trên điện thoại và máy tính bảng',
-      proFeatureSso: '✨ Đăng nhập bằng thư mục công ty của bạn (SSO)',
-      proFeatureThemes: '✨ Năm giao diện và màu nhấn của riêng bạn',
-      proFeatureTimeline: '✨ Dòng thời gian: cả năm trên một trục',
-      proTrialSelfHosted: '✨ Dùng thử PLANKA Pro 30 ngày trên máy chủ của bạn',
-      dismissProBannerFor30Days: 'Đóng trong 30 ngày',
       customerPanel_title: 'Bảng điều khiển khách hàng',
       dangerZone_title: 'Khu vực nguy hiểm',
       disable2fa_title: 'Tắt xác thực hai yếu tố',
@@ -348,8 +334,8 @@ export default {
       others: 'Khác',
       passwordIsSet: 'Mật khẩu đã được thiết lập',
       phone: 'Điện thoại',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA sử dụng <1><0>Apprise</0></1> để gửi thông báo tới hơn 100 dịch vụ phổ biến.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama sử dụng <1><0>Apprise</0></1> để gửi thông báo tới hơn 100 dịch vụ phổ biến.',
       port: 'Cổng',
       preferences: 'Tùy chọn',
       pressPasteShortcutToAddAttachmentFromClipboard:

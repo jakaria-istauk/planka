@@ -45,8 +45,8 @@ const ViewModes = {
 
 // The preference outlives the popup (which remounts on every open) and the
 // browser session, so it lives in localStorage rather than in the store. The
-// `plankaLabels` namespace keeps it clear of any other module's keys.
-const VIEW_MODE_STORAGE_KEY = 'plankaLabels.viewMode';
+// `tamaLabels` namespace keeps it clear of any other module's keys.
+const VIEW_MODE_STORAGE_KEY = 'tamaLabels.viewMode';
 
 const loadViewMode = () => {
   try {

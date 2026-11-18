@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Pulls master and rebuilds the PLANKA container. Run by webhook-server.js
+# Pulls master and rebuilds the Tama container. Run by webhook-server.js
 # with the commit SHA that passed CI.
 
 set -euo pipefail
@@ -20,5 +20,5 @@ fi
 git checkout --quiet master
 git merge --quiet --ff-only "$SHA"
 
-docker compose up -d --build --wait planka
+docker compose up -d --build --wait --remove-orphans tama
 docker image prune -f >/dev/null

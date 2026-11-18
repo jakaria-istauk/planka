@@ -63,7 +63,7 @@ describe('LocalFileManager.read with a narrower root', () => {
   let previousSails;
 
   before(() => {
-    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'planka-static-'));
+    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'tama-static-'));
     fs.mkdirSync(path.join(tmpDir, 'protected/user-avatars/1'), { recursive: true });
     fs.mkdirSync(path.join(tmpDir, 'private/attachments/1'), { recursive: true });
     fs.writeFileSync(path.join(tmpDir, 'protected/user-avatars/1/a.png'), 'avatar');

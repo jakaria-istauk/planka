@@ -17,7 +17,6 @@ export default {
       or: 'Of',
       pageNotFound_title: 'Pagina niet gevonden',
       password: 'Wachtwoord',
-      poweredByPlanka: 'Mogelijk gemaakt door <1>PLANKA</1>',
       serverConnectionFailed: 'Verbinding met de server mislukt',
       totpSessionExpired: 'TOTP-sessie verlopen. Log opnieuw in.',
       trustThisBrowser: 'Deze browser 30 dagen vertrouwen',

@@ -1,40 +1,39 @@
 apiVersion: v2
-name: planka
-description: A Helm chart to deploy PLANKA and it's dependencies.
+name: tama
+description: A Helm chart to deploy Tama and it's dependencies.
 
 # Where the chart, the project and its documentation live. Artifact Hub reads
 # these to build the listing, so they are not decoration.
-home: https://planka.app
-icon: https://raw.githubusercontent.com/plankanban/planka/master/assets/logo.png
+home: https://github.com/jakaria-istauk/planka
+icon: https://raw.githubusercontent.com/jakaria-istauk/planka/master/assets/logo.png
 sources:
-  - https://github.com/plankanban/planka
-  - https://github.com/plankanban/planka/tree/master/charts/planka
+  - https://github.com/jakaria-istauk/planka
+  - https://github.com/jakaria-istauk/planka/tree/master/charts/tama
 
 keywords:
-  - planka
+  - tama
   - kanban
   - project-management
   - trello
   - collaboration
 
 maintainers:
-  - name: PLANKA
-    email: security@planka.group
-    url: https://github.com/plankanban/planka
+  - name: Jakaria Istauk
+    url: https://github.com/jakaria-istauk
 
 annotations:
   artifacthub.io/links: |
     - name: Chart documentation
-      url: https://docs.planka.cloud/docs/installation/kubernetes/helm-chart/
+      url: https://github.com/jakaria-istauk/planka/tree/master/charts/tama
     - name: Chart source
-      url: https://github.com/plankanban/planka/tree/master/charts/planka
+      url: https://github.com/jakaria-istauk/planka/tree/master/charts/tama
     - name: Issue tracker
-      url: https://github.com/plankanban/planka/issues
+      url: https://github.com/jakaria-istauk/planka/issues
     - name: License
-      url: https://github.com/plankanban/planka/blob/master/LICENSE.md
+      url: https://github.com/jakaria-istauk/planka/blob/master/LICENSE.md
   artifacthub.io/images: |
-    - name: planka
-      image: ghcr.io/plankanban/planka
+    - name: tama
+      image: ghcr.io/jakaria-istauk/tama
 
 # A chart can be either an 'application' or a 'library' chart.
 #

@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: '關於應用程式',
-      aboutPlanka_title: '關於 PLANKA',
+      aboutTama_title: '關於 Tama',
       accessToken: '存取權杖',
       account: '帳號',
       actions: '操作',
@@ -138,20 +138,6 @@ export default {
       customFieldGroups_title: '自定義欄位群組',
       customField_title: '自定義欄位',
       customFields_title: '自定義欄位',
-      discoverPlankaPro: '✨ 為您的看板提供更多功能：探索 PLANKA Pro',
-      discoverPlankaPro_title: '探索 PLANKA Pro',
-      upgradeTeamToPro_title: '將團隊升級至 Pro',
-      proFeatureCalendar: '✨ 看板的日曆檢視',
-      proFeatureRecurringCards: '✨ 重複卡片與自動化',
-      proFeatureGuestRoles: '✨ 訪客角色與外部協作',
-      proFeatureDashboard: '✨ 跨所有專案的單一儀表板',
-      proFeatureExport: '✨ 將卡片匯出為 PDF 供報告使用',
-      proFeatureMobile: '✨ 在手機與平板上使用 PLANKA',
-      proFeatureSso: '✨ 使用公司目錄登入 (SSO)',
-      proFeatureThemes: '✨ 五種佈景主題與您專屬的強調色',
-      proFeatureTimeline: '✨ 時間軸：一整年在同一條軸線上',
-      proTrialSelfHosted: '✨ 在您自己的伺服器上試用 PLANKA Pro 30 天',
-      dismissProBannerFor30Days: '關閉 30 天',
       customerPanel_title: '客戶面板',
       dangerZone_title: '危險區域',
       disable2fa_title: '停用雙因素驗證',
@@ -324,8 +310,8 @@ export default {
       others: '其他',
       passwordIsSet: '密碼已設定',
       phone: '電話',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA 使用 <1><0>Apprise</0></1> 向超過 100 個熱門服務發送通知。',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama 使用 <1><0>Apprise</0></1> 向超過 100 個熱門服務發送通知。',
       port: '連接埠',
       preferences: '偏好設定',
       pressPasteShortcutToAddAttachmentFromClipboard:

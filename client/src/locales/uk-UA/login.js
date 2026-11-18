@@ -17,7 +17,6 @@ export default {
       or: 'Або',
       pageNotFound_title: 'Сторінку не знайдено',
       password: 'Пароль',
-      poweredByPlanka: 'Працює на <1>PLANKA</1>',
       serverConnectionFailed: 'Не вдалося підключитися до сервера',
       totpSessionExpired: 'Термін дії TOTP-сеансу минув. Будь ласка, увійдіть знову.',
       trustThisBrowser: 'Довіряти цьому браузеру протягом 30 днів',

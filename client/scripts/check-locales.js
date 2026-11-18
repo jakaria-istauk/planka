@@ -73,7 +73,7 @@ function pluralCategories(language) {
 
 // The check only needs module resolution, so it skips the app's Vite config and its plugin
 // chain, and keeps its cache in a throwaway directory rather than invalidating the app's.
-const cacheDir = mkdtempSync(path.join(os.tmpdir(), 'planka-locales-'));
+const cacheDir = mkdtempSync(path.join(os.tmpdir(), 'tama-locales-'));
 
 const server = await createServer({
   root: path.dirname(localesDir),

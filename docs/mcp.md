@@ -1,6 +1,6 @@
 # MCP server
 
-PLANKA serves a [Model Context Protocol](https://modelcontextprotocol.io) server at `POST /api/mcp`, so AI clients can read and edit boards as a PLANKA user.
+Tama serves a [Model Context Protocol](https://modelcontextprotocol.io) server at `POST /api/mcp`, so AI clients can read and edit boards as a Tama user.
 
 - Transport: stateless streamable HTTP with JSON responses. `GET` and `DELETE` answer `405`.
 - Auth: an API key in the `X-Api-Key` header, or an OAuth 2.1 access token (`Authorization: Bearer …`). Session access tokens and the internal access token are rejected.
@@ -10,12 +10,12 @@ PLANKA serves a [Model Context Protocol](https://modelcontextprotocol.io) server
 
 Every user can connect assistants themselves in **Settings → AI Assistants**. The tab shows the server URL, step-by-step setup for Claude, ChatGPT, Claude Code, Gemini CLI, Codex, Cursor, VS Code and Windsurf, the user's own API key, and the apps connected through OAuth (with a Disconnect button).
 
-- **Claude (claude.ai, Desktop, mobile) and ChatGPT** connect through OAuth: add PLANKA as a custom connector with the server URL, and approve the request on PLANKA's consent screen. These assistants reach PLANKA from the internet, so PLANKA must be served from a public HTTPS address.
+- **Claude (claude.ai, Desktop, mobile) and ChatGPT** connect through OAuth: add Tama as a custom connector with the server URL, and approve the request on Tama's consent screen. These assistants reach Tama from the internet, so Tama must be served from a public HTTPS address.
 - **Claude Code, Gemini CLI, Codex, Cursor, VS Code, Windsurf and other clients** use an API key from a command or config file. The tab fills the key into the snippet right after it is created.
 
 ## OAuth
 
-PLANKA is its own OAuth 2.1 authorization server for the MCP endpoint:
+Tama is its own OAuth 2.1 authorization server for the MCP endpoint:
 
 | Endpoint | Purpose |
 | --- | --- |
@@ -29,7 +29,7 @@ PLANKA is its own OAuth 2.1 authorization server for the MCP endpoint:
 - Access tokens last 1 hour and only work on `/api/mcp`. Refresh tokens last 30 days and rotate on every use.
 - Only hashes of client secrets, codes and tokens are stored.
 - Users see and disconnect their connected apps in Settings → AI Assistants (`GET` and `DELETE /api/oauth/connections`).
-- The issuer is `BASE_URL`. When PLANKA runs under a sub-path, the reverse proxy must also forward the `/.well-known/oauth-*` paths at the host root.
+- The issuer is `BASE_URL`. When Tama runs under a sub-path, the reverse proxy must also forward the `/.well-known/oauth-*` paths at the host root.
 
 ## Get an API key
 
@@ -40,7 +40,7 @@ Users create, regenerate and delete their own key in Settings → AI Assistants 
 Claude Code:
 
 ```sh
-claude mcp add --transport http planka https://planka.example.com/api/mcp \
+claude mcp add --transport http tama https://tama.example.com/api/mcp \
   --header "X-Api-Key: <api key>"
 ```
 
@@ -49,9 +49,9 @@ Any client that reads an `.mcp.json`-style config:
 ```json
 {
   "mcpServers": {
-    "planka": {
+    "tama": {
       "type": "http",
-      "url": "https://planka.example.com/api/mcp",
+      "url": "https://tama.example.com/api/mcp",
       "headers": {
         "X-Api-Key": "<api key>"
       }

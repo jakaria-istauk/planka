@@ -20,7 +20,7 @@
 
 import { BoardViews } from '../constants/Enums';
 
-const KEY = 'planka:boardView';
+const KEY = 'tama:boardView';
 
 const VIEWS = new Set(Object.values(BoardViews));
 

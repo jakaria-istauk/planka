@@ -17,7 +17,6 @@ export default {
       or: 'Ou',
       pageNotFound_title: 'Página não encontrada',
       password: 'Palavra-passe',
-      poweredByPlanka: 'Desenvolvido por <1>PLANKA</1>',
       serverConnectionFailed: 'Falha na ligação ao servidor',
       totpSessionExpired: 'A sessão TOTP expirou. Inicie sessão novamente.',
       trustThisBrowser: 'Confiar neste navegador durante 30 dias',

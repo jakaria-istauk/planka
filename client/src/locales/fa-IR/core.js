@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'درباره برنامه',
-      aboutPlanka_title: 'درباره PLANKA',
+      aboutTama_title: 'درباره Tama',
       accessToken: 'رمز دسترسی',
       account: 'حساب کاربری',
       actions: 'اقدامات',
@@ -160,20 +160,6 @@ export default {
       customFieldGroups_title: 'گروه‌های فیلد سفارشی',
       customField_title: 'فیلد سفارشی',
       customFields_title: 'فیلدهای سفارشی',
-      discoverPlankaPro: '✨ ویژگی‌های بیشتر برای تابلوهای شما: PLANKA Pro را کشف کنید',
-      discoverPlankaPro_title: 'PLANKA Pro را کشف کنید',
-      upgradeTeamToPro_title: 'ارتقای تیم به Pro',
-      proFeatureCalendar: '✨ نمای تقویم برای تابلوهای شما',
-      proFeatureRecurringCards: '✨ کارت‌های تکرارشونده و خودکارسازی',
-      proFeatureGuestRoles: '✨ نقش‌های مهمان و همکاری خارجی',
-      proFeatureDashboard: '✨ یک داشبورد برای همه پروژه‌ها',
-      proFeatureExport: '✨ کارت‌ها به صورت PDF برای گزارش‌های شما',
-      proFeatureMobile: '✨ PLANKA روی موبایل و تبلت',
-      proFeatureSso: '✨ ورود با دایرکتوری سازمان شما (SSO)',
-      proFeatureThemes: '✨ پنج پوسته و رنگ تأکیدی دلخواه شما',
-      proFeatureTimeline: '✨ تایم‌لاین: یک سال کامل روی یک محور',
-      proTrialSelfHosted: '✨ PLANKA Pro را ۳۰ روز روی سرور خودتان امتحان کنید',
-      dismissProBannerFor30Days: 'بستن برای ۳۰ روز',
       customerPanel_title: 'پنل مشتری',
       dangerZone_title: 'منطقه خطر',
       date: 'تاریخ',
@@ -326,7 +312,7 @@ export default {
       others: 'دیگران',
       passwordIsSet: 'رمز عبور تنظیم شده است',
       phone: 'تلفن',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
         'پلانکا از <1><0>Apprise</0></1> برای ارسال اعلان به بیش از ۱۰۰ سرویس محبوب استفاده می‌کند.',
       port: 'پورت',
       preferences: 'ترجیحات',

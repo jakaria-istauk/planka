@@ -17,7 +17,6 @@ export default {
       or: 'Atau',
       pageNotFound_title: 'Halaman tidak ditemukan',
       password: 'Kata sandi',
-      poweredByPlanka: 'Didukung oleh <1>PLANKA</1>',
       serverConnectionFailed: 'Koneksi server gagal',
       totpSessionExpired: 'Sesi TOTP telah berakhir. Silakan masuk kembali.',
       trustThisBrowser: 'Percayai peramban ini selama 30 hari',

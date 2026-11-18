@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'About the App',
-      aboutPlanka_title: 'About PLANKA',
+      aboutTama_title: 'About Tama',
       accessToken: 'Access token',
       account: 'Account',
       actions: 'Actions',
@@ -159,8 +159,6 @@ export default {
       disable2fa_title: 'Disable Two-Factor Authentication',
       disable2faWarning:
         'You will need to confirm your current password and a TOTP code. Existing sessions stay signed in.',
-      discoverPlankaPro: '✨ More features for your boards: Discover PLANKA Pro',
-      discoverPlankaPro_title: 'Discover PLANKA Pro',
       enable2fa_title: 'Enable Two-Factor Authentication',
       enabledOn: 'Enabled on {{date}}',
       enterCodeFromApp: 'Enter the 6-digit code from your authenticator app.',
@@ -200,11 +198,6 @@ export default {
         'Add an extra layer of security to your account using a time-based one-time code from an authenticator app.',
       twoFactorAuthentication: 'Two-Factor Authentication',
       unknownDevice: 'Unknown device',
-      upgradeTeamToPro_title: 'Upgrade Team to Pro',
-      proFeatureCalendar: '✨ Calendar View for your boards',
-      proFeatureRecurringCards: '✨ Recurring Cards & Automation',
-      proFeatureGuestRoles: '✨ Guest Roles & External Collaboration',
-      dismissProBannerFor30Days: 'Dismiss for 30 days',
       customerPanel_title: 'Customer Panel',
       dangerZone_title: 'Danger Zone',
       date: 'Date',
@@ -342,20 +335,13 @@ export default {
       others: 'Others',
       passwordIsSet: 'Password is set',
       phone: 'Phone',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA uses <1><0>Apprise</0></1> to send notifications to over 100 popular services.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama uses <1><0>Apprise</0></1> to send notifications to over 100 popular services.',
       port: 'Port',
       preferences: 'Preferences',
       pressPasteShortcutToAddAttachmentFromClipboard:
         'Tip: press Ctrl-V (Cmd-V on Mac) to add an attachment from the clipboard.',
       private: 'Private',
-      proFeatureDashboard: '✨ One dashboard across every project',
-      proFeatureExport: '✨ Cards as PDF for your reporting',
-      proFeatureMobile: '✨ PLANKA on phones and tablets',
-      proFeatureSso: '✨ Sign in with your company directory (SSO)',
-      proFeatureThemes: '✨ Five themes and your own accent color',
-      proFeatureTimeline: '✨ Timeline: a whole year on one axis',
-      proTrialSelfHosted: '✨ Try PLANKA Pro for 30 days on your own server',
       project: 'Project',
       projectNotFound_title: 'Project Not Found',
       projectOwner: 'Project owner',

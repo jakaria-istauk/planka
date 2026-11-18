@@ -17,7 +17,6 @@ export default {
       or: 'Или',
       pageNotFound_title: 'Страницата не е намерена',
       password: 'Парола',
-      poweredByPlanka: 'Задвижвано от <1>PLANKA</1>',
       serverConnectionFailed: 'Неуспешна връзка със сървъра',
       totpSessionExpired: 'TOTP сесията изтече. Моля, влезте отново.',
       trustThisBrowser: 'Отбележи този браузър като доверен за 30 дни',

@@ -16,7 +16,7 @@
   }
 
   .appIcon,
-  .plankaIcon {
+  .tamaIcon {
     align-items: center;
     border-radius: var(--pk-radius);
     display: inline-flex;
@@ -84,7 +84,7 @@
     }
   }
 
-  .plankaIcon {
+  .tamaIcon {
     background: var(--pk-accent);
     color: #fff;
   }

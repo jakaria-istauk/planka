@@ -19,14 +19,11 @@
 // over the existing entry actions) and neither one is ever overwritten
 // by what the other stashed away.
 //
-// The keys and the `{ userIds, labelIds, search }` core of the payload
-// are deliberately identical to PLANKA Pro's, so a user's saved filters
-// survive an upgrade: same origin, same database, same user ids.
-// Community's own filter dimensions are stored alongside as extra
-// fields, which Pro simply reads as absent.
+// Saved filters from before the rename to Tama are moved over to these
+// keys at startup (see utils/legacy-storage.js).
 
-const LAST_KEY_PREFIX = 'planka:filter:last';
-const SAVED_KEY_PREFIX = 'planka:filter:saved';
+const LAST_KEY_PREFIX = 'tama:filter:last';
+const SAVED_KEY_PREFIX = 'tama:filter:saved';
 
 const buildKey = (prefix, userId, boardId) => {
   if (!userId || !boardId) {

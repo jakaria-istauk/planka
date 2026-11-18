@@ -279,7 +279,7 @@ const getProtectedResourceMetadata = () => ({
   authorization_servers: [getIssuerUrl()],
   scopes_supported: SCOPES,
   bearer_methods_supported: ['header'],
-  resource_name: 'PLANKA',
+  resource_name: 'Tama',
 });
 
 const getProtectedResourceMetadataUrl = () =>

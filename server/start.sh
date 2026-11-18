@@ -33,7 +33,7 @@ ensure_runtime_directories() {
 
   for directory in "${directories[@]}"; do
     if ! mkdir -p "$directory" 2>/dev/null || [[ ! -w "$directory" ]]; then
-      echo "PLANKA cannot write to /app/${directory} as uid $(id -u), gid $(id -g)." >&2
+      echo "Tama cannot write to /app/${directory} as uid $(id -u), gid $(id -g)." >&2
       echo "Run the container as uid 1000, as any uid with group 0 (for example user: \"5000:0\"), or mount a writable volume at /app/${directory}." >&2
       exit 1
     fi
@@ -42,7 +42,7 @@ ensure_runtime_directories() {
   # A volume keeps the ownership it was created with, so this one is the
   # operator's to fix and not worth refusing to start over
   if [[ ! -w data ]]; then
-    echo "Warning: PLANKA cannot write to /app/data as uid $(id -u), gid $(id -g). Avatars, attachments and background images will fail to save." >&2
+    echo "Warning: Tama cannot write to /app/data as uid $(id -u), gid $(id -g). Avatars, attachments and background images will fail to save." >&2
     echo "Change the owner of the volume mounted there to the uid the container runs as, or give that uid group 0." >&2
   fi
 }

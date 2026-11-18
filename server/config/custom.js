@@ -33,7 +33,7 @@ const envToBytes = (value) => bytes(value);
 // URL parser forgives it, so the origins built below survive; everything that
 // compares these strings as strings does not. A schema reads as ` discord`
 // and matches nothing, and a `baseUrl` with a space in it goes out in every
-// link PLANKA sends. An entry that was only separators is not an entry at all
+// link Tama sends. An entry that was only separators is not an entry at all
 // and becomes `new URL('')` somewhere downstream.
 const envToArray = (value) =>
   value
@@ -57,7 +57,7 @@ const exitWithUnusableBaseUrl = (problem, detail) => {
   console.error('');
   console.error('  It is the address browsers use to reach this instance, scheme included:');
   console.error('');
-  console.error('    BASE_URL=https://planka.example.com');
+  console.error('    BASE_URL=https://tama.example.com');
   console.error(RULE);
 
   return process.exit(1);
@@ -66,7 +66,7 @@ const exitWithUnusableBaseUrl = (problem, detail) => {
 const baseUrls = envToArray(process.env.BASE_URL);
 
 if (baseUrls.length === 0) {
-  exitWithUnusableBaseUrl('is not set.', ['PLANKA cannot start without it.']);
+  exitWithUnusableBaseUrl('is not set.', ['Tama cannot start without it.']);
 }
 
 // Every entry, not only the first: config/env/production.js turns all of them
@@ -77,8 +77,8 @@ const parsedBaseUrls = baseUrls.map((value) => {
     return new URL(value);
   } catch (error) {
     return exitWithUnusableBaseUrl(`contains "${value}", which is not a URL.`, [
-      'A missing scheme is the usual reason: "planka.example.com" is not a URL,',
-      '"https://planka.example.com" is.',
+      'A missing scheme is the usual reason: "tama.example.com" is not a URL,',
+      '"https://tama.example.com" is.',
     ]);
   }
 });
@@ -113,7 +113,7 @@ module.exports.custom = {
   // caught by the first, many sources working on one account by the second.
   //
   // Counted in the process that serves the request, not in shared storage —
-  // PLANKA needs no Redis, and the stock deployment is a single container. Run
+  // Tama needs no Redis, and the stock deployment is a single container. Run
   // several and each keeps its own count, so the effective ceiling multiplies
   // by the number of processes. Put a limiter in your proxy if that matters.
   authRateLimitWindow: parseInt(process.env.AUTH_RATE_LIMIT_WINDOW, 10) || 60,

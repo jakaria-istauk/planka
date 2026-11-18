@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Sobre o aplicativo',
-      aboutPlanka_title: 'Sobre o PLANKA',
+      aboutTama_title: 'Sobre o Tama',
       accessToken: 'Token de acesso',
       account: 'Conta',
       actions: 'Ações',
@@ -159,20 +159,6 @@ export default {
       customFieldGroups_title: 'Grupos de campo personalizado',
       customField_title: 'Campo personalizado',
       customFields_title: 'Campos personalizados',
-      discoverPlankaPro: '✨ Mais recursos para seus quadros: Descubra o PLANKA Pro',
-      discoverPlankaPro_title: 'Descubra o PLANKA Pro',
-      upgradeTeamToPro_title: 'Atualizar equipe para Pro',
-      proFeatureCalendar: '✨ Visualização de calendário para seus quadros',
-      proFeatureRecurringCards: '✨ Cartões recorrentes e automação',
-      proFeatureGuestRoles: '✨ Funções de convidado e colaboração externa',
-      proFeatureDashboard: '✨ Um painel para todos os projetos',
-      proFeatureExport: '✨ Cartões em PDF para seus relatórios',
-      proFeatureMobile: '✨ PLANKA no celular e no tablet',
-      proFeatureSso: '✨ Entre com o diretório da sua empresa (SSO)',
-      proFeatureThemes: '✨ Cinco temas e sua própria cor de destaque',
-      proFeatureTimeline: '✨ Linha do tempo: um ano inteiro em um só eixo',
-      proTrialSelfHosted: '✨ Experimente o PLANKA Pro por 30 dias no seu próprio servidor',
-      dismissProBannerFor30Days: 'Fechar por 30 dias',
       customerPanel_title: 'Painel do cliente',
       dangerZone_title: 'Zona de perigo',
       disable2fa_title: 'Desativar autenticação de dois fatores',
@@ -356,8 +342,8 @@ export default {
       others: 'Outros',
       passwordIsSet: 'Senha definida',
       phone: 'Telefone',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA usa <1><0>Apprise</0></1> para enviar notificações para mais de 100 serviços populares.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama usa <1><0>Apprise</0></1> para enviar notificações para mais de 100 serviços populares.',
       port: 'Porta',
       preferences: 'Preferências',
       pressPasteShortcutToAddAttachmentFromClipboard:

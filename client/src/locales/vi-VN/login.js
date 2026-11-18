@@ -16,7 +16,6 @@ export default {
       or: 'Hoặc',
       pageNotFound_title: 'Không tìm thấy trang',
       password: 'Mật khẩu',
-      poweredByPlanka: 'Được phát triển bởi <1>PLANKA</1>',
       serverConnectionFailed: 'Không kết nối được tới máy chủ',
       totpSessionExpired: 'Phiên TOTP đã hết hạn. Vui lòng đăng nhập lại.',
       trustThisBrowser: 'Tin cậy trình duyệt này trong 30 ngày',

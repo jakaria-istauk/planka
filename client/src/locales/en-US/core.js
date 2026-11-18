@@ -16,7 +16,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'About the App',
-      aboutPlanka_title: 'About PLANKA',
+      aboutTama_title: 'About Tama',
       accessToken: 'Access token',
       account: 'Account',
       actions: 'Actions',
@@ -46,9 +46,9 @@ export default {
       appConnectionRequestFailed:
         'The connection could not be completed. Start it again from the app.',
       appKeepsYourPermissions:
-        'It can only do what you can do in PLANKA, on the boards you can access',
+        'It can only do what you can do in Tama, on the boards you can access',
       applyFilter: 'Apply filter',
-      appWantsToAccessYourAccount: '<0>{{appName}}</0> wants to access your PLANKA account',
+      appWantsToAccessYourAccount: '<0>{{appName}}</0> wants to access your Tama account',
       archive: 'Archive',
       archiveCard_title: 'Archive Card',
       archiveCards_title: 'Archive Cards',
@@ -169,9 +169,6 @@ export default {
       disable2fa_title: 'Disable Two-Factor Authentication',
       disable2faWarning:
         'You will need to confirm your current password and a TOTP code. Existing sessions stay signed in.',
-      discoverPlankaPro: '✨ More features for your boards: Discover PLANKA Pro',
-      discoverPlankaPro_title: 'Discover PLANKA Pro',
-      dismissProBannerFor30Days: 'Dismiss for 30 days',
       enable2fa_title: 'Enable Two-Factor Authentication',
       enabledOn: 'Enabled on {{date}}',
       enterCodeFromApp: 'Enter the 6-digit code from your authenticator app.',
@@ -182,28 +179,28 @@ export default {
       invalidTotpCode: 'Invalid TOTP or recovery code',
       lastUsed: 'Last used',
       mcpChatgptDescription:
-        'ChatGPT connects as a custom connector and signs in with your PLANKA account.',
+        'ChatGPT connects as a custom connector and signs in with your Tama account.',
       mcpChatgptStep1:
         'In ChatGPT, open Settings → Apps & Connectors → Advanced settings and turn on Developer mode.',
       mcpChatgptStep2: 'Go back to Apps & Connectors and choose Create.',
       mcpChatgptStep3:
         'Enter a name, paste {{url}} as the MCP server URL and choose OAuth authentication.',
-      mcpChatgptStep4: 'Create it, then approve the request in PLANKA when ChatGPT opens it.',
-      mcpClaudeCodeDescription: 'Run this in a terminal to add PLANKA to Claude Code.',
+      mcpChatgptStep4: 'Create it, then approve the request in Tama when ChatGPT opens it.',
+      mcpClaudeCodeDescription: 'Run this in a terminal to add Tama to Claude Code.',
       mcpClaudeDescription:
-        'Works in claude.ai, Claude Desktop and the mobile apps. Claude signs in with your PLANKA account.',
+        'Works in claude.ai, Claude Desktop and the mobile apps. Claude signs in with your Tama account.',
       mcpClaudeStep1: 'In Claude, open Settings → Connectors.',
-      mcpClaudeStep2: 'Choose Add custom connector and give it a name, such as PLANKA.',
+      mcpClaudeStep2: 'Choose Add custom connector and give it a name, such as Tama.',
       mcpClaudeStep3: 'Paste {{url}} as the remote MCP server URL and add it.',
-      mcpClaudeStep4: 'Choose Connect, then approve the request in PLANKA when Claude opens it.',
+      mcpClaudeStep4: 'Choose Connect, then approve the request in Tama when Claude opens it.',
       mcpCodexDescription: 'Add this to the Codex configuration file.',
       mcpCreateApiKeyFirst: 'Create an API key below and it is filled in here.',
       mcpCursorDescription: 'Add this to the Cursor MCP configuration file.',
       mcpGeminiCliDescription: 'Add this to the Gemini CLI settings file.',
       mcpIntro:
-        'Connect AI assistants to PLANKA through the Model Context Protocol (MCP). They can read and update your boards as you, with your permissions.',
+        'Connect AI assistants to Tama through the Model Context Protocol (MCP). They can read and update your boards as you, with your permissions.',
       mcpNeedsPublicHttps:
-        'This assistant reaches PLANKA over the internet, so PLANKA must be served from a public HTTPS address.',
+        'This assistant reaches Tama over the internet, so Tama must be served from a public HTTPS address.',
       mcpOtherDescription:
         'Any client that supports remote MCP servers over Streamable HTTP with custom headers can connect with these details.',
       mcpServerUrl_title: 'MCP Server URL',
@@ -212,8 +209,7 @@ export default {
       never: 'Never',
       noApiKeyCreatedForMcp:
         'No API key yet. Assistants configured with a file or command need one.',
-      noConnectedApps:
-        'No apps are connected. Apps you approve through PLANKA sign-in appear here.',
+      noConnectedApps: 'No apps are connected. Apps you approve through Tama sign-in appear here.',
       noTrustedDevices: 'No trusted devices.',
       openBoardActions: 'Open board actions',
       openBoardSettings: 'Open board settings',
@@ -244,9 +240,8 @@ export default {
         'Scan this QR code with an authenticator app such as Google Authenticator or Authy.',
       security_title: 'Security',
       showHiddenProjects: 'Show hidden projects',
-      showProBanner: 'Show the PLANKA Pro banner',
       signedInAs: 'Signed in as {{name}}',
-      signInWithPlanka: 'Sign in with PLANKA',
+      signInWithTama: 'Sign in with Tama',
       totpCode: 'TOTP code',
       totpOrRecoveryCode: 'TOTP or recovery code',
       trustedDevices_title: 'Trusted Browsers',
@@ -260,7 +255,6 @@ export default {
         'This connection request is incomplete or the app is unknown. Start it again from the app.',
       unknownDevice: 'Unknown device',
       unnamedApp: 'Unnamed app',
-      upgradeTeamToPro_title: 'Upgrade Team to Pro',
       dark: 'Dark',
       date: 'Date',
       deactivateFilter: 'Deactivate filter',
@@ -394,26 +388,13 @@ export default {
       others: 'Others',
       passwordIsSet: 'Password is set',
       phone: 'Phone',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA uses <1><0>Apprise</0></1> to send notifications to over 100 popular services.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama uses <1><0>Apprise</0></1> to send notifications to over 100 popular services.',
       port: 'Port',
       preferences: 'Preferences',
       pressPasteShortcutToAddAttachmentFromClipboard:
         'Tip: press Ctrl-V (Cmd-V on Mac) to add an attachment from the clipboard.',
       private: 'Private',
-      proBannerIsOnlyShownToYouInThisBrowser:
-        'Only administrators can see it, and only in the browser where it was turned on.',
-      proBanner_title: 'PLANKA Pro Banner',
-      proFeatureCalendar: '✨ Calendar View for your boards',
-      proFeatureDashboard: '✨ One dashboard across every project',
-      proFeatureExport: '✨ Cards as PDF for your reporting',
-      proFeatureGuestRoles: '✨ Guest Roles & External Collaboration',
-      proFeatureMobile: '✨ PLANKA on phones and tablets',
-      proFeatureRecurringCards: '✨ Recurring Cards',
-      proFeatureSso: '✨ Sign in with your company directory (SSO)',
-      proFeatureThemes: '✨ Five themes and your own accent color',
-      proFeatureTimeline: '✨ Timeline: a whole year on one axis',
-      proTrialSelfHosted: '✨ Try PLANKA Pro for 30 days on your own server',
       project: 'Project',
       projectNotFound_title: 'Project Not Found',
       projectOwner: 'Project owner',

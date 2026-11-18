@@ -75,7 +75,7 @@ jobs:
             type=raw,value=nightly
           labels: |
             org.opencontainers.image.licenses=Fair Use License
-            org.opencontainers.image.url=https://planka.app
+            org.opencontainers.image.url=https://github.com/${{ github.repository }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4

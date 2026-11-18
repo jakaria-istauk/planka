@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Rakenduse kohta',
-      aboutPlanka_title: 'PLANKA kohta',
+      aboutTama_title: 'Tama kohta',
       accessToken: 'Juurdepääsuluba',
       account: 'Konto',
       actions: 'Tegevused',
@@ -157,20 +157,6 @@ export default {
       customFieldGroups_title: 'Kohandatud väljade grupid',
       customField_title: 'Kohandatud väli',
       customFields_title: 'Kohandatud väljad',
-      discoverPlankaPro: '✨ Rohkem funktsioone oma tahvlite jaoks: Avasta PLANKA Pro',
-      discoverPlankaPro_title: 'Avasta PLANKA Pro',
-      upgradeTeamToPro_title: 'Uuenda meeskond Pro-ks',
-      proFeatureCalendar: '✨ Kalendervaade oma tahvlite jaoks',
-      proFeatureRecurringCards: '✨ Korduvad kaardid ja automatiseerimine',
-      proFeatureGuestRoles: '✨ Külalisrollid ja väline koostöö',
-      proFeatureDashboard: '✨ Üks töölaud kõigi projektide jaoks',
-      proFeatureExport: '✨ Kaardid PDF-ina oma aruannete jaoks',
-      proFeatureMobile: '✨ PLANKA telefonis ja tahvelarvutis',
-      proFeatureSso: '✨ Logi sisse ettevõtte kataloogiga (SSO)',
-      proFeatureThemes: '✨ Viis teemat ja oma rõhuvärv',
-      proFeatureTimeline: '✨ Ajajoon: terve aasta ühel teljel',
-      proTrialSelfHosted: '✨ Proovi PLANKA Pro-d 30 päeva oma serveris',
-      dismissProBannerFor30Days: 'Sulge 30 päevaks',
       customerPanel_title: 'Kliendi paneel',
       dangerZone_title: 'Ohtliku ala',
       disable2fa_title: 'Keela kaheastmeline autentimine',
@@ -349,8 +335,8 @@ export default {
       others: 'Teised',
       passwordIsSet: 'Parool on määratud',
       phone: 'Telefon',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA kasutab <1><0>Apprise</0></1> teavitusteenuse, et teavitada üle 100 populaarset teenust.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama kasutab <1><0>Apprise</0></1> teavitusteenuse, et teavitada üle 100 populaarset teenust.',
       port: 'Port',
       preferences: 'Eelistused',
       pressPasteShortcutToAddAttachmentFromClipboard:

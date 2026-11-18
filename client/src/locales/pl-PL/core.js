@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'O aplikacji',
-      aboutPlanka_title: 'O PLANKA',
+      aboutTama_title: 'O Tama',
       accessToken: 'Token dostępu',
       account: 'Konto',
       actions: 'Akcje',
@@ -156,20 +156,6 @@ export default {
       customFieldGroups_title: 'Grupy pól własnych',
       customField_title: 'Własne pole',
       customFields_title: 'Własne pola',
-      discoverPlankaPro: '✨ Więcej funkcji dla Twoich tablic: Odkryj PLANKA Pro',
-      discoverPlankaPro_title: 'Odkryj PLANKA Pro',
-      upgradeTeamToPro_title: 'Uaktualnij zespół do Pro',
-      proFeatureCalendar: '✨ Widok kalendarza dla Twoich tablic',
-      proFeatureRecurringCards: '✨ Powtarzające się karty i automatyzacja',
-      proFeatureGuestRoles: '✨ Role gościa i zewnętrzna współpraca',
-      proFeatureDashboard: '✨ Jeden dashboard dla wszystkich projektów',
-      proFeatureExport: '✨ Karty jako PDF do Twoich raportów',
-      proFeatureMobile: '✨ PLANKA na telefonach i tabletach',
-      proFeatureSso: '✨ Logowanie przez katalog firmowy (SSO)',
-      proFeatureThemes: '✨ Pięć motywów i Twój własny kolor akcentu',
-      proFeatureTimeline: '✨ Timeline: cały rok na jednej osi',
-      proTrialSelfHosted: '✨ Wypróbuj PLANKA Pro przez 30 dni na własnym serwerze',
-      dismissProBannerFor30Days: 'Zamknij na 30 dni',
       customerPanel_title: 'Panel klienta',
       dangerZone_title: 'Strefa niebezpieczeństwa',
       disable2fa_title: 'Wyłącz uwierzytelnianie dwuskładnikowe',
@@ -354,8 +340,8 @@ export default {
       others: 'Inne',
       passwordIsSet: 'Hasło jest ustawione',
       phone: 'Telefon',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA używa <1><0>Apprise</0></1> do wysyłania powiadomień do ponad 100 popularnych serwisów.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama używa <1><0>Apprise</0></1> do wysyłania powiadomień do ponad 100 popularnych serwisów.',
       port: 'Port',
       preferences: 'Preferencje',
       pressPasteShortcutToAddAttachmentFromClipboard:

@@ -15,7 +15,6 @@ import { useClosableModal } from '../../../hooks';
 import UsersPane from './UsersPane';
 import SmtpPane from './SmtpPane';
 import WebhooksPane from './WebhooksPane';
-import PromoBannerPane from './PromoBannerPane';
 
 import styles from './AdministrationModal.module.scss';
 
@@ -69,16 +68,6 @@ const AdministrationModal = React.memo(() => {
       }),
     },
     render: () => <WebhooksPane />,
-  });
-  panes.push({
-    menuItem: {
-      key: 'proBanner',
-      icon: 'bullhorn',
-      content: t('common.proBanner', {
-        context: 'title',
-      }),
-    },
-    render: () => <PromoBannerPane />,
   });
 
   const isUsersPaneActive = activeTabIndex === 0;

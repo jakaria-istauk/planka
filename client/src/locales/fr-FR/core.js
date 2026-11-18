@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: "À propos de l'application",
-      aboutPlanka_title: 'À propos de PLANKA',
+      aboutTama_title: 'À propos de Tama',
       accessToken: "Jeton d'accès",
       account: 'Compte',
       actions: 'Actions',
@@ -161,20 +161,6 @@ export default {
       customFieldGroups_title: 'Groupes de champs personnalisés',
       customField_title: 'Champ personnalisé',
       customFields_title: 'Champs personnalisés',
-      discoverPlankaPro: '✨ Plus de fonctionnalités pour vos tableaux : Découvrez PLANKA Pro',
-      discoverPlankaPro_title: 'Découvrez PLANKA Pro',
-      upgradeTeamToPro_title: "Passer l'équipe à Pro",
-      proFeatureCalendar: '✨ Vue calendrier pour vos tableaux',
-      proFeatureRecurringCards: '✨ Cartes récurrentes et automatisation',
-      proFeatureGuestRoles: '✨ Rôles invités et collaboration externe',
-      proFeatureDashboard: '✨ Un tableau de bord pour tous vos projets',
-      proFeatureExport: '✨ Vos cartes en PDF pour vos rapports',
-      proFeatureMobile: '✨ PLANKA sur mobile et tablette',
-      proFeatureSso: "✨ Connexion avec l'annuaire de votre entreprise (SSO)",
-      proFeatureThemes: "✨ Cinq thèmes et votre propre couleur d'accentuation",
-      proFeatureTimeline: "✨ Timeline : toute l'année sur un seul axe",
-      proTrialSelfHosted: '✨ Essayez PLANKA Pro 30 jours sur votre propre serveur',
-      dismissProBannerFor30Days: 'Fermer pendant 30 jours',
       customerPanel_title: 'Panneau client',
       dangerZone_title: 'Zone dangereuse',
       disable2fa_title: "Désactiver l'authentification à deux facteurs",
@@ -358,8 +344,8 @@ export default {
       others: 'Autres',
       passwordIsSet: 'Mot de passe défini',
       phone: 'Téléphone',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA utilise <1><0>Apprise</0></1> pour envoyer des notifications vers plus de 100 services populaires.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama utilise <1><0>Apprise</0></1> pour envoyer des notifications vers plus de 100 services populaires.',
       port: 'Port',
       preferences: 'Préférences',
       pressPasteShortcutToAddAttachmentFromClipboard:

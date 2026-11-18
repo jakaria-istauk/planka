@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'За приложението',
-      aboutPlanka_title: 'За PLANKA',
+      aboutTama_title: 'За Tama',
       accessToken: 'Токен за достъп',
       account: 'Акаунт',
       actions: 'Действия',
@@ -163,20 +163,6 @@ export default {
       customFieldGroups_title: 'Групи персонализирани полета',
       customField_title: 'Персонализирано поле',
       customFields_title: 'Персонализирани полета',
-      discoverPlankaPro: '✨ Повече функции за вашите дъски: Открийте PLANKA Pro',
-      discoverPlankaPro_title: 'Открийте PLANKA Pro',
-      upgradeTeamToPro_title: 'Надградете екипа до Pro',
-      proFeatureCalendar: '✨ Изглед Календар за вашите дъски',
-      proFeatureRecurringCards: '✨ Повтарящи се карти и автоматизация',
-      proFeatureGuestRoles: '✨ Роли за гости и външно сътрудничество',
-      proFeatureDashboard: '✨ Едно табло за управление за всички проекти',
-      proFeatureExport: '✨ Карти като PDF за вашите отчети',
-      proFeatureMobile: '✨ PLANKA на телефон и таблет',
-      proFeatureSso: '✨ Вход с фирмената ви директория (SSO)',
-      proFeatureThemes: '✨ Пет теми и ваш собствен акцентен цвят',
-      proFeatureTimeline: '✨ Времева линия: цяла година на една ос',
-      proTrialSelfHosted: '✨ Изпробвайте PLANKA Pro 30 дни на вашия сървър',
-      dismissProBannerFor30Days: 'Скрий за 30 дни',
       customerPanel_title: 'Панел на клиента',
       dangerZone_title: 'Опасна зона',
       date: 'Дата',
@@ -329,8 +315,8 @@ export default {
       others: 'Други',
       passwordIsSet: 'Паролата е зададена',
       phone: 'Телефон',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA използва <1><0>Apprise</0></1> за изпращане на уведомления до над 100 популярни услуги.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama използва <1><0>Apprise</0></1> за изпращане на уведомления до над 100 популярни услуги.',
       port: 'Порт',
       preferences: 'Предпочитания',
       pressPasteShortcutToAddAttachmentFromClipboard:

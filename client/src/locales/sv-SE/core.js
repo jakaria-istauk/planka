@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Om appen',
-      aboutPlanka_title: 'Om PLANKA',
+      aboutTama_title: 'Om Tama',
       accessToken: 'Åtkomsttoken',
       account: 'Konto',
       actions: 'Åtgärder',
@@ -163,20 +163,6 @@ export default {
       customFieldGroups_title: 'Anpassade fältgrupper',
       customField_title: 'Anpassat fält',
       customFields_title: 'Anpassade fält',
-      discoverPlankaPro: '✨ Fler funktioner för dina tavlor: Upptäck PLANKA Pro',
-      discoverPlankaPro_title: 'Upptäck PLANKA Pro',
-      upgradeTeamToPro_title: 'Uppgradera teamet till Pro',
-      proFeatureCalendar: '✨ Kalendervy för dina tavlor',
-      proFeatureRecurringCards: '✨ Återkommande kort',
-      proFeatureGuestRoles: '✨ Gästroller och externt samarbete',
-      proFeatureDashboard: '✨ En dashboard för alla projekt',
-      proFeatureExport: '✨ Kort som PDF för din rapportering',
-      proFeatureMobile: '✨ PLANKA på mobil och surfplatta',
-      proFeatureSso: '✨ Logga in med företagets katalogtjänst (SSO)',
-      proFeatureThemes: '✨ Fem teman och din egen accentfärg',
-      proFeatureTimeline: '✨ Tidslinje: hela året på en axel',
-      proTrialSelfHosted: '✨ Testa PLANKA Pro i 30 dagar på din egen server',
-      dismissProBannerFor30Days: 'Dölj i 30 dagar',
       customerPanel_title: 'Kundpanel',
       dangerZone_title: 'Farozon',
       disable2fa_title: 'Inaktivera tvåfaktorsautentisering',
@@ -358,8 +344,8 @@ export default {
       others: 'Andra',
       passwordIsSet: 'Lösenordet är inställt',
       phone: 'Telefon',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA använder <1><0>Apprise</0></1> för att skicka aviseringar till över 100 populära tjänster.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama använder <1><0>Apprise</0></1> för att skicka aviseringar till över 100 populära tjänster.',
       port: 'Port',
       preferences: 'Preferenser',
       pressPasteShortcutToAddAttachmentFromClipboard:

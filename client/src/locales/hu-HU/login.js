@@ -17,7 +17,6 @@ export default {
       or: 'Vagy',
       pageNotFound_title: 'Az oldal nem található',
       password: 'Jelszó',
-      poweredByPlanka: 'Működteti a <1>PLANKA</1>',
       serverConnectionFailed: 'A szerverkapcsolat sikertelen',
       totpSessionExpired: 'A TOTP-munkamenet lejárt. Kérjük, jelentkezzen be újra.',
       trustThisBrowser: 'Megbízom ebben a böngészőben 30 napig',

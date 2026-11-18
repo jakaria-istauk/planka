@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'حول التطبيق',
-      aboutPlanka_title: 'حول PLANKA',
+      aboutTama_title: 'حول Tama',
       accessToken: 'رمز الوصول',
       account: 'الحساب',
       actions: 'إجراءات',
@@ -151,20 +151,6 @@ export default {
       customFieldGroups_title: 'مجموعات الحقول المخصصة',
       customField_title: 'الحقل المخصص',
       customFields_title: 'الحقول المخصصة',
-      discoverPlankaPro: '✨ المزيد من الميزات لألواحك: اكتشف PLANKA Pro',
-      discoverPlankaPro_title: 'اكتشف PLANKA Pro',
-      upgradeTeamToPro_title: 'ترقية الفريق إلى Pro',
-      proFeatureCalendar: '✨ عرض التقويم للوحاتك',
-      proFeatureRecurringCards: '✨ البطاقات المتكررة والأتمتة',
-      proFeatureGuestRoles: '✨ أدوار الضيف والتعاون الخارجي',
-      proFeatureDashboard: '✨ لوحة معلومات واحدة لجميع المشاريع',
-      proFeatureExport: '✨ البطاقات بصيغة PDF لتقاريرك',
-      proFeatureMobile: '✨ PLANKA على الهواتف والأجهزة اللوحية',
-      proFeatureSso: '✨ تسجيل الدخول عبر دليل شركتك (SSO)',
-      proFeatureThemes: '✨ خمس سمات ولون تمييز خاص بك',
-      proFeatureTimeline: '✨ المخطط الزمني: سنة كاملة على محور واحد',
-      proTrialSelfHosted: '✨ جرب PLANKA Pro لمدة 30 يومًا على خادمك الخاص',
-      dismissProBannerFor30Days: 'إغلاق لمدة 30 يومًا',
       customerPanel_title: 'لوحة العملاء',
       dangerZone_title: 'منطقة الخطر',
       disable2fa_title: 'تعطيل المصادقة الثنائية',
@@ -344,7 +330,7 @@ export default {
       others: 'آخرون',
       passwordIsSet: 'تم تعيين كلمة المرور',
       phone: 'الهاتف',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
         'تستخدم بلانكا <1><0>Apprise</0></1> لإرسال الإشعارات إلى أكثر من 100 خدمة شائعة.',
       port: 'المنفذ',
       preferences: 'التفضيلات',

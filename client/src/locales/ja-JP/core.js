@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'アプリについて',
-      aboutPlanka_title: 'PLANKAについて',
+      aboutTama_title: 'Tamaについて',
       accessToken: 'アクセストークン',
       account: 'アカウント',
       actions: 'アクション',
@@ -154,20 +154,6 @@ export default {
       customFieldGroups_title: 'カスタムフィールドグループ',
       customField_title: 'カスタムフィールド',
       customFields_title: 'カスタムフィールド',
-      discoverPlankaPro: '✨ ボードのさらなる機能: PLANKA Proを発見',
-      discoverPlankaPro_title: 'PLANKA Proを発見',
-      upgradeTeamToPro_title: 'チームをProにアップグレード',
-      proFeatureCalendar: '✨ ボード用カレンダービュー',
-      proFeatureRecurringCards: '✨ 繰り返しカードと自動化',
-      proFeatureGuestRoles: '✨ ゲストロールと外部コラボレーション',
-      proFeatureDashboard: '✨ すべてのプロジェクトを1つのダッシュボードで',
-      proFeatureExport: '✨ レポート用にカードをPDFで出力',
-      proFeatureMobile: '✨ スマートフォンとタブレットでPLANKAを利用',
-      proFeatureSso: '✨ 社内ディレクトリでログイン(SSO)',
-      proFeatureThemes: '✨ 5つのテーマと独自のアクセントカラー',
-      proFeatureTimeline: '✨ タイムライン: 1年間を1本の軸で',
-      proTrialSelfHosted: '✨ 自分のサーバーでPLANKA Proを30日間お試し',
-      dismissProBannerFor30Days: '30日間閉じる',
       customerPanel_title: '顧客パネル',
       dangerZone_title: '危険ゾーン',
       disable2fa_title: '二要素認証を無効にする',
@@ -346,8 +332,8 @@ export default {
       others: 'その他',
       passwordIsSet: 'パスワードが設定されています',
       phone: '電話番号',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKAは<1><0>Apprise</0></1>を使用して100以上の人気サービスに通知を送信します。',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tamaは<1><0>Apprise</0></1>を使用して100以上の人気サービスに通知を送信します。',
       port: 'ポート',
       preferences: '環境設定',
       pressPasteShortcutToAddAttachmentFromClipboard:

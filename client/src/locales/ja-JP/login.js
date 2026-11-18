@@ -17,7 +17,6 @@ export default {
       or: 'または',
       pageNotFound_title: 'ページが見つかりません',
       password: 'パスワード',
-      poweredByPlanka: '<1>PLANKA</1>で動作',
       serverConnectionFailed: 'サーバーの接続に失敗',
       totpSessionExpired: 'TOTPセッションの有効期限が切れました。もう一度ログインしてください。',
       trustThisBrowser: 'このブラウザーを30日間信頼する',

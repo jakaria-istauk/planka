@@ -8,10 +8,10 @@ import { Themes } from '../constants/Enums';
 // Each user's choice of light, dark or the system's theme, kept in this browser.
 // System is the default, so a new user starts out matching their device.
 
-const CHANGE_EVENT = 'planka:themeChange';
+const CHANGE_EVENT = 'tama:themeChange';
 const DARK_QUERY = '(prefers-color-scheme: dark)';
 
-const getKey = (userId) => `planka_theme_${userId}`;
+const getKey = (userId) => `tama_theme_${userId}`;
 
 export const getTheme = (userId) => {
   try {

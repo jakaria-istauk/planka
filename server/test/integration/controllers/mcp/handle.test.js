@@ -255,7 +255,7 @@ describe('POST /api/mcp', () => {
       });
 
       expect(response.status).to.equal(200);
-      expect(response.body.result.serverInfo.name).to.equal('planka');
+      expect(response.body.result.serverInfo.name).to.equal('tama');
       expect(response.body.result.capabilities).to.have.property('tools');
     });
 

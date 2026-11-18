@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Az alkalmazásról',
-      aboutPlanka_title: 'PLANKA-ról',
+      aboutTama_title: 'Tama-ról',
       accessToken: 'Hozzáférési token',
       account: 'Fiók',
       actions: 'Műveletek',
@@ -151,20 +151,6 @@ export default {
       customFieldGroups_title: 'Egyedi mezőcsoportok',
       customField_title: 'Egyedi mező',
       customFields_title: 'Egyedi mezők',
-      discoverPlankaPro: '✨ Több funkció a tábláidhoz: Fedezd fel a PLANKA Pro-t',
-      discoverPlankaPro_title: 'Fedezd fel a PLANKA Pro-t',
-      upgradeTeamToPro_title: 'Csapat frissítése Pro-ra',
-      proFeatureCalendar: '✨ Naptár nézet a tábláidhoz',
-      proFeatureRecurringCards: '✨ Ismétlődő kártyák és automatizálás',
-      proFeatureGuestRoles: '✨ Vendég szerepkörök és külső együttműködés',
-      proFeatureDashboard: '✨ Egyetlen irányítópult az összes projektedhez',
-      proFeatureExport: '✨ Kártyák PDF-ben a jelentéseidhez',
-      proFeatureMobile: '✨ PLANKA telefonon és táblagépen',
-      proFeatureSso: '✨ Bejelentkezés a céges címtárral (SSO)',
-      proFeatureThemes: '✨ Öt téma és saját kiemelőszín',
-      proFeatureTimeline: '✨ Idővonal: egy teljes év egyetlen tengelyen',
-      proTrialSelfHosted: '✨ Próbáld ki a PLANKA Pro-t 30 napig a saját szervereden',
-      dismissProBannerFor30Days: 'Bezárás 30 napra',
       customerPanel_title: 'Ügyfélpanel',
       dangerZone_title: 'Veszélyzóna',
       disable2fa_title: 'Kétfaktoros hitelesítés kikapcsolása',
@@ -346,8 +332,8 @@ export default {
       others: 'Egyebek',
       passwordIsSet: 'Jelszó beállítva',
       phone: 'Telefon',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'A PLANKA az <1><0>Apprise</0></1> szolgáltatást használja több mint 100 népszerű szolgáltatás értesítéseinek küldésére.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'A Tama az <1><0>Apprise</0></1> szolgáltatást használja több mint 100 népszerű szolgáltatás értesítéseinek küldésére.',
       port: 'Port',
       preferences: 'Beállítások',
       pressPasteShortcutToAddAttachmentFromClipboard:

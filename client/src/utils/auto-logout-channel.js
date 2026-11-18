@@ -3,8 +3,8 @@
  * Licensed under the Fair Use License: https://github.com/plankanban/planka/blob/master/LICENSE.md
  */
 
-const CHANNEL_NAME = 'planka-auto-logout';
-const STORAGE_KEY = 'planka:auto-logout-message';
+const CHANNEL_NAME = 'tama-auto-logout';
+const STORAGE_KEY = 'tama:auto-logout-message';
 
 const TAB_ID = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
 

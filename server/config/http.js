@@ -21,8 +21,8 @@ const HASHED_ASSETS_URL_PREFIX = '/assets/';
 // blunt version and would cost a full download on every visit; this way the
 // usual answer is a 304 and the bytes stay put. It is spelled out rather than
 // written as `no-cache` because nearly every install has a reverse proxy in
-// front of PLANKA: `must-revalidate` is what stops that proxy from handing out
-// its stale copy while PLANKA is restarting, which is the one moment the copy
+// front of Tama: `must-revalidate` is what stops that proxy from handing out
+// its stale copy while Tama is restarting, which is the one moment the copy
 // is certain to be wrong.
 const REVALIDATED_CACHE_CONTROL = 'public, max-age=0, must-revalidate';
 

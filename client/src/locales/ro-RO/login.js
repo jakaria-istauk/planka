@@ -17,7 +17,6 @@ export default {
       or: 'Sau',
       pageNotFound_title: 'Pagina n-a fost găsită',
       password: 'Parola',
-      poweredByPlanka: 'Susținut de <1>PLANKA</1>',
       serverConnectionFailed: 'Conexiunea la server a eșuat',
       totpSessionExpired: 'Sesiunea TOTP a expirat. Vă rugăm să vă autentificați din nou.',
       trustThisBrowser: 'Consideră acest browser de încredere timp de 30 de zile',

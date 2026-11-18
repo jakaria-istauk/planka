@@ -3,10 +3,10 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ include "planka.fullname" . }}
+  name: {{ include "tama.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "planka.name" . }}
-    helm.sh/chart: {{ include "planka.chart" . }}
+    app.kubernetes.io/name: {{ include "tama.name" . }}
+    helm.sh/chart: {{ include "tama.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:

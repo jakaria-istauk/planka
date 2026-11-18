@@ -72,7 +72,7 @@ const input = async (fieldName, options = {}) => {
       }
 
       console.error(RULE);
-      console.error('This database was not created by this version of PLANKA.');
+      console.error('This database was not created by this version of Tama.');
       console.error('');
       console.error('  It still lists migrations this release no longer carries, which is what a');
       console.error('  PLANKA v1 database looks like to PLANKA v2. Nothing has been changed.');

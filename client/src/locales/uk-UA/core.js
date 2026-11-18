@@ -21,7 +21,7 @@ export default {
   translation: {
     common: {
       aboutApp_title: 'Про додаток',
-      aboutPlanka_title: 'Про PLANKA',
+      aboutTama_title: 'Про Tama',
       accessToken: 'Токен доступу',
       account: 'Обліковий запис',
       actions: 'Дії',
@@ -158,20 +158,6 @@ export default {
       customFieldGroups_title: 'Користувацькі групи полів',
       customField_title: 'Користувацьке поле',
       customFields_title: 'Користувацькі поля',
-      discoverPlankaPro: '✨ Більше можливостей для ваших дощок: Відкрийте PLANKA Pro',
-      discoverPlankaPro_title: 'Відкрийте PLANKA Pro',
-      upgradeTeamToPro_title: 'Оновити команду до Pro',
-      proFeatureCalendar: '✨ Вигляд календаря для ваших дощок',
-      proFeatureRecurringCards: '✨ Повторювані картки та автоматизація',
-      proFeatureGuestRoles: '✨ Ролі гостей та зовнішня співпраця',
-      proFeatureDashboard: '✨ Одна панель для всіх проектів',
-      proFeatureExport: '✨ Картки у форматі PDF для ваших звітів',
-      proFeatureMobile: '✨ PLANKA на телефонах і планшетах',
-      proFeatureSso: '✨ Вхід через каталог вашої компанії (SSO)',
-      proFeatureThemes: "✨ П'ять тем і власний акцентний колір",
-      proFeatureTimeline: '✨ Таймлайн: цілий рік на одній осі',
-      proTrialSelfHosted: '✨ Спробуйте PLANKA Pro 30 днів на власному сервері',
-      dismissProBannerFor30Days: 'Закрити на 30 днів',
       customerPanel_title: 'Панель клієнта',
       dangerZone_title: 'Небезпечна зона',
       disable2fa_title: 'Вимкнути двофакторну аутентифікацію',
@@ -357,8 +343,8 @@ export default {
       others: 'Інші',
       passwordIsSet: 'Пароль встановлено',
       phone: 'Телефон',
-      plankaUsesAppriseToSendNotificationsToOver100PopularServices:
-        'PLANKA використовує <1><0>Apprise</0></1> для надсилання сповіщень на понад 100 популярних сервісів.',
+      tamaUsesAppriseToSendNotificationsToOver100PopularServices:
+        'Tama використовує <1><0>Apprise</0></1> для надсилання сповіщень на понад 100 популярних сервісів.',
       port: 'Порт',
       preferences: 'Уподобання',
       pressPasteShortcutToAddAttachmentFromClipboard:
