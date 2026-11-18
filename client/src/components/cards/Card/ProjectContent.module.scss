@@ -59,12 +59,33 @@
     overflow: hidden;
   }
 
-  .creatorDivider {
-    background: #dce0e4;
-    display: inline-block;
-    height: 24px;
-    margin: 2px 2px 0 4px;
-    width: 1px;
+  .description {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    color: var(--pk-text-muted);
+    display: -webkit-box;
+    font-size: 12px;
+    line-height: 17px;
+    margin: -4px 0 8px;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+
+  .footer {
+    align-items: center;
+    display: flex;
+    gap: 4px;
+
+    .attachments {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .attachmentsRight {
+      flex: none;
+      float: none;
+      margin: 0 0 6px auto;
+    }
   }
 
   .labels {
