@@ -70,9 +70,13 @@ const UserSettingsModal = React.memo(() => {
       render: () => <SecurityPane />,
     },
     {
-      menuItem: t('common.aiAssistants', {
-        context: 'title',
-      }),
+      menuItem: {
+        key: 'aiAssistants',
+        icon: 'magic',
+        content: t('common.aiAssistants', {
+          context: 'title',
+        }),
+      },
       render: () => <McpPane />,
     },
   ];
