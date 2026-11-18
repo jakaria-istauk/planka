@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "planka.fullname" . }}
+  name: {{ include "tama.fullname" . }}
   labels:
-    {{- include "planka.labels" . | nindent 4 }}
+    {{- include "tama.labels" . | nindent 4 }}
   {{- with .Values.deploymentAnnotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -14,7 +14,7 @@ spec:
   {{- end }}
   selector:
     matchLabels:
-      {{- include "planka.selectorLabels" . | nindent 6 }}
+      {{- include "tama.selectorLabels" . | nindent 6 }}
   {{- if .Values.persistence.enabled }}
   strategy:
     type: Recreate
@@ -26,13 +26,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "planka.selectorLabels" . | nindent 8 }}
+        {{- include "tama.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "planka.serviceAccountName" . }}
+      serviceAccountName: {{ include "tama.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -56,16 +56,16 @@ spec:
               protocol: TCP
           {{- if .Values.livenessProbe.enabled }}
           livenessProbe:
-            {{- include "planka.probe" .Values.livenessProbe | nindent 12 }}
+            {{- include "tama.probe" .Values.livenessProbe | nindent 12 }}
           {{- end }}
           {{- if .Values.readinessProbe.enabled }}
           readinessProbe:
-            {{- include "planka.probe" .Values.readinessProbe | nindent 12 }}
+            {{- include "tama.probe" .Values.readinessProbe | nindent 12 }}
           {{- end }}
           volumeMounts:
             - mountPath: /app/data
               subPath: data
-              name: planka
+              name: tama
           {{- if .Values.securityContext.readOnlyRootFilesystem }}
             - mountPath: /app/logs
               subPath: app-logs
@@ -79,7 +79,7 @@ spec:
           {{- end }}
           {{- if .Values.terms.enabled }}
             - mountPath: /app/terms/custom
-              name: planka-terms
+              name: tama-terms
           {{- end }}
           {{- /* Extra volume mounts */}}
           {{- range .Values.extraMounts }}
@@ -126,7 +126,7 @@ spec:
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "planka.fullname" . }}-postgresql-svcbind-custom-user
+                  name: {{ include "tama.fullname" . }}-postgresql-svcbind-custom-user
                   key: uri
           {{- end }}
             - name: BASE_URL
@@ -192,10 +192,10 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       volumes:
-        - name: planka
+        - name: tama
     {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ .Values.persistence.existingClaim | default (include "planka.fullname" .) }}
+            claimName: {{ .Values.persistence.existingClaim | default (include "tama.fullname" .) }}
     {{- else }}
           emptyDir: {}
     {{- end }}
@@ -204,9 +204,9 @@ spec:
           emptyDir: {}
     {{- end }}
     {{- if .Values.terms.enabled }}
-        - name: planka-terms
+        - name: tama-terms
           configMap:
-            name: {{ include "planka.fullname" . }}-terms
+            name: {{ include "tama.fullname" . }}-terms
     {{- end }}
         {{- /* Extra volumes */}}
         {{- range .Values.extraMounts }}

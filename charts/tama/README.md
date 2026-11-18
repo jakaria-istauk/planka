@@ -1,8 +1,6 @@
-# PLANKA Helm Chart
+# Tama Helm Chart
 
-This Helm Chart simplifies the deployment of [PLANKA](https://github.com/plankanban/planka) on Kubernetes.
-
-Shoutout to [this issue](https://github.com/plankanban/planka/issues/192) for requesting a Helm Chart!
+This Helm Chart simplifies the deployment of [Tama](https://github.com/jakaria-istauk/planka) on Kubernetes.
 
 ## Issues
 
@@ -14,44 +12,44 @@ If you want to fully uninstall this chart including the data, follow [these step
 
 ## Usage
 
-If you just want to spin up an instance using help, please see [these docs](https://docs.planka.cloud/docs/installation/kubernetes/helm-chart/). If you want to make changes to the chart locally, and deploy them, see the below section.
+To install a released version, see the next section. If you want to make changes to the chart locally, and deploy them, see the section after it.
 
 ## Installing from the chart repository
 
-Released versions of the chart are published to `https://plankanban.github.io/planka/`, so there is no need to clone anything to install it:
+Released versions of the chart are published to `https://jakaria-istauk.github.io/planka/`, so there is no need to clone anything to install it:
 
 ```bash
-helm repo add planka https://plankanban.github.io/planka/
+helm repo add tama https://jakaria-istauk.github.io/planka/
 helm repo update
 export SECRETKEY=$(openssl rand -hex 64)
-helm install planka planka/planka --set secretkey=$SECRETKEY  \
+helm install tama tama/tama --set secretkey=$SECRETKEY  \
 --set admin_email="demo@demo.demo"  \
 --set admin_password="demo"  \
 --set admin_name="Demo Demo" \
 --set admin_username="demo"
 ```
 
-> **Note:** The command `openssl rand -hex 64` is needed to create a random hexadecimal key for planka. On Windows you can use Git Bash to run that command.
+> **Note:** The command `openssl rand -hex 64` is needed to create a random hexadecimal key for tama. On Windows you can use Git Bash to run that command.
 
-The chart version tracks the application version, so `--version 2.3.1` installs PLANKA 2.3.1. The examples further down all use `planka/planka`; swap it for `.` if you are working from a clone as described in the next section.
+The chart version tracks the application version, so `--version 2.3.1` installs Tama 2.3.1. The examples further down all use `tama/tama`; swap it for `.` if you are working from a clone as described in the next section.
 
 ## Local Building and Using the Chart
 
 If you want to change the chart itself and deploy your changes, build it from a clone instead:
 
 ```bash
-git clone https://github.com/plankanban/planka.git
-cd planka/charts/planka
+git clone https://github.com/jakaria-istauk/planka.git
+cd planka/charts/tama
 helm dependency build
 export SECRETKEY=$(openssl rand -hex 64)
-helm install planka . --set secretkey=$SECRETKEY  \
+helm install tama . --set secretkey=$SECRETKEY  \
 --set admin_email="demo@demo.demo"  \
 --set admin_password="demo"  \
 --set admin_name="Demo Demo" \
 --set admin_username="demo"
 ```
 
-To access PLANKA you can port forward using the following command:
+To access Tama you can port forward using the following command:
 
 ```bash
 kubectl port-forward $POD_NAME 3000:1337
@@ -59,36 +57,36 @@ kubectl port-forward $POD_NAME 3000:1337
 
 ### Accessing Externally
 
-To access PLANKA externally you can use the following configuration
+To access Tama externally you can use the following configuration
 
 ```bash
 # HTTP only
-helm install planka planka/planka --set secretkey=$SECRETKEY \
+helm install tama tama/tama --set secretkey=$SECRETKEY \
 --set admin_email="demo@demo.demo"  \
 --set admin_password="demo"  \
 --set admin_name="Demo Demo" \
 --set admin_username="demo" \
 --set ingress.enabled=true \
---set ingress.hosts[0].host=planka.example.dev \
+--set ingress.hosts[0].host=tama.example.dev \
 
 # HTTPS
-helm install planka planka/planka --set secretkey=$SECRETKEY \
+helm install tama tama/tama --set secretkey=$SECRETKEY \
 --set admin_email="demo@demo.demo"  \
 --set admin_password="demo"  \
 --set admin_name="Demo Demo" \
 --set admin_username="demo" \
 --set ingress.enabled=true \
---set ingress.hosts[0].host=planka.example.dev \
---set ingress.tls[0].secretName=planka-tls \
---set ingress.tls[0].hosts[0]=planka.example.dev \
+--set ingress.hosts[0].host=tama.example.dev \
+--set ingress.tls[0].secretName=tama-tls \
+--set ingress.tls[0].hosts[0]=tama.example.dev \
 ```
 
 or create a values.yaml file like:
 
 ````yaml
 secretkey: "<InsertSecretKey>"
-# The admin section needs to be present for new instances of PLANKA, after the first start you can remove the lines starting with admin_. If you want the admin user to be unchangeable admin_email: has to stay
-# After changing the config you have to run ```helm upgrade planka planka/planka -f values.yaml```
+# The admin section needs to be present for new instances of Tama, after the first start you can remove the lines starting with admin_. If you want the admin user to be unchangeable admin_email: has to stay
+# After changing the config you have to run ```helm upgrade tama tama/tama -f values.yaml```
 
 # Admin user
 admin_email: "demo@demo.demo" # Do not remove if you want to prevent this user from being edited/deleted
@@ -101,37 +99,37 @@ admin_username: "demo"
 ingress:
   enabled: true
   hosts:
-    - host: planka.example.dev
+    - host: tama.example.dev
       paths:
         - path: /
           pathType: ImplementationSpecific
 
   # Needed for HTTPS
   tls:
-    - secretName: planka-tls # existing TLS secret in k8s
+    - secretName: tama-tls # existing TLS secret in k8s
       hosts:
-        - planka.example.dev
+        - tama.example.dev
 ```
 
 ```bash
-helm install planka planka/planka -f values.yaml
+helm install tama tama/tama -f values.yaml
 ```
 
 ### Things to consider if production hosting
 
-If you want to host PLANKA for more than just playing around with, you might want to do the following things:
+If you want to host Tama for more than just playing around with, you might want to do the following things:
 
 - Create a `values.yaml` with your config, as this will make applying upgrades much easier in the future.
 - Create your `secretkey` once and store it either in a secure vault, or in your `values.yaml` file so it will be the same for upgrading in the future.
 - Specify a password for `postgresql.auth.password` as there have been issues with the postgresql chart generating new passwords locking you out of the data you've already stored. (see [this issue](https://github.com/bitnami/charts/issues/2061))
 
-Any questions or concerns, [raise an issue](https://github.com/plankanban/planka/issues/new).
+Any questions or concerns, [raise an issue](https://github.com/jakaria-istauk/planka/issues/new).
 
 ## Advanced Configuration
 
 ### Base URL
 
-PLANKA has to be told the address the browser actually uses, because it only accepts websocket connections from that origin. Getting it wrong is what produces a page that loads blank and never finishes connecting.
+Tama has to be told the address the browser actually uses, because it only accepts websocket connections from that origin. Getting it wrong is what produces a page that loads blank and never finishes connecting.
 
 The chart works it out for you:
 
@@ -139,18 +137,18 @@ The chart works it out for you:
 - With ingress disabled, it uses `defaultBaseUrl`, which is `http://localhost:3000` to match the port-forward above. If you port forward to a different port, or reach the service by another address, set it to match:
 
   ```yaml
-  defaultBaseUrl: "http://planka.internal:8080"
+  defaultBaseUrl: "http://tama.internal:8080"
   ```
 
 - `baseUrl` overrides both, for the cases the chart cannot work out on its own, such as a proxy in front of the ingress that terminates TLS elsewhere:
 
   ```yaml
-  baseUrl: "https://planka.example.dev"
+  baseUrl: "https://tama.example.dev"
   ```
 
 ### Probes
 
-Both probes hit `/` on the container port and otherwise leave Kubernetes' defaults alone. If PLANKA is on slow storage, or waits on a database that is still starting, the first start can outlast the probe and the pod restarts in a loop that looks like PLANKA crashing. Give it more room rather than turning the probes off:
+Both probes hit `/` on the container port and otherwise leave Kubernetes' defaults alone. If Tama is on slow storage, or waits on a database that is still starting, the first start can outlast the probe and the pod restarts in a loop that looks like Tama crashing. Give it more room rather than turning the probes off:
 
 ```yaml
 livenessProbe:
@@ -169,7 +167,7 @@ readinessProbe:
 
 ### Extra Volume Mounts
 
-The Helm chart supports mounting arbitrary ConfigMaps, Secrets, and Volumes to the PLANKA deployment using the `extraMounts` configuration. This is especially useful for scenarios like:
+The Helm chart supports mounting arbitrary ConfigMaps, Secrets, and Volumes to the Tama deployment using the `extraMounts` configuration. This is especially useful for scenarios like:
 
 - Adding custom configuration files
 - Mounting TLS certificates from existing secrets
@@ -196,7 +194,7 @@ extraMounts:
     mountPath: /etc/ssl/private
     readOnly: true
     secret:
-      secretName: planka-tls-secret # Must exist
+      secretName: tama-tls-secret # Must exist
       items:
         - key: tls.crt
           path: server.crt
@@ -205,17 +203,17 @@ extraMounts:
 
   # Temporary storage
   - name: temp-storage
-    mountPath: /tmp/planka-temp
+    mountPath: /tmp/tama-temp
     readOnly: false
     emptyDir:
       sizeLimit: 1Gi
 
   # Host path mount
   - name: backup-storage
-    mountPath: /var/lib/planka-backups
+    mountPath: /var/lib/tama-backups
     readOnly: false
     hostPath:
-      path: /var/lib/planka-backups
+      path: /var/lib/tama-backups
       type: DirectoryOrCreate
 
   # NFS mount
@@ -224,7 +222,7 @@ extraMounts:
     readOnly: false
     nfs:
       server: nfs.example.com
-      path: /exports/planka
+      path: /exports/tama
 ```
 
 ### Environment Variables from Secrets
@@ -274,11 +272,11 @@ For enhanced security and reproducibility, you can pin the container image using
 You can find the digest of a specific image tag using:
 
 ```bash
-docker inspect ghcr.io/plankanban/planka:latest --format='{{index .RepoDigests 0}}'
-# Output: ghcr.io/plankanban/planka@sha256:abc123def456...
+docker inspect ghcr.io/jakaria-istauk/tama:latest --format='{{index .RepoDigests 0}}'
+# Output: ghcr.io/jakaria-istauk/tama@sha256:abc123def456...
 
 # Or with skopeo
-skopeo inspect docker://ghcr.io/plankanban/planka:latest
+skopeo inspect docker://ghcr.io/jakaria-istauk/tama:latest
 ```
 
 #### Usage
@@ -290,7 +288,7 @@ You can use digest pinning in several ways:
 Includes the tag for reference while using the digest for verification:
 
 ```bash
-helm install planka planka/planka --set secretkey=$SECRETKEY \
+helm install tama tama/tama --set secretkey=$SECRETKEY \
   --set image.tag=latest \
   --set image.digest=abc123def456... \
   --set admin_email="demo@demo.demo" \
@@ -303,7 +301,7 @@ Or in values.yaml:
 
 ```yaml
 image:
-  repository: ghcr.io/plankanban/planka
+  repository: ghcr.io/jakaria-istauk/tama
   tag: latest
   digest: "abc123def456ab89cd12ef34ab56cd78ef90ab12cd34ef56ab78cd90ef12ab34"
 ```
@@ -314,7 +312,7 @@ If you prefer to pin only by digest without specifying a tag:
 
 ```yaml
 image:
-  repository: ghcr.io/plankanban/planka
+  repository: ghcr.io/jakaria-istauk/tama
   tag: "" # Empty - digest alone identifies the image
   digest: "abc123def456ab89cd12ef34ab56cd78ef90ab12cd34ef56ab78cd90ef12ab34"
 ```
