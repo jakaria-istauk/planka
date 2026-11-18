@@ -50,6 +50,11 @@ module.exports.policies = {
 
   'mcp/handle': 'is-mcp-authenticated',
 
+  'oauth-clients/show': ['is-authenticated', 'is-session'],
+  'oauth-consents/create': ['is-authenticated', 'is-session'],
+  'oauth-connections/index': ['is-authenticated', 'is-session'],
+  'oauth-connections/delete': ['is-authenticated', 'is-session'],
+
   '_internal/update-config': ['is-authenticated', 'is-internal'],
 
   index: true,
