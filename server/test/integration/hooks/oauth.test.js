@@ -106,7 +106,7 @@ describe('oauth (hook)', () => {
       code_verifier: pkce.verifier,
     });
 
-    expect(response.status).to.equal(200);
+    expect(response.status, JSON.stringify(response.body)).to.equal(200);
     return { client, tokens: response.body };
   };
 
