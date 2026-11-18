@@ -18,7 +18,7 @@ Status legend: `[ ]` todo, `[~]` in progress, `[x]` done.
 
 ## Open questions
 
-- [ ] Confirm adding `@modelcontextprotocol/sdk` to `server/package.json`
+- [x] Confirm adding `@modelcontextprotocol/sdk` to `server/package.json`
 - [ ] Confirm Discord bot via HTTP interactions instead of a gateway bot
 - [ ] GitHub auth: PAT only first, or GitHub App from the start?
 - [ ] Which PLANKA roles may manage automations and integrations (board editor, project manager, admin)?
@@ -31,29 +31,33 @@ Hook point: `server/api/helpers/utils/send-webhooks.js` (called from 78 helpers)
 - [x] Subscriber registry (`sails.helpers.utils.subscribeToEvents` or a small hook in `server/api/hooks/`)
 - [x] Pass `origin` through helpers that integrations call, for the loop guard
 - [x] Tests: subscriber receives events with data, prevData, user and scope
-- [ ] PR
+- [x] PR
 
 Built as the `event-bus` hook (`server/api/hooks/event-bus/`): `subscribe(handler)` returns an unsubscribe function, `sendWebhooks` emits `{ event, data, prevData, user, scope, origin }` to every subscriber on a later microtask, and data is only built when a subscriber or webhook needs it.
 `origin` travels through `AsyncLocalStorage` instead of a new input on each helper: integrations wrap their helper calls in `sails.hooks['event-bus'].runWithOrigin('github', fn)`, and every event emitted inside carries that origin.
 
 ## Phase 1: built-in MCP server
 
-- [ ] Add `@modelcontextprotocol/sdk` dependency
-- [ ] Route `POST /api/mcp` (and `GET`/`DELETE` if session mode is used) in `server/config/routes.js`
-- [ ] Controller `server/api/controllers/mcp/` wiring the SDK transport to the Sails request
-- [ ] Auth: require API key user, reject internal token; reuse `is-authenticated` policy
-- [ ] Tools, each reusing helpers and the same permission checks as REST controllers:
-  - [ ] `list_projects`, `get_project`
-  - [ ] `list_boards`, `get_board` (lists, labels, members included)
-  - [ ] `list_cards`, `get_card`, `search_cards`
-  - [ ] `create_card`, `update_card`, `move_card`, `delete_card`
-  - [ ] `create_task`, `update_task`, `delete_task`
-  - [ ] `add_label_to_card`, `remove_label_from_card`
-  - [ ] `add_member_to_card`, `remove_member_from_card`
-  - [ ] `create_comment`, `list_comments`
-- [ ] Integration tests per tool (auth, permission denied, happy path)
-- [ ] Swagger / docs entry and a client config example (Claude Code `claude mcp add --transport http`)
+- [x] Add `@modelcontextprotocol/sdk` dependency
+- [x] Route `POST /api/mcp` (and `GET`/`DELETE` if session mode is used) in `server/config/routes.js`
+- [x] Controller `server/api/controllers/mcp/` wiring the SDK transport to the Sails request
+- [x] Auth: require API key user, reject internal token; reuse `is-authenticated` policy
+- [x] Tools, each reusing helpers and the same permission checks as REST controllers:
+  - [x] `list_projects`, `get_project`
+  - [x] `list_boards`, `get_board` (lists, labels, members included)
+  - [x] `list_cards`, `get_card`, `search_cards`
+  - [x] `create_card`, `update_card`, `move_card`, `delete_card`
+  - [x] `create_task`, `update_task`, `delete_task`
+  - [x] `add_label_to_card`, `remove_label_from_card`
+  - [x] `add_member_to_card`, `remove_member_from_card`
+  - [x] `create_comment`, `list_comments`
+- [x] Integration tests per tool (auth, permission denied, happy path)
+- [x] Swagger / docs entry and a client config example (Claude Code `claude mcp add --transport http`)
 - [ ] PR
+
+Built as the `mcp/handle` action at `POST /api/mcp` (stateless streamable HTTP, JSON responses; `GET`/`DELETE` answer 405) behind the new `is-api-key` policy.
+Tools live in `server/utils/mcp/tools.js` and run the REST controller definitions through `server/utils/mcp/run-action.js` (the same `machine` runner Sails uses for actions), so input validation and permission checks are the REST ones, not copies.
+Docs: `docs/mcp.md` and the `/mcp` swagger entry.
 
 ## Phase 2: automation rules
 
@@ -118,3 +122,5 @@ Bot commands (HTTP interactions):
 ## Done log
 
 Add a line per merged PR: date, phase, PR link.
+
+- 2026-11-17, phase 0: landed on `master` directly without a PR (`7d5f0e6f`..`19d0a7d2`)

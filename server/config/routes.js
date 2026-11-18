@@ -300,6 +300,10 @@ module.exports.routes = {
   'POST /api/notification-services/:id/test': 'notification-services/test',
   'DELETE /api/notification-services/:id': 'notification-services/delete',
 
+  'POST /api/mcp': 'mcp/handle',
+  'GET /api/mcp': 'mcp/handle',
+  'DELETE /api/mcp': 'mcp/handle',
+
   'PATCH /api/_internal/config': '_internal/update-config',
 
   'GET /swagger.json': 'swagger/show',

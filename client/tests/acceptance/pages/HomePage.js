@@ -4,7 +4,7 @@ export default class HomePage {
   constructor() {
     this.url = Config.BASE_URL;
 
-    this.userActionSelector = 'div.menu > a:last-child';
+    this.userActionSelector = 'aside > button:last-child';
     this.logOutSelector = 'a:has-text("Log Out")';
   }
 

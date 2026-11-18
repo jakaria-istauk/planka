@@ -133,7 +133,6 @@ const Scrollbar = React.memo(({ contentRef }) => {
   }, [contentRef, update]);
 
   return (
-    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       ref={trackRef}
       aria-hidden="true"
