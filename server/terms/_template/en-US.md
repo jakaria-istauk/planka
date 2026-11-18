@@ -1,90 +1,52 @@
 # ⚠️ THIS IS ONLY A TEMPLATE
 
-If you are the admin of this instance, you can customize these Terms to suit your own needs and legal requirements.
+If you are the administrator of this instance, replace these terms with your own. Mount a folder of Markdown files (one per language, such as `en-US.md`) at `/app/terms/custom`. The last block, starting at `[confirmations]::`, holds the confirmations users accept.
 
-For guidance on updating this template, see this [guide](https://docs.planka.cloud/docs/configuration/customizing-end-user-terms/).
+These template terms are generic and are not legal advice.
 
 ---
 
-# End User Terms of Service – On-Premise Version
+# Terms of Use
 
-**Effective: February 11, 2026 – v1.0**
+**Effective: November 18, 2026 – v1.0**
 
-## 1. Scope and Your Relationship with PLANKA
+## 1. Scope
 
-### 1.1 What This Document Covers
-These End User Terms of Service apply to you as an end user of the PLANKA software in its on-premise version. The software is operated on the systems of your employer or client. They govern the conditions under which you may use the software – regardless of whether you are an employee, external contractor, or invited user of the organization that has made PLANKA available to you.
-
-### 1.2 Who Is Who?
-- **"Provider"** or **"we"**: PLANKA Software GmbH, Lindauer Str. 4, 87439 Kempten, Germany
-- **"Customer"** or **"Instance Administrator"**: The organization that has acquired the license for PLANKA and operates the software on its own systems
-- **"You"** or **"End User"**: The natural person using PLANKA through the Customer's installation
-
-### 1.3 Contractual Framework
-Your access to PLANKA is based on the agreement between the Customer and us (Terms and Conditions). This document supplements those Terms and Conditions and governs your personal obligations as an end user. It does not establish an independent contractual relationship between you and the Provider.
+These Terms of Use apply to you as a user of this Tama instance. Tama is free, self-hosted software. This instance is run by the organization or person that gave you access (the "Operator"), not by the authors of Tama.
 
 ## 2. Your Account
 
-### 2.1 Account Creation
-Each end user requires their own personal account. Shared accounts are not permitted.
-
-### 2.2 Your Responsibility
-You are responsible for the accuracy of your account information, maintaining the confidentiality of your access credentials, and all activities that occur under your account. If you suspect unauthorized use of your account, notify your instance administrator immediately.
-
-### 2.3 Access and Revocation
-Your access is managed by the Customer. The Customer may restrict or revoke your access at any time. When your relationship with the Customer ends (e.g., end of employment), your right of access also expires.
+- Each user needs their own personal account. Do not share accounts or credentials.
+- You are responsible for keeping your credentials safe and for everything done under your account.
+- If you think someone else is using your account, tell the Operator straight away.
+- The Operator manages access and may restrict or remove it at any time.
 
 ## 3. Acceptable Use
 
-### 3.1 Intended Use
-You may use PLANKA exclusively for the purposes for which the Customer has granted you access, and within the scope of the role and permissions assigned to you.
+Use this instance only for the purposes the Operator allows, within the role and permissions you were given. Do not:
 
-### 3.2 Prohibited Uses
-The following are expressly prohibited:
-- Sharing your access credentials with other persons
-- Use for unlawful, discriminatory, or abusive purposes
-- Uploading harmful files (viruses, malware) or unlawful content
-- Attempting to access data of other users without authorization
-- Reverse engineering, decompilation, or disassembly of the software
-- Using the software beyond the scope licensed by the Customer
-- Copying, duplicating, or distributing the software or parts thereof
+- use it for unlawful, discriminatory or abusive purposes;
+- upload malware or unlawful content;
+- try to access other users' data without permission;
+- try to disrupt or overload the service.
 
-### 3.3 Content Responsibility
-You are responsible for all content you create, upload, or share in PLANKA. Ensure that such content does not infringe the rights of third parties and complies with applicable law.
+## 4. Your Content
 
-## 4. Intellectual Property and Your Content
-
-The PLANKA software is owned by PLANKA Software GmbH. Your authorization to use the software does not constitute a transfer of ownership rights. You retain ownership of all content you create within PLANKA. The management and any release of your content is the responsibility of the Customer (instance administrator), not the Provider.
+You keep ownership of the content you create. You are responsible for making sure it does not infringe the rights of others and complies with the law. The Operator manages the data stored on this instance.
 
 ## 5. Data Protection
 
-### 5.1 Notice Regarding Data Processing
-The on-premise version of PLANKA is operated on the Customer's systems. The Provider has no access to your data and does not process any personal data of end users. The Customer (instance administrator) is solely responsible for data protection within the PLANKA installation. For data protection inquiries, please contact your instance administrator.
-
-### 5.2 Telemetry Data
-The software may transmit anonymized technical data to the Provider to the extent necessary for license verification or software improvement. Personal data of end users is not transmitted. Details are set out in the technical documentation.
+The Operator runs this instance on systems it controls and is responsible for the personal data stored in it. Tama does not send your data to its authors. For data protection questions, contact the Operator.
 
 ## 6. Availability and Liability
 
-The availability of the software is the sole responsibility of the Customer (instance administrator), who operates the software on its own systems. The Provider assumes no responsibility for outages, limitations, or data loss of the on-premise installation.
+The Operator is responsible for running this instance, including its availability and backups. Tama is provided as is, without warranty.
 
-The Provider's liability towards end users is governed by the applicable statutory provisions and the terms set out in the Terms and Conditions between the Provider and the Customer. The Provider is not liable for damages resulting from misuse or use in breach of these terms.
+## 7. Changes
 
-## 7. Confidentiality
-
-Access credentials, license information, and internal data to which you gain access through PLANKA must be treated as confidential. The confidentiality obligation continues beyond the duration of your access authorization.
-
-## 8. Violations and Consequences
-
-In the event of violations of these End User Terms of Service, the Provider is entitled to inform the Customer (instance administrator) of the violation. The Customer may temporarily suspend or permanently revoke your access. The Provider's right to take further action in the event of serious violations remains unaffected.
-
-## 9. Changes and Applicable Law
-
-The Provider may amend these End User Terms of Service with effect for the future. Changes will be displayed to you at your next login and require your renewed confirmation. Without confirmation, further use of PLANKA is not possible. German law applies.
-
-*PLANKA Software GmbH · Lindauer Str. 4 · 87439 Kempten · Germany*
+The Operator may change these terms. You will be asked to accept the new version at your next sign-in, and you cannot keep using the instance without accepting it.
 
 [confirmations]::
 ---
 
-✔️ **I have read and accept these End User Terms of Service**
+✔️ **I have read and accept these Terms of Use**
