@@ -98,7 +98,7 @@ const resolveUrl = () => {
 
   if (!configured) {
     throw new Error(
-      'DATABASE_URL is not set. PLANKA needs a PostgreSQL connection string, for example postgresql://planka:password@postgres:5432/planka. Set DATABASE_URL, or point DATABASE_URL__FILE at a file that holds it.',
+      'DATABASE_URL is not set. Tama needs a PostgreSQL connection string, for example postgresql://tama:password@postgres:5432/tama. Set DATABASE_URL, or point DATABASE_URL__FILE at a file that holds it.',
     );
   }
 
@@ -161,7 +161,7 @@ const resolveUrl = () => {
 
   if (!url.pathname.replace(/^\/+/, '')) {
     throw new Error(
-      `DATABASE_URL does not name a database: ${maskPassword(value)}. Expected the database name after the host, for example postgresql://planka:password@postgres:5432/planka.`,
+      `DATABASE_URL does not name a database: ${maskPassword(value)}. Expected the database name after the host, for example postgresql://tama:password@postgres:5432/tama.`,
     );
   }
 
@@ -197,7 +197,7 @@ const resolveSearchPath = () => {
 
   if (!SEARCH_PATH_PATTERN.test(value)) {
     throw new Error(
-      `DATABASE_SCHEMA must be one or more comma-separated PostgreSQL identifiers, but it is "${value}". Expected for example planka, or planka,public.`,
+      `DATABASE_SCHEMA must be one or more comma-separated PostgreSQL identifiers, but it is "${value}". Expected for example tama, or tama,public.`,
     );
   }
 

@@ -5,9 +5,8 @@ module.exports = {
     openapi: '3.0.0',
     info: {
       version,
-      title: 'PLANKA API',
-      description:
-        'API documentation for PLANKA - Real-Time Collaborative Kanban Board Application',
+      title: 'Tama API',
+      description: 'API documentation for Tama - Real-Time Collaborative Kanban Board Application',
       license: {
         name: 'Fair Use License',
         url: 'https://github.com/plankanban/planka/blob/master/LICENSE.md',

@@ -47,7 +47,7 @@
  *         data:
  *           type: object
  *           description: Attachment specific data (varies by type)
- *           example: {"url": "https://google.com/search?q=planka", "faviconUrl": "https://storage.example.com/favicons/google.com.png"}
+ *           example: {"url": "https://google.com/search?q=tama", "faviconUrl": "https://storage.example.com/favicons/google.com.png"}
  *         name:
  *           type: string
  *           description: Name/title of the attachment

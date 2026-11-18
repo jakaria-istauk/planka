@@ -65,7 +65,7 @@ const origins = baseUrls.reduce((acc, baseUrl) => {
 customLogger.info(`BASE_URL is ${baseUrls.join(', ')}`);
 customLogger.info(
   `Browser requests are accepted from these origins only: ${origins.join(', ')}. ` +
-    'A browser reaching PLANKA at any other address will load the page and then fail to connect.',
+    'A browser reaching Tama at any other address will load the page and then fail to connect.',
 );
 
 module.exports = {

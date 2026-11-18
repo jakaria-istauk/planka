@@ -15,7 +15,7 @@
  *       session access tokens are rejected. GET and DELETE answer 405.
  *
  *       Add it to Claude Code with:
- *       `claude mcp add --transport http planka https://planka.example.com/api/mcp --header "X-Api-Key: <key>"`
+ *       `claude mcp add --transport http tama https://tama.example.com/api/mcp --header "X-Api-Key: <key>"`
  *     tags:
  *       - MCP
  *     operationId: handleMcp
@@ -98,7 +98,7 @@ const buildTextResult = (text, isError = false) => ({
 const buildServer = (req) => {
   const server = new McpServer({
     version,
-    name: 'planka',
+    name: 'tama',
   });
 
   tools.forEach((tool) => {

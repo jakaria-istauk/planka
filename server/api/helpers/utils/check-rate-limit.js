@@ -5,7 +5,7 @@
 
 // A fixed-window counter, held in the process that serves the request.
 //
-// PLANKA needs no Redis and the stock deployment is a single container, so the
+// Tama needs no Redis and the stock deployment is a single container, so the
 // count lives in memory rather than in shared storage. Run several processes
 // and each keeps its own, which multiplies the effective ceiling by their
 // number — enough to blunt a script, not a substitute for a limiter in front of

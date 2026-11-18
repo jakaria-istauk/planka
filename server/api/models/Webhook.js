@@ -52,7 +52,7 @@
  *         url:
  *           type: string
  *           description: URL endpoint for the webhook
- *           example: https://webhook.example.com/planka
+ *           example: https://webhook.example.com/tama
  *         accessToken:
  *           type: string
  *           nullable: true

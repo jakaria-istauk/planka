@@ -86,7 +86,7 @@ function resolveScope(event, data, override) {
 async function sendWebhook(webhook, event, data, prevData, user) {
   const headers = {
     'Content-Type': 'application/json',
-    'User-Agent': `planka (+${sails.config.custom.baseUrl})`,
+    'User-Agent': `tama (+${sails.config.custom.baseUrl})`,
   };
 
   if (webhook.accessToken) {

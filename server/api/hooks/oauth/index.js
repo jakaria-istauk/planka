@@ -7,7 +7,7 @@
  * oauth hook
  *
  * @description :: OAuth 2.1 authorization server for the MCP endpoint, so clients that only
- *                 connect through OAuth (ChatGPT, Claude connectors) can sign in as a PLANKA user.
+ *                 connect through OAuth (ChatGPT, Claude connectors) can sign in as a Tama user.
  *                 Serves discovery metadata, dynamic client registration, the authorize redirect,
  *                 the token and revoke endpoints through the handlers of the MCP SDK.
  * @docs        :: https://sailsjs.com/docs/concepts/extending-sails/hooks
@@ -32,7 +32,7 @@ const {
   verifyClientSecret,
 } = require('../../../utils/mcp/oauth-provider');
 
-// Express rate limit warns about proxy headers it cannot trust; PLANKA's `TRUST_PROXY` decides that
+// Express rate limit warns about proxy headers it cannot trust; Tama's `TRUST_PROXY` decides that
 const RATE_LIMIT_OPTIONS = {
   validate: false,
 };

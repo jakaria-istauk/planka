@@ -133,7 +133,7 @@ const reportRefusedSocketOrigins = () => {
     if (reportedOrigins.size === MAX_REPORTED_ORIGINS) {
       sails.log.warn(
         `CONFIGURATION: ${MAX_REPORTED_ORIGINS} different origins have now been refused. ` +
-          'Further refusals will not be reported until PLANKA is restarted.',
+          'Further refusals will not be reported until Tama is restarted.',
       );
     }
   });

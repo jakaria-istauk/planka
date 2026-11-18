@@ -44,7 +44,7 @@
  *                 format: url
  *                 maxLength: 2048
  *                 description: URL for the link attachment
- *                 example: https://google.com/search?q=planka
+ *                 example: https://google.com/search?q=tama
  *               name:
  *                 type: string
  *                 maxLength: 128

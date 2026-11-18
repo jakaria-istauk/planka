@@ -42,7 +42,7 @@
  *         url:
  *           type: string
  *           description: URL endpoint for notifications
- *           example: https://service.example.com/planka
+ *           example: https://service.example.com/tama
  *         format:
  *           type: string
  *           enum: [text, markdown, html]

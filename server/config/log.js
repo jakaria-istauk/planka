@@ -38,7 +38,7 @@ const resolveLevel = () => {
   }
 
   warn(
-    `LOG_LEVEL is set to "${process.env.LOG_LEVEL}", which is not a level PLANKA can log at. ` +
+    `LOG_LEVEL is set to "${process.env.LOG_LEVEL}", which is not a level Tama can log at. ` +
       `The levels are: ${LEVELS.join(', ')}. Logging at "${DEFAULT_LEVEL}" instead.`,
   );
 
@@ -60,7 +60,7 @@ const resolveStderrLevels = () => {
 
   if (unknownLevels.length > 0) {
     warn(
-      `LOG_STDERR_LEVELS names ${unknownLevels.join(', ')}, which PLANKA cannot log at. ` +
+      `LOG_STDERR_LEVELS names ${unknownLevels.join(', ')}, which Tama cannot log at. ` +
         `The levels are: ${LEVELS.join(', ')}. Ignoring those, keeping the rest.`,
     );
   }
