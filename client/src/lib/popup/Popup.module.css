@@ -4,25 +4,58 @@
  */
 
 .closeButton {
+  align-items: center;
   background: transparent !important;
+  border: 1.5px solid var(--pk-close) !important;
+  border-radius: 50% !important;
   box-shadow: none !important;
+  color: var(--pk-close) !important;
+  display: flex !important;
+  height: 28px;
+  justify-content: center;
   margin: 0 !important;
-  padding: 10px 12px 10px 8px !important;
+  padding: 0 !important;
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 40px;
+  right: 8px;
+  top: 8px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.25s ease;
+  width: 28px;
   z-index: 2000;
 }
 
+.closeButton:hover,
+.closeButton:focus-visible {
+  background: var(--pk-close) !important;
+  color: #fff !important;
+  transform: rotate(90deg);
+}
+
+/* Slim stroked cross instead of the heavy icon-font glyph */
+.closeButton > :global(.icon) {
+  height: 14px !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  width: 14px !important;
+}
+
+.closeButton > :global(.icon)::before {
+  background: currentColor !important;
+  content: '' !important;
+  display: block;
+  height: 14px;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E") center / contain no-repeat;
+  width: 14px;
+}
+
 .wrapper {
-  border-radius: 3px !important;
+  border-radius: 12px !important;
   border-width: 0 !important;
-  box-shadow: 0 8px 16px -4px rgba(9, 45, 66, 0.25),
-    0 0 0 1px rgba(9, 45, 66, 0.08) !important;
-  margin-top: 6px !important;
+  box-shadow: 0 16px 40px -12px rgba(16, 24, 40, 0.28),
+    0 0 0 1px var(--pk-border) !important;
+  margin-top: 8px !important;
   max-height: calc(100% - 70px);
-  padding: 0 12px 12px !important;
+  padding: 0 14px 14px !important;
   width: 304px;
 }
 

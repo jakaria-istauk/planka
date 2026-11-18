@@ -19,6 +19,7 @@
     --pk-accent-soft: #eef0ff;
     --pk-accent-text: #3730a3;
     --pk-danger: #d92d20;
+    --pk-close: #a3162b;
     --pk-radius: 10px;
     --pk-radius-lg: 14px;
     --pk-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
@@ -58,6 +59,7 @@
     --pk-accent-soft: #26244a;
     --pk-accent-text: #c7c3ff;
     --pk-danger: #f97066;
+    --pk-close: #f0617a;
     --pk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
     --pk-shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45);
 
@@ -157,11 +159,36 @@
       }
 
       > .close {
-        color: var(--pk-text-muted);
+        align-items: center;
+        background: transparent;
+        border: 1.5px solid var(--pk-close);
+        border-radius: 50%;
+        color: var(--pk-close);
+        display: flex;
+        height: 32px;
+        justify-content: center;
+        margin: 0;
         opacity: 1;
+        padding: 0;
+        right: 12px;
+        top: 12px;
+        transition: background 0.2s ease, color 0.2s ease, transform 0.25s ease;
+        width: 32px;
+
+        // Slim stroked cross instead of the heavy icon-font glyph
+        &::before {
+          background: currentColor !important;
+          content: '';
+          height: 14px;
+          -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E") center / contain no-repeat;
+          width: 14px;
+        }
 
         &:hover {
-          color: var(--pk-text);
+          background: var(--pk-close);
+          color: #fff;
+          transform: rotate(90deg);
         }
       }
     }
