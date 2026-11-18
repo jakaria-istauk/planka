@@ -28,11 +28,9 @@ import DueFilterStep from './DueFilterStep';
 import SaveFilterStep from './SaveFilterStep';
 import SavedFiltersStep from './SavedFiltersStep';
 import {
-  addSavedFilter,
   clearLastFilter,
   readLastFilter,
-  readSavedFilters,
-  removeSavedFilter,
+  takeLegacySavedFilters,
   writeLastFilter,
 } from './useFilterStorage';
 
@@ -84,6 +82,7 @@ const Filters = React.memo(() => {
   const excludedLabelIds = useSelector(selectors.selectFilterExcludedLabelIdsForCurrentBoard);
   const listIds = useSelector(selectors.selectFilterListIdsForCurrentBoard);
   const currentUserId = useSelector(selectors.selectCurrentUserId);
+  const savedFilters = useSelector(selectors.selectSavedFiltersForCurrentBoard);
   const creatorUserIds = board.filterCreatorUserIds;
   const due = board.filterDue;
 
@@ -95,9 +94,9 @@ const Filters = React.memo(() => {
   const [t] = useTranslation();
   const [search, setSearch] = useState(board.search);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
-  // Cache-buster for the two localStorage buckets below. Bumping it after a
-  // write re-runs the memos that read them, which is all the syncing they
-  // need — nothing here watches storage, so another window's snapshot never
+  // Cache-buster for the "last filter" localStorage bucket below. Bumping it
+  // after a write re-runs the memo that reads it, which is all the syncing it
+  // needs — nothing here watches storage, so another window's snapshot never
   // arrives uninvited.
   const [storageRev, setStorageRev] = useState(0);
 
@@ -185,11 +184,19 @@ const Filters = React.memo(() => {
     creatorUserIds.length > 0 ||
     !!due;
 
-  const savedFilters = useMemo(
-    () => readSavedFilters(currentUserId, board.id),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [board.id, currentUserId, storageRev],
-  );
+  // Saved filters used to live in this browser only. The first time a board
+  // opens after they moved to the server, whatever this browser still holds
+  // for it is saved there and dropped here.
+  useEffect(() => {
+    takeLegacySavedFilters(currentUserId, board.id).forEach(({ name, filter }) => {
+      dispatch(
+        entryActions.createSavedFilterInCurrentBoard({
+          name,
+          filter,
+        }),
+      );
+    });
+  }, [board.id, currentUserId, dispatch]);
 
   // Only looked up while the board is unfiltered, and only to decide whether
   // the restore button is worth showing. Reading it never applies it.
@@ -203,15 +210,15 @@ const Filters = React.memo(() => {
   // highlight in the list and the second-click-to-deactivate behaviour.
   const activeSavedFilterId = useMemo(() => {
     const match = savedFilters.find(
-      (item) =>
-        sameIds(item.userIds || [], currentFilter.userIds) &&
-        sameIds(item.labelIds || [], currentFilter.labelIds) &&
-        sameIds(item.excludedLabelIds || [], currentFilter.excludedLabelIds) &&
-        sameIds(item.listIds || [], currentFilter.listIds) &&
-        !!item.noMember === currentFilter.noMember &&
-        (item.search || '') === currentFilter.search &&
-        sameIds(item.creatorUserIds || [], currentFilter.creatorUserIds) &&
-        isSameDueFilter(item.due || null, currentFilter.due),
+      ({ filter }) =>
+        sameIds(filter.userIds || [], currentFilter.userIds) &&
+        sameIds(filter.labelIds || [], currentFilter.labelIds) &&
+        sameIds(filter.excludedLabelIds || [], currentFilter.excludedLabelIds) &&
+        sameIds(filter.listIds || [], currentFilter.listIds) &&
+        !!filter.noMember === currentFilter.noMember &&
+        (filter.search || '') === currentFilter.search &&
+        sameIds(filter.creatorUserIds || [], currentFilter.creatorUserIds) &&
+        isSameDueFilter(filter.due || null, currentFilter.due),
     );
 
     return match && match.id;
@@ -493,7 +500,7 @@ const Filters = React.memo(() => {
       clearCurrentFilter();
 
       if (item.id !== activeSavedFilterId) {
-        applyFilter(item);
+        applyFilter(item.filter);
       }
     },
     [activeSavedFilterId, applyFilter, clearCurrentFilter],
@@ -501,22 +508,33 @@ const Filters = React.memo(() => {
 
   const handleSavedFilterRemove = useCallback(
     (id) => {
-      removeSavedFilter(currentUserId, board.id, id);
-      setStorageRev((prevStorageRev) => prevStorageRev + 1);
+      dispatch(entryActions.deleteSavedFilter(id));
     },
-    [board.id, currentUserId],
+    [dispatch],
   );
 
+  // Saving under a name already in use replaces that filter rather than
+  // adding a second one with the same name.
   const handleSaveFilter = useCallback(
     (name) => {
-      addSavedFilter(currentUserId, board.id, {
-        name,
-        ...currentFilter,
-      });
+      const existing = savedFilters.find((item) => item.name === name);
 
-      setStorageRev((prevStorageRev) => prevStorageRev + 1);
+      if (existing && existing.isPersisted) {
+        dispatch(
+          entryActions.updateSavedFilter(existing.id, {
+            filter: currentFilter,
+          }),
+        );
+      } else {
+        dispatch(
+          entryActions.createSavedFilterInCurrentBoard({
+            name,
+            filter: currentFilter,
+          }),
+        );
+      }
     },
-    [board.id, currentFilter, currentUserId],
+    [currentFilter, dispatch, savedFilters],
   );
 
   useDidUpdate(() => {
