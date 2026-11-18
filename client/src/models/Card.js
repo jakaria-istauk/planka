@@ -9,6 +9,7 @@ import { attr, fk, many, oneToOne } from 'redux-orm';
 import BaseModel from './BaseModel';
 import ActionTypes from '../constants/ActionTypes';
 import Config from '../constants/Config';
+import isPersonalListName from '../utils/is-personal-list-name';
 
 export default class extends BaseModel {
   static modelName = 'Card';
@@ -293,11 +294,22 @@ export default class extends BaseModel {
         Card.upsert(payload.card);
 
         break;
-      case ActionTypes.CARD_CREATE__SUCCESS:
+      case ActionTypes.CARD_CREATE__SUCCESS: {
         Card.withId(payload.localId).deleteWithClearable();
-        Card.upsert(payload.card);
+        const cardModel = Card.upsert(payload.card);
+
+        // The server makes the creator a member of cards in a personal list,
+        // but skips broadcasting it to this socket
+        if (cardModel.list && isPersonalListName(cardModel.list.name)) {
+          try {
+            cardModel.users.add(payload.card.creatorUserId);
+          } catch {
+            /* empty */
+          }
+        }
 
         break;
+      }
       case ActionTypes.CARD_CREATE__FAILURE:
         Card.withId(payload.localId).deleteWithClearable();
 
