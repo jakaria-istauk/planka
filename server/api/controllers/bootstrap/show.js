@@ -36,6 +36,15 @@
  *                   type: boolean
  *                   description: Whether anyone can create an account from the login page (conditionally added if enabled)
  *                   example: true
+ *                 google:
+ *                   type: object
+ *                   description: Google sign-in settings (conditionally added if configured)
+ *                   properties:
+ *                     authorizationUrl:
+ *                       type: string
+ *                       format: uri
+ *                       description: Google authorization URL, without state and nonce
+ *                       example: https://accounts.google.com/o/oauth2/v2/auth?client_id=...
  *                 termsLanguages:
  *                   type: array
  *                   description: List of available language codes for terms localization

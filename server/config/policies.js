@@ -62,6 +62,7 @@ module.exports.policies = {
   'bootstrap/show': true,
   'terms/show': true,
   'access-tokens/create': true,
+  'access-tokens/exchange-with-google': true,
   'users/sign-up': true,
   'access-tokens/verify-totp': true,
   'access-tokens/accept-terms': true,

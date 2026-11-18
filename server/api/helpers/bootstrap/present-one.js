@@ -26,6 +26,12 @@ module.exports = {
       data.isSignUpEnabled = true;
     }
 
+    if (sails.config.custom.googleClientId && sails.config.custom.googleClientSecret) {
+      data.google = {
+        authorizationUrl: sails.helpers.utils.buildGoogleAuthorizationUrl(),
+      };
+    }
+
     if (inputs.user && inputs.user.role === User.Roles.ADMIN) {
       Object.assign(data, {
         activeUsersLimit: inputs.internalConfig.activeUsersLimit,
