@@ -276,22 +276,55 @@
       }
     }
 
+    // Tabs in modals: a pill track with an icon per tab and a raised active tab
     .ui.secondary.pointing.menu {
-      border-bottom: 1px solid var(--pk-border);
+      background: var(--pk-surface-muted);
+      border: 0;
+      border-radius: 12px;
+      display: inline-flex;
+      gap: 2px;
+      margin: 0 0 16px;
+      max-width: 100%;
+      min-height: 0;
+      padding: 4px;
 
       .item {
-        color: var(--pk-text-muted);
-        font-weight: bold;
-        padding: 10px 14px;
+        align-self: auto;
+        border: 0;
+        border-radius: 8px;
+        color: var(--pk-text-secondary);
+        font-size: 13px;
+        font-weight: 600;
+        margin: 0;
+        padding: 8px 14px;
+        transition: background 0.15s ease, color 0.15s ease;
+        white-space: nowrap;
+
+        > .icon {
+          color: var(--pk-text-muted);
+          margin: 0 8px 0 0;
+          transition: color 0.15s ease;
+        }
 
         &:hover {
+          background: var(--pk-hover);
           color: var(--pk-text);
         }
       }
 
       .active.item {
-        border-color: var(--pk-accent);
-        color: var(--pk-text);
+        background: var(--pk-surface);
+        box-shadow: var(--pk-shadow-sm), 0 0 0 1px var(--pk-border);
+        color: var(--pk-accent);
+
+        > .icon {
+          color: var(--pk-accent);
+        }
+
+        &:hover {
+          background: var(--pk-surface);
+          color: var(--pk-accent);
+        }
       }
     }
 

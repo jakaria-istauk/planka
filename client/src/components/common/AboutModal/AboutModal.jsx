@@ -27,15 +27,23 @@ const AboutModal = React.memo(() => {
 
   const panes = [
     {
-      menuItem: t('common.aboutPlanka', {
-        context: 'title',
-      }),
+      menuItem: {
+        key: 'aboutPlanka',
+        icon: 'info circle',
+        content: t('common.aboutPlanka', {
+          context: 'title',
+        }),
+      },
       render: () => <AboutPane />,
     },
     {
-      menuItem: t('common.termsOfService', {
-        context: 'title',
-      }),
+      menuItem: {
+        key: 'termsOfService',
+        icon: 'file alternate outline',
+        content: t('common.termsOfService', {
+          context: 'title',
+        }),
+      },
       render: () => <TermsPane />,
     },
   ];

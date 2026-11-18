@@ -27,27 +27,43 @@ const UserSettingsModal = React.memo(() => {
 
   const panes = [
     {
-      menuItem: t('common.account', {
-        context: 'title',
-      }),
+      menuItem: {
+        key: 'account',
+        icon: 'user outline',
+        content: t('common.account', {
+          context: 'title',
+        }),
+      },
       render: () => <AccountPane />,
     },
     {
-      menuItem: t('common.preferences', {
-        context: 'title',
-      }),
+      menuItem: {
+        key: 'preferences',
+        icon: 'sliders horizontal',
+        content: t('common.preferences', {
+          context: 'title',
+        }),
+      },
       render: () => <PreferencesPane />,
     },
     {
-      menuItem: t('common.notifications', {
-        context: 'title',
-      }),
+      menuItem: {
+        key: 'notifications',
+        icon: 'bell outline',
+        content: t('common.notifications', {
+          context: 'title',
+        }),
+      },
       render: () => <NotificationsPane />,
     },
     {
-      menuItem: t('common.security', {
-        context: 'title',
-      }),
+      menuItem: {
+        key: 'security',
+        icon: 'shield alternate',
+        content: t('common.security', {
+          context: 'title',
+        }),
+      },
       render: () => <SecurityPane />,
     },
   ];

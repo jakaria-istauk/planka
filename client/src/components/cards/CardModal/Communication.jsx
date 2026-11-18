@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Menu, Tab } from 'semantic-ui-react';
+import { Icon, Menu, Tab } from 'semantic-ui-react';
 
 import Comments from '../../comments/Comments';
 import CardActivities from '../../activities/CardActivities';
@@ -19,6 +19,7 @@ const Communication = React.memo(() => {
     {
       menuItem: (
         <Menu.Item key="comments" className={styles.menuItem}>
+          <Icon name="comment outline" />
           {t('common.comments', {
             context: 'title',
           })}
@@ -29,6 +30,7 @@ const Communication = React.memo(() => {
     {
       menuItem: (
         <Menu.Item key="actions" className={styles.menuItem}>
+          <Icon name="history" />
           {t('common.actions', {
             context: 'title',
           })}
